@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — The Troy Groups</title>
+
+  <!-- Fonts & Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* ===== CONTACT / DISTRIBUTED TEAM (page-scoped) ===== */
+    :root{
+      --ink:#0f0f12; --muted:#667085; --ink-2:#1f2430; --band:#0c5ef7;
+      --soft:#eef2f7; --hr:#e9edf3;
+    }
+    .page-wrap{max-width:1100px;margin:0 auto;padding:40px 16px 24px}
+    .eyebrow{color:#98a2b3;font:600 13px/1 Inter,system-ui;margin-bottom:6px}
+    .title-xl{
+      font:800 clamp(28px,4.5vw,40px)/1.15 "Inter",system-ui; color:var(--ink-2);
+    }
+    .lead-sm{color:#657084;font:400 15px/1.7 Inter,system-ui}
+
+    /* Map */
+    .map-wrap{position:relative;margin:34px auto 0;max-width:920px}
+    .map-wrap img{width:100%;height:auto;border-radius:10px}
+    .hotspot{position:absolute;width:10px;height:10px;background:#7c5cff;border-radius:50%;
+      box-shadow:0 0 18px 6px rgba(124,92,255,.45)}
+    /* Sample hotspot positions (percentages on the image) */
+    .hs-1{left:22%;top:36%}.hs-2{left:37%;top:30%}.hs-3{left:49%;top:38%}
+    .hs-4{left:63%;top:52%}.hs-5{left:70%;top:35%}.hs-6{left:78%;top:61%}
+
+    /* 3-column quick contacts */
+    .quick-contacts .title{font:700 14px/1.2 Inter,system-ui;color:#23262b}
+    .quick-contacts .desc{color:#6b7280;font:400 13.5px/1.6 Inter}
+    .quick-contacts a{font-weight:700;text-decoration:none}
+
+    /* Offices band */
+    .offices-band{background:#0a5cff;color:#fff;border-radius:10px;padding:28px}
+    .offices-band h3{font:800 20px/1.2 Inter,system-ui;margin-bottom:4px}
+    .offices-band small{opacity:.85}
+    .offices-band .city{font:700 14px/1 Inter;margin-top:18px}
+    .offices-band .addr{font:400 13px/1.6 Inter,system-ui;opacity:.9}
+
+    /* Team */
+    .section-pad{padding:56px 0 12px}
+    .team-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+    @media (max-width:992px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:640px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+    .member{text-align:center}
+    .avatar{width:76px;height:76px;border-radius:999px;object-fit:cover;margin:0 auto 10px;display:block}
+    .name{font:700 14px/1.2 Inter;color:#0f1720}
+    .role{font:600 12.5px/1.2 Inter;color:#6b7280}
+
+    /* Form + image */
+    .contact-card{max-width:1100px;margin:36px auto 0}
+    .contact-form .btn-primary{background:#6C5CE7;border:0}
+    .contact-form .btn-primary:hover{background:#5948e2}
+    .contact-form .form-control,.contact-form .form-select{border-color:#dde3ea}
+    .toggle-btns .btn{border-color:#d8deea}
+  </style>
+</head>
+<body>
+
+  <!-- Auto header -->
+  <div id="site-header"></div>
+
+  <main class="page-wrap">
+    <!-- Intro -->
+    <div class="text-center">
+      <div class="eyebrow">About us</div>
+      <h1 class="title-xl">We’re a distributed team</h1>
+      <p class="lead-sm">We have offices and teams all around the world.</p>
+    </div>
+
+    <!-- Map -->
+    <div class="map-wrap">
+      <!-- Replace with your dotted world map -->
+      <img src="https://placehold.co/920x360?text=World+Map" alt="World map with locations">
+      <div class="hotspot hs-1" aria-hidden="true"></div>
+      <div class="hotspot hs-2" aria-hidden="true"></div>
+      <div class="hotspot hs-3" aria-hidden="true"></div>
+      <div class="hotspot hs-4" aria-hidden="true"></div>
+      <div class="hotspot hs-5" aria-hidden="true"></div>
+      <div class="hotspot hs-6" aria-hidden="true"></div>
+    </div>
+
+    <!-- Quick contact trio -->
+    <div class="row quick-contacts text-center g-4 mt-4">
+      <div class="col-md-4">
+        <div class="title">Support</div>
+        <div class="desc">Our friendly team is here to help.</div>
+        <a href="mailto:info@thetroygroups.com">info@thetroygroups.com</a>
+      </div>
+      <div class="col-md-4">
+        <div class="title">Sales</div>
+        <div class="desc">Questions or queries? Get in touch!</div>
+        <a href="mailto:info@thetroygroups.com">info@thetroygroups.com</a>
+      </div>
+      <div class="col-md-4">
+        <div class="title">Phone</div>
+        <div class="desc">Mon–Fri from 8am to 5pm.</div>
+        <a href="tel:+15550000000">+1 (555) 000-0000</a>
+      </div>
+    </div>
+
+    <!-- Offices band -->
+    <section class="offices-band mt-5">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <small>Our locations</small>
+          <h3>Visit our offices</h3>
+          <p>Find us at these locations.</p>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-sm-6 col-lg-4">
+              <div class="city">Melbourne</div>
+              <div class="addr">100 Flinders Street<br/>Melbourne VIC 3000 AU</div>
+
+              <div class="city">Sydney</div>
+              <div class="addr">100 George Street<br/>Sydney NSW 2000 AU</div>
+
+              <div class="city">Byron Bay</div>
+              <div class="addr">100 Jonson Street<br/>Byron Bay NSW 2481 AU</div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+              <div class="city">London</div>
+              <div class="addr">100 Oxford Street<br/>London W1D 1LL UK</div>
+
+              <div class="city">San Francisco</div>
+              <div class="addr">100 Market Street<br/>San Francisco, CA 94105 USA</div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+              <div class="city">Sweden</div>
+              <div class="addr">Dreiftinggatan 100<br/>111 50 Stockholm SE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section-pad text-center">
+      <div class="eyebrow" style="color:#8b5cf6">We’re hiring!</div>
+      <h2 class="title-xl" style="font-weight:800">Meet our team</h2>
+      <p class="lead-sm" style="max-width:680px;margin:6px auto 26px">
+        Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
+      </p>
+
+      <div class="team-grid">
+        <!-- 8 sample members (replace src, names, roles) -->
+        <div class="member">
+          <img class="avatar" src="https://placehold.co/160x160" alt="">
+          <div class="name">Olivia Rhye</div><div class="role">Founder & CEO</div>
+        </div>
+        <div class="member">
+          <img class="avatar" src="https://placehold.co/160x160" alt="">
+          <div class="name">Phoenix Baker</div><div class="role">Engineering Manager</div>
+        </div>
+        <div class="member">
+          <img class="avatar" src="https://placehold.co/160x160" alt="">
+          <div class="name">Lana Steiner</div><div class="role">Product Manager</div>
+        </div>
+        <div class="member">
+          <img class="avatar" src="https://placehold.co/160x160" alt="">
+          <div class="name">Demi Wilkinson</div><div class="role">Frontend Developer</div>
+        </div>
+        <div class="member">
+          <img class="avatar" src="https://placehold.co/160x160" alt="">
+          <div class="name">Candice Wu</div><div class="role">Backend Developer</div>
+        </div>
+        <div class="member">
+          <img class="avatar" src="https://placehold.co/160x160" alt="">
+          <div class="name">Natali Craig</div><div class="role">Product Designer</div>
+        </div>
+        <div class="member">
+          <img class="avatar" src="https://placehold.co/160x160" alt="">
+          <div class="name">Drew Cano</div><div class="role">UX Researcher</div>
+        </div>
+        <div class="member">
+          <img class="avatar" src="https://placehold.co/160x160" alt="">
+          <div class="name">Orlando Diggs</div><div class="role">Customer Success</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image + Contact form -->
+    <section class="contact-card">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6">
+          <img class="w-100 rounded" src="https://placehold.co/620x720?text=Visual" alt="Decor image">
+        </div>
+
+        <div class="col-lg-6">
+          <h3 class="title-xl" style="font-size:22px">Get in touch</h3>
+          <p class="lead-sm">Our friendly team would love to hear from you.</p>
+
+          <div class="toggle-btns mb-3">
+            <div class="btn-group" role="group" aria-label="Contact purpose">
+              <input type="radio" class="btn-check" name="purpose" id="investor" checked>
+              <label class="btn btn-outline-secondary" for="investor">Investor</label>
+              <input type="radio" class="btn-check" name="purpose" id="fund">
+              <label class="btn btn-outline-secondary" for="fund">Fund Raising</label>
+            </div>
+          </div>
+
+          <form class="contact-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">First name</label>
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Last name</label>
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col-12">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="you@company.com">
+              </div>
+              <div class="col-12">
+                <label class="form-label">Phone number</label>
+                <div class="input-group">
+                  <select class="form-select" style="max-width:110px">
+                    <option selected>US</option>
+                    <option>IN</option><option>UK</option>
+                  </select>
+                  <input type="tel" class="form-control" placeholder="+1 (555) 000-0000">
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="4" placeholder="Write your message here..."></textarea>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="agree">
+                  <label class="form-check-label" for="agree">
+                    You agree to our friendly <a href="privacy-policy.html">privacy policy</a>.
+                  </label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">Send message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Auto footer -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
