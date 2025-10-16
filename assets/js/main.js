@@ -5,8 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const map = {
     "index.html": "home",
     "about.html": "about",
+    "clients.html": "clients",
+    "digital-roadmap.html": "digital-roadmap",
     "contact.html": "contact",
-    "services.html": "services"
+    "services.html": "services",
+    "privacy-policy.html": "privacy-policy",
+    "our-active-businesses.html": "our-active-businesses",
+     "our-opportunities.html": "our-oppportunities",
+"our-strategies.html": "our-strategies",
+
   };
   const activeKey = map[path] || null;
   if (activeKey) {
