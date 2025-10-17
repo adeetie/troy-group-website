@@ -467,3 +467,78 @@ h1,h2,h3{margin:0 0 12px}
   .about-hero__copy{ align-content: end; padding-bottom: 22px; max-width: 90vw; }
   .about-hero__title{ font-size: clamp(34px, 8vw, 48px); }
 }
+/* ===== Global Button System (site-wide, pill outline) ===== */
+:root{
+  --btn-bg:#ffffff;
+  --btn-ink:#0F0F0F;
+  --btn-outline:#042F6B; /* navy from your comp */
+  --btn-shadow:0 0 0 .5px rgba(4,47,107,.15) inset;
+  --btn-hover-tint: rgba(4,47,107,.06);
+}
+
+.btn,
+a.btn,
+button.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:10px 22px;
+  border-radius:999px;                 /* full pill */
+  background:var(--btn-bg);
+  color:var(--btn-ink);
+  border:1.5px solid var(--btn-outline);
+  box-shadow: var(--btn-shadow);
+  font:600 14px/1 "Open Sans", system-ui, sans-serif;
+  text-decoration:none;
+  transition: background .18s ease, box-shadow .18s ease, transform .06s ease;
+}
+
+.btn .icon,
+.btn svg { color:inherit; stroke:currentColor; }
+
+.btn:hover,
+a.btn:hover,
+button.btn:hover {
+  background:linear-gradient(0deg, var(--btn-hover-tint), var(--btn-hover-tint)), var(--btn-bg);
+  box-shadow:0 4px 14px rgba(4,47,107,.10);
+}
+
+.btn:active { transform: translateY(0.5px) scale(.99); }
+
+/* Make sure “pill” helpers and prior variants follow the new look */
+.btn--pill,
+.btn--outline-gradient,
+.btn--outlineBlue,
+.btn--dark,
+.btn-primary{
+  background:var(--btn-bg) !important;
+  color:var(--btn-ink) !important;
+  border:1.5px solid var(--btn-outline) !important;
+  border-radius:999px !important;
+  box-shadow: var(--btn-shadow) !important;
+}
+
+/* Optional: small + large size helpers if you need them later */
+.btn-sm { padding:8px 16px; font-size:13px }
+.btn-lg { padding:12px 26px; font-size:15px }
+
+/* Keep “chip” links visually in-family (outlined) */
+.chip{
+  background:var(--btn-bg) !important;
+  color:var(--btn-ink) !important;
+  border:1.5px solid var(--btn-outline) !important;
+  border-radius:999px !important;
+  padding:10px 20px !important;
+}
+
+    /* KPI + “What we do” */
+    .lead-tight{ font:400 16px/1.5 "Inter",sans-serif; color:var(--ink-2) }
+    .about-stats{
+      list-style:none; margin:36px auto 0; padding:0;
+      display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:993px;
+       background:linear-gradient(#ffffff 0%,#DFEDFF 100%);
+    }
+    .about-stats li{ display:flex; gap:16px; align-items:center }
+    .bubble{
+      width:100px; height:100px; display:grid; place-items:center; border-radius:999px;
+      background:linear-gradient(268deg,#ffffff 0%,#DFEDFF 100%);
+      font:700 36px/1 "Inter",sans-serif;
+    }
