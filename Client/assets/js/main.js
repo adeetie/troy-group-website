@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "contact.html": "contact",
     "services.html": "services",
     "privacy-policy.html": "privacy-policy",
-    "our-active-businesses.html": "our-active-businesses",
-     "our-opportunities.html": "our-oppportunities",
-"our-strategies.html": "our-strategies",
+  "our-active-businesses.html": "our-active-businesses",
+  "our-opportunities.html": "our-opportunities",
+  "our-strategies.html": "our-strategies",
 
   };
   const activeKey = map[path] || null;
@@ -74,11 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Failed to load component:", file, e);
     }
   };
-  load("site-header", "components/header.html");
-  load("site-footer", "components/footer.html");
+  // Components folder in this repo is `Components` (capital C). Use that to avoid
+  // failing to load on case-sensitive filesystems or hosting platforms.
+  load("site-header", "Components/header.html");
+  load("site-footer", "Components/footer.html");
 
   // Active state for Services page (your image 3 spec)
-  const map = { "index.html":"home", "about.html":"about", "contact.html":"contact", "services.html":"services" };
+  const map = { "index.html":"home", "about.html":"about", "contact.html":"contact", "services.html":"services", "our-opportunities.html":"our-opportunities" };
   const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   const key = map[page];
   if (key) {
