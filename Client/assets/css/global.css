@@ -1,0 +1,39 @@
+/* Header base */
+.tg-header{background:#fff;border-bottom:1px solid #E6EAF2;position:sticky;top:0;z-index:1000}
+.tg-header .nav-link{color:#111;opacity:.85}
+.tg-header .nav-link:hover,.tg-header .nav-link.active{opacity:1}
+.tg-header .navbar-toggler{border:0}
+
+/* CTA pills */
+.tg-btn-outline{border:1.5px solid #2E6AE6;border-radius:999px;padding:.55rem 1rem;font-weight:600;background:#fff;color:#111}
+.tg-btn-outline:hover{box-shadow:0 0 0 3px rgba(46,106,230,.12)}
+.tg-btn-outline-light{border:1.5px solid #2E6AE6;border-radius:999px;padding:.55rem 1rem;background:#fff}
+
+/* Mega dropdown container */
+.tg-megamenu{--radius:22px;min-width:940px;border:1px solid #E6EAF2;border-radius:var(--radius);
+  box-shadow:0 20px 48px rgba(0,0,0,.08);overflow:hidden}
+@media (max-width:991.98px){ .tg-megamenu{min-width:auto;width:100%} }
+
+/* Open on hover for desktop */
+@media (min-width:992px){
+  .tg-mega:hover > .dropdown-menu{display:block}
+}
+
+/* Headings + lists */
+.tg-mm-head{font-size:1.125rem;font-weight:700;margin-bottom:.5rem;color:#111}
+.tg-mm-list li+li{margin-top:.35rem}
+.tg-mm-list a{color:#222;text-decoration:none}
+.tg-mm-list a:hover{color:#2E6AE6;text-decoration:underline}
+
+/* Social row */
+.tg-mm-social .tg-icon-link{display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border:1px solid #E6EAF2;border-radius:10px;color:#111}
+.tg-mm-social .tg-icon-link:hover{border-color:#2E6AE6;color:#2E6AE6}
+
+/* Right image grid */
+.tg-mega-media{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tg-mega-media img{width:100%;aspect-ratio:1/1;border-radius:18px;object-fit:cover}
+
+/* Services variant emphasis */
+.tg-header--services .nav-link[data-link="services"],
+.tg-header--services .nav-link.active[data-link="services"]{color:#2E6AE6;font-weight:700}
