@@ -1,0 +1,56 @@
+/* ===== CONTACT / DISTRIBUTED TEAM (page-scoped) ===== */
+:root{
+  --ink:#0f0f12; --muted:#667085; --ink-2:#1f2430; --band:#0c5ef7;
+  --soft:#eef2f7; --hr:#e9edf3;
+}
+
+/* layout & base type */
+.page-wrap{max-width:1100px;margin:0 auto;padding:40px 16px 24px}
+.eyebrow{color:#98a2b3;font:600 13px/1 Inter,system-ui;margin-bottom:6px}
+.eyebrow--accent{ color:#8b5cf6 }
+.title-xl{font:800 clamp(28px,4.5vw,40px)/1.15 "Inter",system-ui;color:var(--ink-2)}
+.title-xl--bold{ font-weight:800 }
+.title-xl--form{ font-size:22px }
+.lead-sm{color:#657084;font:400 15px/1.7 Inter,system-ui}
+.lead-sm--narrow{ max-width:680px; margin:6px auto 26px }
+
+/* Map */
+.map-wrap{position:relative;margin:34px auto 0;max-width:920px}
+.map-wrap img{width:100%;height:auto;border-radius:10px}
+.hotspot{
+  position:absolute;width:10px;height:10px;background:#7c5cff;border-radius:50%;
+  box-shadow:0 0 18px 6px rgba(124,92,255,.45)
+}
+/* sample hotspot positions */
+.hs-1{left:22%;top:36%}.hs-2{left:37%;top:30%}.hs-3{left:49%;top:38%}
+.hs-4{left:63%;top:52%}.hs-5{left:70%;top:35%}.hs-6{left:78%;top:61%}
+
+/* Quick contacts */
+.quick-contacts .title{font:700 14px/1.2 Inter,system-ui;color:#23262b}
+.quick-contacts .desc{color:#6b7280;font:400 13.5px/1.6 Inter}
+.quick-contacts a{font-weight:700;text-decoration:none}
+
+/* Offices band */
+.offices-band{background:#0a5cff;color:#fff;border-radius:10px;padding:28px}
+.offices-band h3{font:800 20px/1.2 Inter,system-ui;margin-bottom:4px}
+.offices-band small{opacity:.85}
+.offices-band .city{font:700 14px/1 Inter;margin-top:18px}
+.offices-band .addr{font:400 13px/1.6 Inter,system-ui;opacity:.9}
+
+/* Team */
+.section-pad{padding:56px 0 12px}
+.team-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+@media (max-width:992px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+.member{text-align:center}
+.avatar{width:76px;height:76px;border-radius:999px;object-fit:cover;margin:0 auto 10px;display:block}
+.name{font:700 14px/1.2 Inter;color:#0f1720}
+.role{font:600 12.5px/1.2 Inter;color:#6b7280}
+
+/* Form + image */
+.contact-card{max-width:1100px;margin:36px auto 0}
+.country-select{max-width:110px}
+.contact-form .btn-primary{background:#6C5CE7;border:0}
+.contact-form .btn-primary:hover{background:#5948e2}
+.contact-form .form-control,.contact-form .form-select{border-color:#dde3ea}
+.toggle-btns .btn{border-color:#d8deea}

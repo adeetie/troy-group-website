@@ -1,0 +1,93 @@
+/* ===== SERVICES page scoped tweaks (lean, extracted) ===== */
+
+/* Utility containers for exact max-widths used on this page */
+.container-1280 { max-width: 1280px; }
+.container-1160 { max-width: 1160px; }
+.container-993  { max-width: 993px; }
+
+/* Small custom paddings matching prior inline values */
+.pt-12-custom { padding-top: 12px; }
+.pt-28       { padding-top: 28px; }
+
+/* HERO */
+.svc-hero {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 70px;
+  background: #000;
+}
+.svc-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+.svc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.45) 100%);
+}
+.svc-hero .copy {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: end;
+  color: #fff;
+  padding: 24px 24px 32px;
+}
+.svc-hero h1 {
+  font: 700 clamp(42px, 6vw, 64px) / 1.05 "Fira Sans Extra Condensed", "Montserrat", system-ui;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  margin: 0 0 .5rem;
+}
+.eyebrow { font: 600 16px / 1 "Inter", sans-serif; color: var(--ink-2); margin-bottom: 16px; }
+.eyebrow--light { color: #fff; opacity: .9; margin: 4px 0 16px; }
+.svc-hero__lead { color: #fff; opacity: .9; max-width: 520px; }
+
+/* Contact mini card next to “Beyond Growing Pains” */
+.mini-card { display: flex; gap: 12px; align-items: flex-start; margin-top: 16px; }
+.mini-card img { width: 54px; height: 54px; border-radius: 6px; object-fit: cover; }
+.mini-card .label { font-weight: 600; font-size: 14px; line-height: 1.2; }
+
+/* “What we offer” – accordion visuals */
+.tg-acc .accordion-item { border: 0; border-bottom: 1px solid #D4D4D4; border-radius: 0; }
+.tg-acc .accordion-button {
+  padding: 18px 0;
+  font: 600 16px / 1.6 "Inter", sans-serif;
+  background: #fff;
+  box-shadow: none;
+}
+.tg-acc .accordion-button:not(.collapsed) { color: #000; background: #fff; box-shadow: none; }
+.tg-acc .accordion-body { padding: 0 0 16px 0; }
+.tg-acc .sub-bullets { margin: 8px 0 4px 0; list-style: none; padding-left: 0; }
+.tg-acc .sub-bullets li { font: 400 13px / 1.6 "Inter", sans-serif; color: var(--muted); }
+
+/* Pale band */
+.pale { background: #EDF3FA; border: 1px solid #E5ECF7; border-radius: 12px; }
+.pale-container { padding: 32px; }
+
+/* Title tweaks */
+.subcta-title { font-weight: 700; letter-spacing: .2px; }
+.h3-custom { font: 700 28px / 1.25 Inter, system-ui; }
+
+/* Quote gradient card */
+.quote-card {
+  padding: 1rem;
+  border-radius: .5rem;
+  color: #fff;
+  background: linear-gradient(90deg, #0047AC 0%, #A6CDFF 100%);
+}
+.quote-card__text { max-width: 320px; }
+
+/* CTA “Schedule your meeting” (reusing your CTA style scale if needed) */
+.cta-lite { position: relative; border-top: 1px solid #E4E4E4; background: #fff; }
+.cta-lite .big { color: #2465BF; font: 700 clamp(36px,6vw,90px)/1 "Inter",system-ui; }
+.cta-lite .soft-dot {
+  position: absolute; left: 50%; top: 65%; transform: translate(-50%, -50%);
+  width: 385px; height: 385px; background: rgba(0,107,255,.40);
+  filter: blur(60px); border-radius: 345px; opacity: .75;
+}

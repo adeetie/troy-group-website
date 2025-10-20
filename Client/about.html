@@ -10,132 +10,46 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+  <!-- Your global styles first -->
   <link rel="stylesheet" href="assets/css/style.css"/>
-   <link href="./assets/css/global.css?v=1" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global.css?v=1">
 
-  <style>
-
-
-    /* HERO */
-    .about-hero{
-      position:relative; min-height:520px; overflow:hidden;
-      border-top-left-radius:2px; border-top-right-radius:70px;
-      background:#000;
-    }
-    .about-hero img{ width:100%; height:100%; object-fit:cover; opacity:.9 }
-    .about-hero .overlay{ position:absolute; inset:0;
-      background:linear-gradient(180deg,rgba(0,0,0,0) 20%,rgba(0,0,0,.18) 60%,rgba(0,0,0,.45) 100%);
-    }
-    .about-hero .copy{
-      position:absolute; inset:0; display:grid; align-content:end;
-      padding:24px 24px 32px; color:#fff;
-    }
-    .about-hero .crumbs{ display:flex; gap:10px; color:#fff; opacity:.9 }
-    .about-hero h1{
-      font:700 clamp(38px,5vw,56px)/1.05 "Fira Sans Extra Condensed","Montserrat",system-ui;
-      text-transform:uppercase; letter-spacing:.2px; margin:.25rem 0 .75rem;
-    }
-
-    /* KPI + “What we do” */
-    .lead-tight{ font:400 16px/1.5 "Inter",sans-serif; color:var(--ink-2) }
-    .about-stats{
-      list-style:none; margin:36px auto 0; padding:0;
-      display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:993px;
-    }
-    .about-stats li{ display:flex; gap:16px; align-items:center }
-    .bubble{
-      width:100px; height:100px; display:grid; place-items:center; border-radius:999px;
-      background:linear-gradient(268deg,#fff 0%,#DFEDFF 100%);
-      font:700 36px/1 "Inter",sans-serif;
-    }
-
-    /* Image stripes */
-    .image-trio img{ width:100%; height:460px; object-fit:cover; border-radius:12px }
-    .stripe-2{ display:grid; grid-template-columns:1fr 1fr; gap:24px }
-    .stripe-2 img{ width:100%; height:680px; object-fit:cover; border-radius:12px }
-
-    /* Principles */
-    .rule{ height:1px; background:var(--line); margin:12px 0 24px }
-
-    /* Board members (row of 4 cards) */
-    .board-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px }
-    .board-card{ border:1px solid #E6E6E6; border-radius:14px; padding:18px; background:#fff }
-    .board-card img{ width:100%; height:220px; object-fit:cover; border-radius:10px; margin-bottom:12px }
-    .board-card .name{ font-weight:600 }
-    .board-card .role{ font-size:14px; color:var(--muted) }
-
-    /* Leadership team */
-    .team-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:24px }
-    .member{ text-align:center }
-    .member img{ width:80px; height:80px; border-radius:50%; object-fit:cover; margin:0 auto 10px }
-    .member .name{ font-weight:600 }
-    .member .role{ font-size:14px; color:var(--muted) }
-
-    /* CEO blue card */
-    .ceo-card{
-      background:linear-gradient(90deg,#0047AC 0%,#A6CDFF 100%);
-      color:#fff; border-radius:6px; padding:16px;
-    }
-    .ceo-card img{ width:114px; height:143px; object-fit:cover; border-radius:4px }
-
-    /* Careers + roles */
-    .roles .row-item{
-      display:flex; justify-content:space-between; align-items:center; gap:16px;
-      padding:16px 0; border-bottom:1px solid #D4D4D4;
-    }
-    .roles .meta{ color:var(--muted); font-size:14px }
-
-    /* CTA banner */
-    .cta-meeting{ position:relative; border-top:1px solid #E4E4E4; background:#fff }
-    .cta-meeting .big{ color:#2465BF; font:700 clamp(36px,6vw,90px)/1 "Inter",system-ui }
-    .cta-meeting .soft-dot{
-      position:absolute; left:50%; top:65%; transform:translate(-50%,-50%);
-      width:385px; height:385px; background:rgba(0,107,255,.40);
-      filter:blur(60px); border-radius:345px; opacity:.75;
-    }
-
-    @media (max-width: 992px){
-      .about-stats{ grid-template-columns:repeat(2,1fr) }
-      .board-grid{ grid-template-columns:repeat(2,1fr) }
-      .team-grid{ grid-template-columns:repeat(3,1fr) }
-      .stripe-2{ grid-template-columns:1fr }
-    }
-  </style>
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="assets/css/about.css?v=1">
 </head>
 <body>
 
-  <!-- Auto header (main.js injects /components/header.html) -->
+  <!-- Auto header (your JS injects it) -->
   <div id="site-header"></div>
 
   <!-- =================== HERO (ABOUT) =================== -->
-<section class="block pt-3 about-hero-wrap">
-  <div class="container" style="max-width:1280px">
-    <figure class="about-hero">
-      <img src="https://placehold.co/1600x520" alt="Team collaboration"/>
-      <div class="about-hero__overlay" aria-hidden="true"></div>
+  <section class="block pt-3 about-hero-wrap">
+    <div class="container container-1280">
+      <figure class="about-hero">
+        <img src="https://placehold.co/1600x520" alt="Team collaboration"/>
+        <div class="about-hero__overlay" aria-hidden="true"></div>
 
-      <div class="about-hero__copy">
-        <h1 class="about-hero__title">ABOUT</h1>
-        <p class="about-hero__sub">
-          Driving innovation, fostering growth, and<br>
-          delivering lasting value globally
-        </p>
+        <div class="about-hero__copy">
+          <h1 class="about-hero__title">ABOUT</h1>
+          <p class="about-hero__sub">
+            Driving innovation, fostering growth, and<br>
+            delivering lasting value globally
+          </p>
 
-        <a href="#" class="btn btn--outline-gradient btn--pill about-hero__cta">
-          <span>Who we are</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
-            <path d="M7 17L17 7M17 7H9M17 7v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-    </figure>
-  </div>
-</section>
-
+          <a href="#" class="btn btn--outline-gradient btn--pill about-hero__cta">
+            <span>Who we are</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path d="M7 17L17 7M17 7H9M17 7v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </figure>
+    </div>
+  </section>
 
   <!-- ===== WHAT WE DO + CEO ===== -->
   <section class="block" id="what-we-do">
-    <div class="container" style="max-width:1280px">
+    <div class="container container-1280">
       <div class="row g-5 align-items-start">
         <aside class="col-lg-2"><p class="eyebrow">What we do</p></aside>
 
@@ -171,7 +85,7 @@
 
   <!-- ===== IMAGE TRIO ===== -->
   <section class="block">
-    <div class="container image-trio" style="max-width:1280px">
+    <div class="container image-trio container-1280">
       <div class="row g-3">
         <div class="col-md-4"><img src="https://placehold.co/540x540" alt=""></div>
         <div class="col-md-4"><img src="https://placehold.co/540x540" alt=""></div>
@@ -182,7 +96,7 @@
 
   <!-- ===== BOARD MEMBERS ===== -->
   <section class="block">
-    <div class="container" style="max-width:993px">
+    <div class="container container-993">
       <p class="eyebrow">Our team</p>
       <h2 class="h2 up">Board members</h2>
       <div class="board-grid mt-3">
@@ -233,7 +147,7 @@
 
   <!-- ===== PRINCIPLES ===== -->
   <section class="block">
-    <div class="container" style="max-width:993px">
+    <div class="container container-993">
       <p class="eyebrow">Our values</p>
       <h2 class="h2 up">Principles that guide us</h2>
       <div class="rule"></div>
@@ -261,7 +175,7 @@
 
   <!-- ===== LEADERSHIP TEAM ===== -->
   <section class="block">
-    <div class="container" style="max-width:993px">
+    <div class="container container-993">
       <p class="eyebrow">Our team</p>
       <h2 class="h2 up">Leadership team</h2>
 
@@ -291,7 +205,7 @@
 
   <!-- ===== TALL IMAGE PAIR ===== -->
   <section class="block">
-    <div class="container stripe-2" style="max-width:1280px">
+    <div class="container stripe-2 container-1280">
       <img src="https://placehold.co/720x920" alt="">
       <img src="https://placehold.co/720x920" alt="">
     </div>
@@ -299,7 +213,7 @@
 
   <!-- ===== CAREER + ROLES ===== -->
   <section class="block">
-    <div class="container" style="max-width:1280px">
+    <div class="container container-1280">
       <div class="row g-5 align-items-center">
         <div class="col-lg-6">
           <img class="img-fluid rounded-3" src="https://placehold.co/608x420" alt="Career">
@@ -339,7 +253,7 @@
 
   <!-- ===== FAQ ===== -->
   <section class="block" id="faq">
-    <div class="container" style="max-width:1280px">
+    <div class="container container-1280">
       <p class="eyebrow">FAQ</p>
       <h2 class="h2 up">What clients ask us most</h2>
       <hr class="divider">
@@ -414,9 +328,10 @@
     </div>
   </section>
 
-  <!-- Auto footer (main.js injects /components/footer.html) -->
+  <!-- Auto footer (your JS injects it) -->
   <div id="site-footer"></div>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>

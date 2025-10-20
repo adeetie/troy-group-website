@@ -8,51 +8,12 @@
   <!-- Fonts & Bootstrap -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Shared styles -->
+  <!-- Shared + Page styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
-   <link href="./assets/css/global.css?v=1" rel="stylesheet">
-  <style>
-    /* ===== SERVICES page scoped tweaks (kept lean) ===== */
-
-    /* HERO (image with dark overlay, large title) */
-    .svc-hero{
-      position:relative; min-height:420px; overflow:hidden; border-top-left-radius:2px; border-top-right-radius:70px; background:#000;
-    }
-    .svc-hero img{width:100%;height:100%;object-fit:cover;opacity:.85}
-    .svc-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.45) 100%)}
-    .svc-hero .copy{position:absolute;inset:0;display:grid;align-content:end;color:#fff;padding:24px 24px 32px}
-    .svc-hero h1{
-      font:700 clamp(42px,6vw,64px)/1.05 "Fira Sans Extra Condensed","Montserrat",system-ui;
-      text-transform:uppercase; letter-spacing:.2px; margin:0 0 .5rem;
-    }
-    .svc-hero .eyebrow{color:#fff;opacity:.9;margin:4px 0 16px}
-
-    /* Left sidebar labels (“How we work”, “What we offer”, etc.) */
-    .eyebrow{font:600 16px/1 "Inter",sans-serif;color:var(--ink-2);margin-bottom:16px}
-
-    /* Contact mini card next to “Beyond Growing Pains” */
-    .mini-card{display:flex;gap:12px;align-items:flex-start;margin-top:16px}
-    .mini-card img{width:54px;height:54px;border-radius:6px;object-fit:cover}
-    .mini-card .label{font-weight:600;font-size:14px;line-height:1.2}
-
-    /* “What we offer” – accordion visuals */
-    .tg-acc .accordion-item{border:0;border-bottom:1px solid #D4D4D4;border-radius:0}
-    .tg-acc .accordion-button{padding:18px 0;font:600 16px/1.6 "Inter",sans-serif;background:#fff;box-shadow:none}
-    .tg-acc .accordion-button:not(.collapsed){color:#000;background:#fff;box-shadow:none}
-    .tg-acc .accordion-body{padding:0 0 16px 0}
-    .tg-acc .sub-bullets{margin:8px 0 4px 0;list-style:none;padding-left:0}
-    .tg-acc .sub-bullets li{font:400 13px/1.6 "Inter",sans-serif;color:var(--muted)}
-
-    /* Pale band */
-    .pale{background:#EDF3FA;border:1px solid #E5ECF7;border-radius:12px}
-
-    /* CTA “Schedule your meeting” (re-using your CTA style scale) */
-    .cta-lite{position:relative;border-top:1px solid #E4E4E4;background:#fff}
-    .cta-lite .big{color:#2465BF;font:700 clamp(36px,6vw,90px)/1 "Inter",system-ui}
-    .cta-lite .soft-dot{position:absolute;left:50%;top:65%;transform:translate(-50%,-50%);width:385px;height:385px;background:rgba(0,107,255,.40);filter:blur(60px);border-radius:345px;opacity:.75}
-  </style>
+  <link href="./assets/css/global.css?v=1" rel="stylesheet">
+  <link href="./assets/css/services.css" rel="stylesheet">
 </head>
 <body>
 
@@ -61,14 +22,14 @@
 
   <!-- ===== HERO ===== -->
   <section class="block pt-3">
-    <div class="container" style="max-width:1280px">
+    <div class="container container-1280">
       <figure class="svc-hero">
         <!-- Replace with your hero: /assets/img/services-hero.jpg -->
         <img src="https://placehold.co/1280x480" alt="Services hero">
         <div class="copy">
-          <p class="eyebrow">Services</p>
+          <p class="eyebrow eyebrow--light">Services</p>
           <h1>SERVICES</h1>
-          <p class="lead" style="color:#fff;opacity:.9;max-width:520px">
+          <p class="lead svc-hero__lead">
             Transforming potential into performance with strategy, collaboration, and purpose.
           </p>
           <a href="about.html" class="btn btn--outline-gradient btn--pill mt-2">
@@ -84,7 +45,7 @@
 
   <!-- ===== BEYOND GROWING PAINS ===== -->
   <section class="block">
-    <div class="container" style="max-width:993px">
+    <div class="container container-993">
       <div class="row g-5">
         <aside class="col-lg-3"><p class="eyebrow">How we work</p></aside>
         <div class="col-lg-9">
@@ -107,7 +68,7 @@
 
   <!-- ===== WHAT WE OFFER (Accordion) ===== -->
   <section class="block">
-    <div class="container" style="max-width:993px">
+    <div class="container container-993">
       <div class="row g-5">
         <aside class="col-lg-3"><p class="eyebrow">What we offer</p></aside>
 
@@ -191,7 +152,7 @@
 
           <!-- Sub-CTA inline like Figma -->
           <div class="d-flex align-items-center justify-content-between mt-4">
-            <h3 class="h5 m-0" style="font-weight:700;letter-spacing:.2px">Big change starts with one smart step</h3>
+            <h3 class="h5 m-0 subcta-title">Big change starts with one smart step</h3>
             <a href="#" class="btn btn--outline-gradient btn--pill">
               <span>Get Started</span>
               <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
@@ -205,12 +166,12 @@
   </section>
 
   <!-- ===== GET TO KNOW US (pale band) ===== -->
-  <section class="block" style="padding-top:12px">
-    <div class="container pale" style="max-width:1160px;padding:32px">
+  <section class="block pt-12-custom">
+    <div class="container container-1160 pale pale-container">
       <div class="row g-4 align-items-center">
         <aside class="col-lg-3"><p class="eyebrow">Who we are</p></aside>
         <div class="col-lg-5">
-          <h3 class="h3" style="font:700 28px/1.25 Inter,system-ui">Get to know us</h3>
+          <h3 class="h3 h3-custom">Get to know us</h3>
           <p class="lead mb-2">
             A visionary platform where innovation meets impact. We empower clients and collaborators through bespoke growth strategies, trustworthy partnerships, and relentless commitment to excellence.
           </p>
@@ -224,15 +185,15 @@
   </section>
 
   <!-- ===== QUOTE BAND (image + blue card) ===== -->
-  <section class="block" style="padding-top:28px">
-    <div class="container" style="max-width:1160px">
+  <section class="block pt-28">
+    <div class="container container-1160">
       <div class="row g-4">
         <div class="col-lg-8">
           <img class="w-100 rounded" src="https://placehold.co/900x420" alt="People talking">
         </div>
         <div class="col-lg-4">
-          <div class="p-4 rounded" style="background:linear-gradient(90deg,#0047AC 0%,#A6CDFF 100%);color:#fff">
-            <p class="mb-5" style="max-width:320px">
+          <div class="quote-card">
+            <p class="mb-5 quote-card__text">
               Empowering businesses and individuals through strategy, insight, and innovation daily.
             </p>
             <div class="small opacity-75">Rommel Bayangcar<br>Chief Revenue Officer</div>
@@ -243,7 +204,7 @@
   </section>
 
   <!-- ===== CTA: Schedule your meeting ===== -->
- <section class="cta block">
+  <section class="cta block">
     <div class="cta__glow" aria-hidden="true"></div>
     <div class="container cta__inner">
       <h3 class="cta__kicker">Ready To Grow Together!</h3>
@@ -261,3 +222,4 @@
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
+f

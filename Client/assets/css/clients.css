@@ -1,0 +1,68 @@
+/* ====== CLIENTS page-scoped styles ====== */
+:root{
+  --ink:#101215; --muted:#5f6672; --pale:#f4f7fb; --hr:#e7ebf2; --brand:#215fdd;
+}
+
+/* hero */
+.hero-band{position:relative;min-height:360px;background:#000;overflow:hidden}
+.hero-band img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.hero-title{
+  position:absolute;left:7.5%;bottom:22px;color:#fff;
+  font:800 clamp(38px,6.5vw,72px)/1.02 "Fira Sans Extra Condensed","Montserrat",system-ui;
+  text-transform:uppercase;letter-spacing:.2px;
+}
+
+/* wrapper + typographic base */
+.page-wrap{max-width:1100px;margin:0 auto;padding:42px 16px}
+.eyebrow{font:600 13px/1.2 Inter;color:#8a90a0}
+.title-h2{
+  font:800 clamp(26px,4.3vw,40px)/1.08 "Fira Sans Extra Condensed","Montserrat",system-ui;
+  text-transform:uppercase;letter-spacing:.15px;margin-bottom:10px;color:#0f1116;
+}
+.lead-sm{font:400 15px/1.8 Inter;color:#2f3540}
+
+/* modifiers for headings in this page */
+.eyebrow--accent{ color:#7b88f8 }
+.title-h2--sm{ font-size:28px; text-transform:none }
+.title-h2--xs{ font-size:26px; text-transform:none }
+.title-h2--form{ font-size:22px; text-transform:none }
+.lead-sm--soft{ opacity:.9 }
+
+/* big image band between sections */
+.image-band img{width:100%;height:auto;border-radius:12px}
+
+/* section kicker line */
+.kicker{
+  font:800 clamp(18px,2.6vw,22px)/1.25 "Fira Sans Extra Condensed","Montserrat";
+  text-transform:uppercase;letter-spacing:.2px;margin:48px 0 18px;color:#0f1116;
+}
+
+/* light cards grid (three cols) */
+.pale-card{background:#f6f9ff;border:1px solid var(--hr);border-radius:12px;padding:28px}
+.clients-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+@media (max-width:992px){.clients-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.clients-grid{grid-template-columns:1fr}}
+
+/* client blocks */
+.client-block h5{font:800 14px/1.2 Inter;text-transform:none;margin:0 0 6px;color:#0f1116}
+.client-block .mini{font:600 12px/1.3 Inter;color:#6a7280;margin-bottom:8px}
+.client-block ul{margin:0 0 10px 16px}
+.client-block li{font:400 13px/1.6 Inter;color:#2f3540}
+.client-block a{font:700 12.5px/1.3 Inter;color:#215fdd;text-decoration:none}
+
+/* contact form (right) */
+.country-select{ max-width:110px }
+.contact-form .btn-primary{background:#6C5CE7;border:0}
+.contact-form .btn-primary:hover{background:#5948e2}
+.contact-form .form-control,.contact-form .form-select{border-color:#dde3ea}
+
+/* CTA reused */
+.cta{position:relative;border-top:1px solid #E4E4E4;background:#fff;margin-top:48px}
+.cta__kicker{ margin: 0 }
+.cta__sub{ margin: .25rem 0 .75rem }
+.cta__title{ margin: 0 0 1rem }
+.cta__glow{
+  position:absolute;left:50%;top:65%;transform:translate(-50%,-50%);
+  width:385px;height:385px;background:rgba(0,107,255,.40);filter:blur(60px);
+  border-radius:345px;opacity:.75;pointer-events:none;
+}

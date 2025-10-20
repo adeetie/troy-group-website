@@ -1,0 +1,95 @@
+/* Utility max-widths (replaces inline style) */
+.container-1280 { max-width: 1280px; }
+.container-993  { max-width: 993px; }
+
+/* HERO */
+.about-hero{
+  position:relative; min-height:520px; overflow:hidden;
+  border-top-left-radius:2px; border-top-right-radius:70px;
+  background:#000;
+}
+.about-hero img{ width:100%; height:100%; object-fit:cover; opacity:.9 }
+
+/* FIX: match HTML BEM classes */
+.about-hero__overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 20%,rgba(0,0,0,.18) 60%,rgba(0,0,0,.45) 100%);
+}
+.about-hero__copy{
+  position:absolute; inset:0; display:grid; align-content:end;
+  padding:24px 24px 32px; color:#fff;
+}
+.about-hero__title{
+  font:700 clamp(38px,5vw,56px)/1.05 "Fira Sans Extra Condensed","Montserrat",system-ui;
+  text-transform:uppercase; letter-spacing:.2px; margin:.25rem 0 .75rem;
+}
+.about-hero__sub{ margin:0 0 12px }
+.about-hero__cta .icon{ margin-left:.5rem }
+
+/* TEXT + KPI */
+.lead-tight{ font:400 16px/1.5 "Inter",sans-serif; color:var(--ink-2) }
+.about-stats{
+  list-style:none; margin:36px auto 0; padding:0;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:993px;
+}
+.about-stats li{ display:flex; gap:16px; align-items:center }
+.bubble{
+  width:100px; height:100px; display:grid; place-items:center; border-radius:999px;
+  background:linear-gradient(268deg,#fff 0%,#DFEDFF 100%);
+  font:700 36px/1 "Inter",sans-serif;
+}
+
+/* IMAGE STRIPES */
+.image-trio img{ width:100%; height:460px; object-fit:cover; border-radius:12px }
+.stripe-2{ display:grid; grid-template-columns:1fr 1fr; gap:24px }
+.stripe-2 img{ width:100%; height:680px; object-fit:cover; border-radius:12px }
+
+/* PRINCIPLES */
+.rule{ height:1px; background:var(--line); margin:12px 0 24px }
+
+/* BOARD */
+.board-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px }
+.board-card{ border:1px solid #E6E6E6; border-radius:14px; padding:18px; background:#fff }
+.board-card img{ width:100%; height:220px; object-fit:cover; border-radius:10px; margin-bottom:12px }
+.board-card .name{ font-weight:600 }
+.board-card .role{ font-size:14px; color:var(--muted) }
+
+/* TEAM */
+.team-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:24px }
+.member{ text-align:center }
+.member img{ width:80px; height:80px; border-radius:50%; object-fit:cover; margin:0 auto 10px }
+.member .name{ font-weight:600 }
+.member .role{ font-size:14px; color:var(--muted) }
+
+/* CEO card */
+.ceo-card{
+  background:linear-gradient(90deg,#0047AC 0%,#A6CDFF 100%);
+  color:#fff; border-radius:6px; padding:16px;
+}
+.ceo-card img{ width:114px; height:143px; object-fit:cover; border-radius:4px }
+
+/* Careers + roles */
+.roles .row-item{
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding:16px 0; border-bottom:1px solid #D4D4D4;
+}
+.roles .meta{ color:var(--muted); font-size:14px }
+
+/* CTA banner (reuses your global CTA classes if present) */
+.cta { position:relative; border-top:1px solid #E4E4E4; background:#fff }
+.cta__kicker { margin: 0 }
+.cta__sub { margin: .25rem 0 .75rem }
+.cta__title { margin: 0 0 1rem }
+.cta__glow{
+  position:absolute; left:50%; top:65%; transform:translate(-50%,-50%);
+  width:385px; height:385px; background:rgba(0,107,255,.40);
+  filter:blur(60px); border-radius:345px; opacity:.75; pointer-events:none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px){
+  .about-stats{ grid-template-columns:repeat(2,1fr) }
+  .board-grid{ grid-template-columns:repeat(2,1fr) }
+  .team-grid{ grid-template-columns:repeat(3,1fr) }
+  .stripe-2{ grid-template-columns:1fr }
+}
