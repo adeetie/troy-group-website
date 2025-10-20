@@ -534,7 +534,6 @@ button.btn:hover {
     .about-stats{
       list-style:none; margin:36px auto 0; padding:0;
       display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:993px;
-       background:linear-gradient(#ffffff 0%,#DFEDFF 100%);
     }
     .about-stats li{ display:flex; gap:16px; align-items:center }
     .bubble{
@@ -542,3 +541,87 @@ button.btn:hover {
       background:linear-gradient(268deg,#ffffff 0%,#DFEDFF 100%);
       font:700 36px/1 "Inter",sans-serif;
     }
+.col-lg-2 {
+  width: 40%;
+
+}
+.h2 {
+  font-size: 46px;
+}
+.ceo-card {
+  margin-top: 24px;
+  background: var(--card);
+  border-radius: 6px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  background: linear-gradient(90deg, #0047AC 0%, #A6CDFF 100%); overflow: hidden
+}
+               /* === KPI STRIP — flat, tight, icons on right ========================= */
+.kpi-strip { background: none; } /* ensure no inherited background */
+
+.kpi-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 56px;                 /* spacing between items (desktop) */
+}
+
+.kpi{
+  display: flex;
+  align-items: center;
+  gap: 12px;                 /* space between text block and icon */
+  /* prevent awkward wrapping between number+label and its icon */
+  flex-wrap: nowrap;
+}
+
+.kpi__unit{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;          /* number ↔ label spacing */
+  align-items: center;
+}
+
+.kpi__num{
+  font: 800 28px/1 "Inter", system-ui;
+  color: #0f1720;
+  letter-spacing: 0.2px;
+}
+
+.kpi__label{
+  margin: 0;
+  font: 600 12.5px/1.2 "Inter", system-ui;
+  color: #111;
+  opacity: 0.9;
+}
+
+.kpi__icon{
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1200px){
+  .kpi-list{ gap: 44px; }
+}
+@media (max-width: 992px){
+  .kpi-list{ gap: 32px; }
+  .kpi__num{ font-size: 24px; }
+}
+@media (max-width: 680px){
+  .kpi-list{
+    gap: 22px;
+    flex-wrap: wrap;         /* allow wrapping on small phones */
+  }
+  .kpi{
+    gap: 10px;
+  }
+  .kpi__unit{
+    column-gap: 10px;
+  }
+}

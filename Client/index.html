@@ -42,7 +42,7 @@
         </a>
       </div>
       <figure class="hero__media">
-        <img src="https://placehold.co/1280x576" alt="Team discussion" />
+        <img src="./assets/images/homepage_hero.png" alt="Team discussion" />
       </figure>
     </div>
   </section>
@@ -58,121 +58,220 @@
           <p class="lead-tight">Growing companies come to us when things feel harder than they should be. Maybe decisions take longer, processes break down, or your team is stretched thin.</p>
           <p class="lead-tight mb-3">We help you step back, identify what’s slowing you down, and build practical solutions that support where you’re headed—without overcomplicating the process.</p>
 
-          <div class="ceo-card">
-            <div class="d-flex gap-3">
-              <img src="https://placehold.co/114x143" alt="CEO">
-              <div>
-                <p class="h6 mb-1">Eldo Korita</p>
-                <div class="small mb-2">CEO & Founder</div>
-                <p class="small mb-0">A driven finance executive and strategic investor, bridging capital and innovation to fuel scalable growth and lasting market impact.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <!-- CEO CARD (clean markup) -->
+<div class="ceo-card">
+  <div class="ceo">
+    <img src="./assets/images/home_eldo.png" alt="CEO" class="ceo__img">
+    <div class="ceo__text">
+      <h3 class="ceo__name">Eldo Korita</h3>
+      <p class="ceo__role">CEO &amp; Founder</p>
+      <p class="ceo__blurb">
+        A driven finance executive and strategic investor, bridging capital and innovation to fuel scalable growth and lasting market impact.
+      </p>
+    </div>
+  </div>
+</div>
+
 
         <div class="col-lg-3"></div>
       </div>
 
-      <!-- KPI bubbles -->
-      <ul class="about-stats">
-        <li><span class="bubble">27+</span><p>Years Of Excellence</p></li>
-        <li><span class="bubble">54</span><p>Professional Employees</p></li>
-        <li><span class="bubble">04</span><p>Our Offices Worldwide</p></li>
-        <li><span class="bubble">116</span><p>Our Satisfied Clients</p></li>
-      </ul>
-    </div>
-  </section>
+    <!-- === KPI STRIP (Image-2 design) ==================================== -->
+<section class="kpi-lite">
+  <div class="container">
+    <ul class="kpi-lite__list">
+      <!-- 1: Star -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">27+</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/solar_star-bold.svg" alt="Star" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Years Of<br>Excellence</p>
+      </li>
 
- 
-  <!-- =========== SERVICES =========== -->
-  <section class="services block" id="services">
-    <div class="container">
-      <h2 class="h2 up">Our services</h2>
-      <hr class="divider">
-      <div class="cards-3">
-        <article class="svc-card">
-          <img src="https://placehold.co/740x830" alt="" class="svc-card__img">
-          <div class="svc-card__tag">Service</div>
-          <h3 class="svc-card__title">Digital Roadmap &<br>Strategy</h3>
-        </article>
+      <!-- 2: Fire -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">54</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/mdi_fire.svg" alt="Fire" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Professional<br>Employees</p>
+      </li>
 
-        <article class="svc-card">
-          <img src="https://placehold.co/740x830" alt="" class="svc-card__img">
-          <div class="svc-card__tag">Service</div>
-          <h3 class="svc-card__title">Automation & AI<br>Solutions</h3>
-        </article>
+      <!-- 3: Fire -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">04</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/mdi_fire.svg" alt="Fire" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Our Offices<br>Worldwide</p>
+      </li>
 
-        <article class="svc-card">
-          <img src="https://placehold.co/740x830" alt="" class="svc-card__img">
-          <div class="svc-card__tag">Service</div>
-          <h3 class="svc-card__title">On-Demand Tech<br>Experts</h3>
-        </article>
+      <!-- 4: Tick -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">116</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/weui_done2-filled.svg" alt="Check" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Our Satisfied<br>Clients</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- === OUR SERVICES ================================================== -->
+<section class="services-section">
+  <div class="container">
+    <h2 class="services-title">Our Services</h2>
+    <hr class="services-divider" />
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <img src="./assets/images/home_services_1.png" alt="Digital Roadmap" />
+        <span class="service-tag">Service</span>
+        <div class="service-overlay"></div>
+        <h3 class="service-title">Digital Roadmap &amp;<br>Strategy</h3>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card">
+        <img src="./assets/images/home_services_2.png" alt="Automation & AI" />
+        <span class="service-tag">Service</span>
+        <div class="service-overlay"></div>
+        <h3 class="service-title">Automation &amp; AI<br>Solutions</h3>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <img src="./assets/images/home_services_3.png" alt="On-Demand Experts" />
+        <span class="service-tag">Service</span>
+        <div class="service-overlay"></div>
+        <h3 class="service-title">On-Demand Tech<br>Experts</h3>
       </div>
     </div>
-  </section>
 
-  <!-- =========== KPI / VISION & MISSION =========== -->
-  <section class="vision block">
-    <div class="container">
-      <h2 class="h2 up">Vision and mission</h2>
-      <hr class="divider">
+    <a href="#" class="view-more-btn">View more →</a>
+  </div>
+</section>
+<!-- =================================================================== -->
 
-      <div class="vision__top">
-        <div class="vision__copy">
-          <p class="focus">Our focus is simple</p>
-          <h3 class="focus-strong">Innovating the Way the World Invests</h3>
+  <section class="vm-section py-5">
+  <div class="container">
+    <!-- Eyebrow & rule -->
+    <div class="d-flex flex-column gap-2 mb-4">
+      <h2 class="vm-eyebrow text-uppercase m-0">Vision and Mission</h2>
+      <div class="vm-rule"></div>
+    </div>
+
+    <!-- Kicker + Title + Right copy -->
+    <div class="row align-items-start g-4 mb-3">
+      <div class="col-lg-8">
+        <p class="vm-kicker text-muted mb-1">Our focus is simple</p>
+        <h3 class="vm-title">Innovating the Way the World Invests</h3>
+      </div>
+      <div class="col-lg-4">
+        <p class="text-muted vm-sidecopy mt-lg-2">
+          We promise to deliver beyond your expectations for your business.
+        </p>
+      </div>
+    </div>
+
+    <!-- Three-card row -->
+    <div class="row g-4">
+      <!-- LEFT COLUMN (investors + experts) -->
+      <div class="col-12 col-lg-4">
+        <!-- investor strip -->
+        <div class="card card-soft rounded-4 mb-3">
+          <div class="card-body py-3 px-4 d-flex align-items-center justify-content-between">
+            <div class="avatar-stack">
+              <img src="https://placehold.co/38x38" alt="">
+              <img src="https://placehold.co/32x32" alt="">
+              <img src="https://placehold.co/26x26" alt="">
+              <img src="https://placehold.co/38x38" alt="">
+              <img src="https://placehold.co/14x14" alt="">
+            </div>
+            <span class="text-uppercase fw-bold text-muted small">40+ Investors</span>
+          </div>
         </div>
-        <p class="vision__mini">We promise to deliver beyond your expectations for your business.</p>
+
+        <!-- body with paragraph + 45+ Experts -->
+        <div class="card card-soft rounded-4 h-100">
+          <div class="card-body p-4">
+            <p class="mb-4 text-body-secondary">
+              To be the most impactful bridge innovation businesses and investors, creating a
+              sustainable and progressive business environment worldwide, to raise more than £1B
+              and generate more than 25% Net IRR within the next 12 months.
+            </p>
+
+            <div class="d-flex align-items-end gap-2">
+              <span class="display-4 fw-medium text-primary">45</span>
+              <span class="fs-2 text-secondary opacity-50">+</span>
+            </div>
+            <div class="fw-semibold text-muted">Experts</div>
+          </div>
+        </div>
       </div>
 
-      <div class="vision__grid">
-        <div class="kpi kpi--row">
-          <div class="avatars">
-            <img src="https://placehold.co/38x38" alt="">
-            <img src="https://placehold.co/32x32" alt="">
-            <img src="https://placehold.co/26x26" alt="">
-            <img src="https://placehold.co/17x17" alt="">
-          </div>
-          <span class="kpi__meta">40+ Investors</span>
+      <!-- MIDDLE COLUMN (bullets + 116 + availability) -->
+      <div class="col-12 col-lg-4">
+        <div class="card card-soft rounded-4 mb-3 h-100">
+          <div class="card-body p-4">
+            <ul class="vm-bullets list-unstyled mb-4 fs-5">
+              <li><strong>Connection capital</strong> with innovation.</li>
+              <li class="mt-1"><strong>Fueling Growth</strong> Creating Impact.</li>
+              <li class="mt-1"><strong>Empowering Businesses</strong> Transforming Futures.</li>
+            </ul>
 
-          <p class="kpi__text">
-            To be the most impactful bridge innovation businesses and investors, creating a sustainable and progressive business environment worldwide, to raise more than £1B and generate more than 25% Net IRR within the next 12 months.
-          </p>
-
-          <div class="kpi__stat">
-            <span class="num">45</span><span class="plus">+</span>
-            <span class="label">Experts</span>
+            <div class="d-flex align-items-end gap-2">
+              <span class="display-4 fw-medium text-primary">116</span>
+              <span class="fs-2 text-secondary opacity-50">+</span>
+            </div>
+            <div class="small text-muted mb-3">Clients across six Continents.</div>
           </div>
         </div>
 
-        <div class="kpi">
-          <p class="kpi__title">
-            <strong>Connection capital</strong> with innovation.<br>
-            <strong>Fueling Growth</strong> Creating Impact.<br>
-            <strong>Empowering Businesses</strong> Transforming Futures.
-          </p>
-          <div class="kpi__stat">
-            <span class="num">116</span><span class="plus">+</span>
-            <span class="label">Clients across six Continents.</span>
-          </div>
-
-          <div class="badge badge--online">
-            <span class="dot"></span> Available for JOIN
+        <div class="card rounded-4">
+          <div class="card-body py-3 px-4 d-flex align-items-center gap-2">
+            <span class="status-dot bg-success"></span>
+            <span class="text-uppercase small fw-bold text-muted">Available for Join</span>
           </div>
         </div>
+      </div>
 
-        <div class="mission">
-          <p>
-            We are committed to empowering businesses by offering innovative financing solutions, strategic consulting, and investor matchmaking. Our goal is to simplify growth processes, enhance project success, and maximize value for our clients.
-          </p>
-          <div class="rating">
-            <span class="rating__big">4.8</span><span class="rating__out">/5</span>
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="rating__label">Trusted by<br>clients worldwide</div>
+      <!-- RIGHT COLUMN (gradient, copy, rating, stars) -->
+      <div class="col-12 col-lg-4">
+        <div class="card vm-gradient rounded-4 text-white h-100 shadow-lg">
+          <div class="card-body p-4 position-relative">
+            <p class="mb-5">
+              We are committed to empowering businesses by offering innovative financing solutions,
+              strategic consulting, and investor matchmaking. Our goal is to simplify growth processes,
+              enhance project success, and maximize value for our clients.
+            </p>
+
+            <div class="d-flex align-items-baseline gap-2">
+              <span class="display-4 fw-medium">4.8</span>
+              <span class="fs-3 opacity-75">/5</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mt-2">
+              <div class="vm-stars" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="text-uppercase small opacity-75 lh-sm">
+                Trusted by<br>Clients Worldwide
+              </div>
+            </div>
+
+            <!-- arrow watermark -->
+            <div class="vm-arrow"></div>
           </div>
         </div>
-     
-  </section>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- =========== HOW WE WORKS (Step 1 image only) =========== -->
   <section class="section hww">

@@ -129,3 +129,49 @@
     );
   }
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const megas = Array.from(document.querySelectorAll('.tg-mega'));
+
+  function closeAll(except = null) {
+    megas.forEach(m => {
+      if (m === except) return;
+      const t = m.querySelector('.nav__toggle');
+      const p = m.querySelector('.tg-megamenu');
+      if (t) t.classList.remove('is-current');
+      if (p) p.classList.remove('is-open');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  megas.forEach(mega => {
+    const toggle = mega.querySelector('.nav__toggle');
+    const panel  = mega.querySelector('.tg-megamenu');
+    if (!toggle || !panel) return;
+
+    // CLICK to toggle; stays open until outside click or Esc
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const willOpen = !panel.classList.contains('is-open');
+      closeAll(willOpen ? mega : null);
+      panel.classList.toggle('is-open', willOpen);
+      toggle.classList.toggle('is-current', willOpen);
+      toggle.setAttribute('aria-expanded', String(willOpen));
+    });
+
+    // Prevent inside clicks from closing
+    panel.addEventListener('click', (e) => e.stopPropagation());
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', () => closeAll());
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  });
+});
+
+
+
