@@ -1,0 +1,710 @@
+:root{
+  /* Dropdown sizing */
+  --mega-w:      1080px;
+  --mega-radius: 32px;
+  --mega-border: #E2E7F1;
+  --mega-gap:    20px;
+  --mega-nudge-x: 0px;
+
+  /* Images */
+  --mega-tile-r: 20px;
+
+  /* Theme */
+  --nav-text:   #111;
+  --link:       #2E6AE6;
+  --hdr-bg:     #fff;
+  --hdr-border: #E6EAF2;
+}
+
+/* ===== Header ===== */
+.tg-header{
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--hdr-bg);
+  border-bottom: 1px solid var(--hdr-border);
+}
+.tg-header .nav-link{ color: var(--nav-text); opacity:.85; }
+.tg-header .nav-link:hover,
+.tg-header .nav-link.active,
+.tg-header .nav-link.is-current{ color: var(--link); opacity:1; }
+.tg-header .navbar-toggler{ border:0; }
+
+.btn.tg-btn-outline,
+.btn.tg-btn-outline-light{
+  border:1.5px solid var(--link);
+  border-radius:999px;
+  padding:.55rem 1rem;
+  font-weight:600;
+  background:#fff; color:#111;
+}
+.btn.tg-btn-outline:hover{ box-shadow:0 0 0 3px color-mix(in srgb, var(--link) 18%, transparent); }
+
+/* ===== Mega menu ===== */
+.tg-mega{ position:relative; }
+
+.tg-megamenu{
+  position:absolute;
+  left:calc(50% + var(--mega-nudge-x));
+  top:calc(100% + 30px);              /* a bit lower like the Figma */
+  transform:translateX(-50%);
+  width:var(--mega-w);
+  max-width:min(var(--mega-w), 92vw);
+  background:#fff;
+  border:1.5px solid var(--mega-border);
+  border-radius:var(--mega-radius);
+  box-shadow:0 32px 64px rgba(16,24,40,.14), 0 1px 0 rgba(16,24,40,.04);
+  padding:20px 26px;
+  opacity:0; visibility:hidden; pointer-events:none; z-index:1100;
+}
+
+/* stays closed until JS toggles .is-open */
+.tg-megamenu.is-open{ opacity:1; visibility:visible; pointer-events:auto; }
+
+/* No halo; ensure no accidental hover-open */
+@media (hover:hover) and (pointer:fine){
+  /* intentionally empty – click only */
+}
+
+/* desktop split */
+@media (min-width: 992px){
+  .tg-megamenu .col-lg-7{ flex:0 0 60%; max-width:60%; }
+  .tg-megamenu .col-lg-5{ flex:0 0 40%; max-width:40%; }
+}
+
+/* headings & lists */
+.tg-mm-head{ font-weight:700; font-size:1rem; margin:0 0 1rem; color:#111; }
+.tg-mm-list li+li{ margin-top:.6rem; }
+.tg-mm-list a{ color:#222; text-decoration:none; white-space:nowrap; font-weight:600; }
+.tg-mm-list a:hover{ color:var(--link); }
+
+/* socials pinned bottom with equal paddings and label ABOVE */
+.tg-mm-social{
+  margin-top:auto;               /* pins to bottom of the left column */
+  padding-block:16px;            /* equal top/bottom spacing */
+  display:flex; flex-direction:column; align-items:flex-start; gap:12px;
+}
+.tg-mm-social-label{ color:#6B7280; font-size:.875rem; }
+.tg-social-icons{ display:flex; gap:12px; }
+.tg-icon-link{
+  width:36px; height:36px; border:1px solid var(--mega-border);
+  border-radius:10px; display:flex; align-items:center; justify-content:center;
+  color:#111; transition:all .18s ease;
+}
+.tg-icon-link:hover{ border-color:var(--link); color:var(--link); }
+
+/* Right image mosaic – exact sizes & a touch lower */
+.tg-mega-media{
+  display:grid; grid-template-columns:auto auto;
+  column-gap:var(--mega-gap); row-gap:var(--mega-gap);
+  justify-content:end;
+  margin-top:14px;               /* grid slightly lower like Figma */
+}
+.tg-mega-media img{ display:block; border-radius:var(--mega-tile-r); background:#F3F6FB; border:1px solid var(--mega-border); }
+.tg-mega-media .tile-1{ width:175px; height:233px; object-fit:cover; align-self:end; }
+.tg-mega-media .tile-2{ width:191px; height:191px; object-fit:cover; align-self:start; }
+.tg-mega-media .tile-3{ width:175px; height:149px; object-fit:cover; align-self:end; }
+.tg-mega-media .tile-4{ width:191px; height:191px; object-fit:cover; align-self:start; }
+
+/* toggle button */
+.nav__toggle{ background:transparent; border:0; padding:.5rem .75rem; line-height:1.2; color:var(--nav-text); }
+.nav__toggle .chev{ display:inline-block; transition:transform .18s ease; }
+.nav__toggle.is-current{ color:var(--link); }
+.nav__toggle.is-current .chev{ transform:rotate(180deg); }
+
+/* mobile */
+@media (max-width:991.98px){
+  .tg-megamenu{
+    position:static; left:auto; transform:none; width:auto; max-width:100%;
+    padding:14px; border-radius:18px;
+  }
+  .tg-mega-media{ grid-template-columns:1fr 1fr; margin-top:10px; }
+  .tg-mega-media img{ width:100%; height:auto; aspect-ratio:1/1; }
+}
+/* ================== Stats Strip ================== */
+.tg-stats { position: relative; }
+
+/* force single row on desktop, wrap on smaller screens */
+.tg-stats-row{
+  display:flex;
+  align-items:center;
+  gap: clamp(24px, 4vw, 56px);          /* responsive gaps */
+  row-gap: 28px;                         /* when it wraps on mobile */
+  flex-wrap: wrap;                       /* allow wrap on small screens */
+}
+@media (min-width: 992px){
+  .tg-stats-row{ flex-wrap: nowrap; }    /* single row on desktop */
+}
+
+/* each stat (bubble + label) */
+.tg-stat{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+/* divider after first stat */
+.tg-divider{
+  width:2px;
+  height:64px;
+  background:#E0573D;
+  border-radius:2px;
+  flex: 0 0 2px;
+}
+
+/* bubble */
+.tg-bubble{
+  position:relative;
+  width:72px; height:72px; flex:0 0 72px;
+  border-radius:9999px;
+  background: radial-gradient(120% 120% at 10% 10%, #F3F9FF 0%, #EAF3FF 60%, #FFFFFF 100%);
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* small blue badge */
+.tg-badge{
+  position:absolute; top:6px; left:6px;
+  width:20px; height:20px; border-radius:50%;
+  background:#0A58FF; color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; line-height:1;
+}
+
+/* number */
+.tg-num{
+  font-weight:800; font-size:24px; line-height:1;
+  color:#1C1C1C; text-align:center; letter-spacing:.2px;
+}
+
+/* two-line copy */
+.tg-copy{ line-height:1.05; transform: translateY(1px); }
+.tg-copy > div{ font-weight:600; font-size:12px; color:#1C1C1C; white-space:nowrap; }
+
+/* mobile scale */
+@media (max-width:575.98px){
+  .tg-bubble{ width:64px; height:64px; flex-basis:64px; }
+  .tg-num{ font-size:22px; }
+}
+/* === KPI STRIP (Image-2 design) ====================================== */
+.kpi-lite { background: none; padding: 12px 0 8px; }
+
+.kpi-lite__list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 130px;                  /* roomy spacing exactly like ref */
+}
+
+.kpi-lite__item{
+  display: flex;
+  align-items: center;
+  gap: 16px;                  /* space between circle and label */
+  white-space: nowrap;
+}
+
+.kpi-lite__bubble{
+  position: relative;
+  width: 88px; height: 88px;  /* circle size mirrors ref */
+  display: grid; place-items: center;
+  border-radius: 999px;
+  /* soft bluish circle glow */
+  background: radial-gradient(120px 120px at 60% 40%, #EFF5FF 0%, #E7F0FF 60%, #F7FAFF 100%);
+}
+
+.kpi-lite__num{
+  font: 800 32px/1 "Inter", system-ui;
+  color: #0F1A1A;            /* strong dark ink */
+  letter-spacing: 0.2px;
+}
+
+/* tiny blue icon, nudged at top-right of the circle */
+.kpi-lite__icon{
+  position: absolute;
+  top: -6px; right: 0px;
+  width: 22px; height: 22px;
+  object-fit: contain;
+  display: block;
+  filter: none;               /* keep your icon color */
+}
+
+.kpi-lite__label{
+  margin: 0;
+  font: 600 13px/1.25 "Inter", system-ui;
+  color: #111;
+  opacity: 0.9;
+  max-width: 170px;
+}
+
+/* Responsive tuning */
+@media (max-width: 1200px){
+  .kpi-lite__list{ gap: 56px; }
+  .kpi-lite__bubble{ width: 82px; height: 82px; }
+  .kpi-lite__num{ font-size: 28px; }
+}
+
+@media (max-width: 992px){
+  .kpi-lite__list{ gap: 40px; }
+  .kpi-lite__num{ font-size: 26px; }
+}
+
+@media (max-width: 680px){
+  .kpi-lite__list{
+    gap: 24px;
+    flex-wrap: wrap;          /* allow wrap on small phones */
+  }
+  .kpi-lite__item{ gap: 12px; }
+  .kpi-lite__bubble{ width: 76px; height: 76px; }
+  .kpi-lite__num{ font-size: 24px; }
+}
+/* === CEO CARD — exact type spec, no absolute ========================= */
+.ceo-card{
+  background: linear-gradient(90deg, #1E64C6 0%, #A9C9FF 100%);
+  border-radius: 12px;
+  padding: 16px 18px;
+  color: #fff;
+}
+
+.ceo{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.ceo__img{
+  width: 114px;
+  height: 143px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+/* Typography per your inline spec */
+.ceo__name{
+  margin: 0 0 4px 0;
+  font-family: Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;  /* 24px */
+  color: #fff;
+}
+
+.ceo__role{
+  margin: 0 0 10px 0;
+  font-family: Inter, Geist, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.2px; /* 1.37 */
+  color: #fff;
+}
+
+.ceo__blurb{
+  margin: 0;
+  max-width: 466px;       /* from your spec */
+  font-family: Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;      /* 20px */
+  color: #fff;
+}
+
+/* Responsive: keep layout tidy on small screens */
+@media (max-width: 576px){
+  .ceo{
+    align-items: flex-start;
+  }
+  .ceo__img{
+    width: 96px; height: 120px;
+  }
+}
+/* === OUR SERVICES ==================================================== */
+.services-section {
+  padding: 80px 0 60px;
+}
+
+.services-title {
+  font-family: Geist, Inter, system-ui;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #1B1E27;
+  margin-bottom: 16px;
+}
+
+.services-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(24, 30, 21, 0.20);
+  border: none;
+  margin-bottom: 56px;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: flex-start;
+}
+
+.service-card {
+  position: relative;
+  flex: 1 1 320px;
+  max-width: 335px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-card img {
+  width: 100%;
+  height: 415px;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(31,39,27,0) 42%, #1F271B 100%);
+}
+
+.service-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(232, 231, 225, 0.60);
+  color: #1B1E27;
+  font-family: Geist, Inter, system-ui;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  border-radius: 6px;
+  padding: 4px 12px;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(31, 39, 27, 0.05);
+}
+
+.service-title {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  color: #FFF;
+  font-family: Geist, Inter, system-ui;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 33.8px;
+  margin: 0;
+  z-index: 2;
+}
+
+/* --- View more button --- */
+.view-more-btn {
+  display: inline-block;
+  background: #1C1C1C;
+  color: #F5F5F5;
+  font-family: Inter, system-ui;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  border-radius: 12px;
+  padding: 12px 28px;
+  margin-top: 40px;
+  box-shadow: 0px 50px 30px -2.5px rgba(0, 0, 0, 0.13);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+  background: #2E2E2E;
+  transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .services-title { font-size: 44px; }
+  .services-grid { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .service-card img { height: 340px; }
+  .service-title { font-size: 22px; line-height: 30px; }
+}
+
+@media (max-width: 576px) {
+  .services-title { font-size: 36px; }
+  .service-card { max-width: 100%; }
+  .view-more-btn { display: block; margin: 32px auto 0; text-align: center; }
+}
+/* --- Actions row: right on desktop, centered on mobile --- */
+.services-actions{
+  display: flex;
+  justify-content: flex-end;   /* right on desktop */
+  margin-top: 40px;
+}
+
+.view-more-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1C1C1C;
+  color: #F5F5F5;
+  font-family: Inter, system-ui;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  border-radius: 12px;
+  padding: 12px 28px;
+  text-decoration: none;
+  box-shadow: 0px 50px 30px -2.5px rgba(0,0,0,.13);
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.view-more-btn:hover{
+  background:#2E2E2E;
+  transform: translateY(-2px);
+}
+
+/* Center on small screens */
+@media (max-width: 576px){
+  .services-actions{ justify-content: center; }
+}
+/* === OUR SERVICES: force CTA bottom-right ============================ */
+/* 1) Make the inner container a positioning context */
+.services-section .container{
+  position: relative;        /* anchor for the absolute CTA */
+  padding-bottom: 72px;      /* room for the button + shadow */
+}
+
+/* 2) Absolutely position the CTA inside the container box */
+.services-section .view-more-btn{
+  position: absolute;
+  right: 0;                  /* stick to the right edge of the container */
+  bottom: 0;                 /* stick to the bottom edge of the container */
+  margin: 0;                 /* ignore previous margins */
+  z-index: 2;                /* sit above any card shadow */
+}
+
+/* 3) Mobile: revert to normal flow and center it */
+@media (max-width: 576px){
+  .services-section .container{
+    padding-bottom: 0;       /* we’ll use normal flow below */
+  }
+  .services-section .view-more-btn{
+    position: static;        /* back in flow */
+    display: block;
+    margin: 32px auto 0;     /* centered */
+  }
+}
+/* Row that holds the grid and the CTA side-by-side */
+.services-row{
+  display: flex;
+  align-items: center;          /* <— centers CTA vertically parallel to cards */
+  gap: 32px;                    /* space between grid and button */
+}
+
+/* Let the grid take the space; CTA hugs the right */
+.services-grid{
+  flex: 1 1 auto;
+}
+
+/* Keep your existing .view-more-btn visuals; just ensure sizing */
+.view-more-btn{
+  white-space: nowrap;
+}
+
+/* Mobile: stack and center the CTA below */
+@media (max-width: 768px){
+  .services-row{
+    flex-direction: column;
+    align-items: center;
+  }
+  .view-more-btn{
+    margin-top: 24px;
+  }
+}
+.services-grid{
+  flex: 1 1 auto;
+}
+/* === Vision & Mission block === */
+.vm-eyebrow{
+  font-family: Geist, Inter, system-ui;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.1;
+  color: #1B1E27;
+  letter-spacing: 0.02em;
+}
+.vm-rule{
+  height: 1px;
+  background: rgba(24,30,21,.20);
+  width: 100%;
+}
+.vm-kicker{
+  font-size: 44px;
+  line-height: 1.05;
+  opacity: .6;
+  margin: 0;
+}
+.vm-title{
+  font-size: 34px;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: .24px;
+  margin: 0;
+  color: #1C1C1C;
+}
+.vm-sidecopy{ font-size: 18px; line-height: 1.6; }
+
+.card-soft{ border:1px solid #D9D9D9; }
+.avatar-stack{
+  display:flex; align-items:center; gap:0;
+}
+.avatar-stack img{
+  width:32px; height:32px; border-radius:50%;
+  border:2px solid #fff; box-shadow:0 12px 24px rgba(0,0,0,.10);
+  margin-left:-10px;
+}
+.avatar-stack img:first-child{ margin-left:0; }
+.status-dot{ width:10px; height:10px; border-radius:50%; display:inline-block; box-shadow:0 0 18px 6px rgba(51,212,120,.25); }
+
+/* Bulleted text style matching design */
+.vm-bullets li{ color:rgba(28,28,28,.9); }
+.vm-bullets strong{ font-weight:700; }
+
+/* Gradient rating card */
+.vm-gradient{
+  background: linear-gradient(32deg, #042F6B 0%, #1F71E4 100%);
+  border: 0;
+  position: relative;
+}
+.vm-gradient .card-body{ min-height: 360px; }
+.vm-stars i{ font-size: 12px; color: #F7B900; }
+.vm-arrow{
+  position: absolute; inset: 0 auto auto 0;
+  width: 420px; height: 260px; opacity: .12; pointer-events: none;
+  background-repeat: no-repeat; background-size: contain;
+  background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'>\
+    <path d='M40 210 C120 80, 240 80, 340 150' fill='none' stroke='white' stroke-width='24' stroke-linecap='round'/>\
+    <polyline points='280,110 340,150 290,190' fill='none' stroke='white' stroke-width='24' stroke-linecap='round' stroke-linejoin='round'/>\
+  </svg>");
+}
+
+/* Responsive tweaks to mirror reference layout */
+@media (max-width: 991.98px){
+  .vm-kicker{ font-size: 32px; }
+  .vm-title{ font-size: 28px; }
+}
+@media (max-width: 575.98px){
+  .vm-eyebrow{ font-size: 36px; }
+  .vm-kicker{ font-size: 26px; }
+  .vm-title{ font-size: 24px; }
+}
+/* ===== VM — spacing & typography corrections ===== */
+.vm-section .card { border-radius: 20px; }
+.card-soft { border: 1px solid #E6E6E6; box-shadow: 0 24px 40px rgba(0,0,0,0.04); }
+.vm-section .card-body { padding: 24px; }          /* tighter, matches reference */
+.vm-section .card-soft .card-body { padding: 28px; }/* slightly roomier on soft cards */
+
+/* Headline block */
+.vm-eyebrow{ font-size:56px; line-height:1.1; letter-spacing:.01em; }
+.vm-kicker { font-size:44px; line-height:1.05; opacity:.6; margin:0; }
+.vm-title  { font-size:34px; line-height:1.35; font-weight:700; margin:0; }
+.vm-sidecopy{ font-size:18px; line-height:1.65; }
+
+/* ===== Avatar strip (exact sizes + overlap like design) ===== */
+.vm-investor-strip .card-body{ padding: 14px 18px; }
+.avatar-stack{
+  display:flex; align-items:center; gap:0; position:relative;
+  height:38px; /* anchors vertical alignment */
+}
+.avatar-stack img{
+  display:block; border-radius:999px; border:2px solid #fff;
+  box-shadow: 0 18px 30px rgba(0,0,0,.10);
+  margin-left:-12px; /* overlap */
+}
+.avatar-stack img:first-child{ margin-left:0; }
+
+/* individual sizes to match Figma bubbles: 38, 32, 26, 38, 14 */
+.avatar-stack img:nth-child(1){ width:38px; height:38px; z-index:5; }
+.avatar-stack img:nth-child(2){ width:32px; height:32px; z-index:4; }
+.avatar-stack img:nth-child(3){ width:26px; height:26px; z-index:3; }
+.avatar-stack img:nth-child(4){ width:38px; height:38px; z-index:2; }
+.avatar-stack img:nth-child(5){ width:14px; height:14px; z-index:1; }
+
+/* ===== Metric number + plus baseline alignment ===== */
+.metric { display:inline-flex; align-items:flex-end; gap:8px; }
+.metric__num{
+  font-family: Inter, system-ui;
+  font-weight:500; line-height:1; color:#042F6B;
+}
+.metric__plus{
+  font-family: Inter, system-ui; font-weight:600; opacity:.55;
+  font-size:34px; line-height:1; transform: translateY(-4px); /* drop slightly to sit on same baseline */
+}
+
+/* ===== Availability pill ===== */
+.vm-availability .card-body{ padding: 12px 16px; }
+.status-dot{
+  width:10px; height:10px; border-radius:50%;
+  background:#33D478; box-shadow:0 0 18px 6px rgba(51,212,120,.24);
+}
+
+/* ===== Gradient card + watermark arrow (right, centered, subtle) ===== */
+.vm-gradient{
+  background: linear-gradient(32deg, #042F6B 0%, #1F71E4 100%);
+  border:0; color:#fff;
+}
+.vm-gradient .card-body{ min-height: 360px; position:relative; }
+.vm-arrow{
+  position:absolute;
+  right:-6%;             /* nudge off edge like reference */
+  top: 22%;
+  width: 60%;            /* scale */
+  height: 56%;
+  opacity: .16;
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-position: right center;
+  pointer-events:none;
+  filter: drop-shadow(0 0 0 rgba(0,0,0,0)); /* ensure crisp SVG */
+  background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 498 372'>\
+    <path d='M0,240 C120,90 240,90 360,170' fill='none' stroke='white' stroke-width='40' stroke-linecap='round'/>\
+    <polyline points='300,125 360,170 305,215' fill='none' stroke='white' stroke-width='40' stroke-linecap='round' stroke-linejoin='round'/>\
+  </svg>");
+}
+
+/* ===== Card inner spacing to match rounded borders (reference has breathing room) ===== */
+.vm-section .col-lg-4 > .card + .card{ margin-top: 16px; } /* vertical stack gap on left & middle columns */
+
+/* ===== Subtle outer glow around cards like design ===== */
+.vm-section .card-soft{ box-shadow:
+  0 1px 0 rgba(0,0,0,.02),
+  0 12px 24px rgba(0,0,0,.06);
+}
+
+/* ===== Stars sizing/spacing ===== */
+.vm-stars i{ font-size: 12px; color:#F7B900; margin-right:2px; }
+.vm-stars i:last-child{ margin-right:0; }
+
+/* ===== Responsive nudges ===== */
+@media (max-width: 1199.98px){
+  .vm-arrow{ right:-10%; width:70%; }
+}
+@media (max-width: 991.98px){
+  .vm-kicker{ font-size:32px; }
+  .vm-title{ font-size:28px; }
+  .vm-section .col-lg-4 > .card + .card{ margin-top: 12px; }
+}
+@media (max-width: 575.98px){
+  .vm-eyebrow{ font-size:36px; }
+  .vm-kicker{ font-size:26px; }
+  .vm-title{ font-size:24px; }
+}

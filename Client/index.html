@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Troy Groups — Home</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- 1) Bootstrap FIRST -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <!-- 2) Your global CSS (design tokens, base styles) -->
+  <link href="./assets/css/global.css?v=1" rel="stylesheet">
+
+  <!-- 3) Page-specific CSS (optional, if you need) -->
+  <link href="./assets/css/style.css?v=1" rel="stylesheet">
+
+  <!-- 4) AOS (optional animations) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="site-header" data-include="header"></div>
+
+  <!-- =========== HERO =========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__head">
+        <h1 class="title title--tight">
+          A GLOBAL LEADER,<br>IN INVESTMENT and CAPITAL RAISING
+        </h1>
+
+        <a href="#" class="btn btn--outline-gradient btn--pill">
+          <span>Schedule A Call</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" class="icon">
+            <path d="M7 17L17 7M17 7H8M17 7v9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <figure class="hero__media">
+        <img src="./assets/images/homepage_hero.png" alt="Team discussion" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE DO + CEO ===== -->
+  <section class="block" id="what-we-do">
+    <div class="container" style="max-width:1280px">
+      <div class="row g-5 align-items-start">
+        <aside class="col-lg-2"><p class="eyebrow">What we do</p></aside>
+
+        <div class="col-lg-7">
+          <h2 class="h2 up">Change is inevitable.<br>Growth is a choice.</h2>
+          <p class="lead-tight">Growing companies come to us when things feel harder than they should be. Maybe decisions take longer, processes break down, or your team is stretched thin.</p>
+          <p class="lead-tight mb-3">We help you step back, identify what’s slowing you down, and build practical solutions that support where you’re headed—without overcomplicating the process.</p>
+
+          <!-- CEO CARD (clean markup) -->
+<div class="ceo-card">
+  <div class="ceo">
+    <img src="./assets/images/home_eldo.png" alt="CEO" class="ceo__img">
+    <div class="ceo__text">
+      <h3 class="ceo__name">Eldo Korita</h3>
+      <p class="ceo__role">CEO &amp; Founder</p>
+      <p class="ceo__blurb">
+        A driven finance executive and strategic investor, bridging capital and innovation to fuel scalable growth and lasting market impact.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+        <div class="col-lg-3"></div>
+      </div>
+
+    <!-- === KPI STRIP (Image-2 design) ==================================== -->
+<section class="kpi-lite">
+  <div class="container">
+    <ul class="kpi-lite__list">
+      <!-- 1: Star -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">27+</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/solar_star-bold.svg" alt="Star" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Years Of<br>Excellence</p>
+      </li>
+
+      <!-- 2: Fire -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">54</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/mdi_fire.svg" alt="Fire" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Professional<br>Employees</p>
+      </li>
+
+      <!-- 3: Fire -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">04</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/mdi_fire.svg" alt="Fire" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Our Offices<br>Worldwide</p>
+      </li>
+
+      <!-- 4: Tick -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">116</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/weui_done2-filled.svg" alt="Check" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Our Satisfied<br>Clients</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- === OUR SERVICES ================================================== -->
+<section class="services-section">
+  <div class="container">
+    <h2 class="services-title">Our Services</h2>
+    <hr class="services-divider" />
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <img src="./assets/images/home_services_1.png" alt="Digital Roadmap" />
+        <span class="service-tag">Service</span>
+        <div class="service-overlay"></div>
+        <h3 class="service-title">Digital Roadmap &amp;<br>Strategy</h3>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card">
+        <img src="./assets/images/home_services_2.png" alt="Automation & AI" />
+        <span class="service-tag">Service</span>
+        <div class="service-overlay"></div>
+        <h3 class="service-title">Automation &amp; AI<br>Solutions</h3>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <img src="./assets/images/home_services_3.png" alt="On-Demand Experts" />
+        <span class="service-tag">Service</span>
+        <div class="service-overlay"></div>
+        <h3 class="service-title">On-Demand Tech<br>Experts</h3>
+      </div>
+    </div>
+
+    <a href="#" class="view-more-btn">View more →</a>
+  </div>
+</section>
+<!-- =================================================================== -->
+
+  <section class="vm-section py-5">
+  <div class="container">
+    <!-- Eyebrow & rule -->
+    <div class="d-flex flex-column gap-2 mb-4">
+      <h2 class="vm-eyebrow text-uppercase m-0">Vision and Mission</h2>
+      <div class="vm-rule"></div>
+    </div>
+
+    <!-- Kicker + Title + Right copy -->
+    <div class="row align-items-start g-4 mb-3">
+      <div class="col-lg-8">
+        <p class="vm-kicker text-muted mb-1">Our focus is simple</p>
+        <h3 class="vm-title">Innovating the Way the World Invests</h3>
+      </div>
+      <div class="col-lg-4">
+        <p class="text-muted vm-sidecopy mt-lg-2">
+          We promise to deliver beyond your expectations for your business.
+        </p>
+      </div>
+    </div>
+
+    <!-- Three-card row -->
+    <div class="row g-4">
+      <!-- LEFT COLUMN (investors + experts) -->
+      <div class="col-12 col-lg-4">
+        <!-- investor strip -->
+        <div class="card card-soft rounded-4 mb-3">
+          <div class="card-body py-3 px-4 d-flex align-items-center justify-content-between">
+            <div class="avatar-stack">
+              <img src="https://placehold.co/38x38" alt="">
+              <img src="https://placehold.co/32x32" alt="">
+              <img src="https://placehold.co/26x26" alt="">
+              <img src="https://placehold.co/38x38" alt="">
+              <img src="https://placehold.co/14x14" alt="">
+            </div>
+            <span class="text-uppercase fw-bold text-muted small">40+ Investors</span>
+          </div>
+        </div>
+
+        <!-- body with paragraph + 45+ Experts -->
+        <div class="card card-soft rounded-4 h-100">
+          <div class="card-body p-4">
+            <p class="mb-4 text-body-secondary">
+              To be the most impactful bridge innovation businesses and investors, creating a
+              sustainable and progressive business environment worldwide, to raise more than £1B
+              and generate more than 25% Net IRR within the next 12 months.
+            </p>
+
+            <div class="d-flex align-items-end gap-2">
+              <span class="display-4 fw-medium text-primary">45</span>
+              <span class="fs-2 text-secondary opacity-50">+</span>
+            </div>
+            <div class="fw-semibold text-muted">Experts</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MIDDLE COLUMN (bullets + 116 + availability) -->
+      <div class="col-12 col-lg-4">
+        <div class="card card-soft rounded-4 mb-3 h-100">
+          <div class="card-body p-4">
+            <ul class="vm-bullets list-unstyled mb-4 fs-5">
+              <li><strong>Connection capital</strong> with innovation.</li>
+              <li class="mt-1"><strong>Fueling Growth</strong> Creating Impact.</li>
+              <li class="mt-1"><strong>Empowering Businesses</strong> Transforming Futures.</li>
+            </ul>
+
+            <div class="d-flex align-items-end gap-2">
+              <span class="display-4 fw-medium text-primary">116</span>
+              <span class="fs-2 text-secondary opacity-50">+</span>
+            </div>
+            <div class="small text-muted mb-3">Clients across six Continents.</div>
+          </div>
+        </div>
+
+        <div class="card rounded-4">
+          <div class="card-body py-3 px-4 d-flex align-items-center gap-2">
+            <span class="status-dot bg-success"></span>
+            <span class="text-uppercase small fw-bold text-muted">Available for Join</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN (gradient, copy, rating, stars) -->
+      <div class="col-12 col-lg-4">
+        <div class="card vm-gradient rounded-4 text-white h-100 shadow-lg">
+          <div class="card-body p-4 position-relative">
+            <p class="mb-5">
+              We are committed to empowering businesses by offering innovative financing solutions,
+              strategic consulting, and investor matchmaking. Our goal is to simplify growth processes,
+              enhance project success, and maximize value for our clients.
+            </p>
+
+            <div class="d-flex align-items-baseline gap-2">
+              <span class="display-4 fw-medium">4.8</span>
+              <span class="fs-3 opacity-75">/5</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mt-2">
+              <div class="vm-stars" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="text-uppercase small opacity-75 lh-sm">
+                Trusted by<br>Clients Worldwide
+              </div>
+            </div>
+
+            <!-- arrow watermark -->
+            <div class="vm-arrow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- =========== HOW WE WORKS (Step 1 image only) =========== -->
+  <section class="section hww">
+    <div class="wrap">
+      <h2 class="eyebrow-up">HOW WE WORKS</h2>
+
+      <!-- Step 1: with image -->
+      <article class="hww-row">
+        <div class="hww-text">
+          <p class="step">Step 1</p>
+          <h3>We start by understanding your situation.</h3>
+          <p class="desc">
+            What’s happening in the business, what’s changing, and what you’re aiming to achieve.
+          </p>
+        </div>
+        <div class="hww-media">
+          <img src="https://placehold.co/680x520" alt="Discovery meeting">
+        </div>
+      </article>
+
+      <!-- Step 2: text only -->
+      <article class="hww-row hww-row--textonly">
+        <div class="hww-text">
+          <p class="step">Step 2</p>
+          <h3>Next, we identify where to focus.</h3>
+          <p class="desc">
+            It might be your systems, your ways of working, or how your strategy is set up.
+          </p>
+        </div>
+      </article>
+
+      <!-- Step 3: text only -->
+      <article class="hww-row hww-row--textonly">
+        <div class="hww-text">
+          <p class="step">Step 3</p>
+          <h3>Then we support you in making the right changes.</h3>
+          <p class="desc">
+            Step by step, in a way that works with your goals, your pace, and your team.
+          </p>
+        </div>
+      </article>
+    </div>
+    <span class="hww-glow" aria-hidden="true"></span>
+  </section>
+
+  <!-- =========== PARTNERS =========== -->
+  <section class="section partners">
+    <div class="wrap partners-grid">
+      <div class="partners-copy">
+        <p class="eyebrow">Who we are</p>
+        <h3 class="t-title">YOUR STRATEGIC<br> PARTNERS IN GROWTH</h3>
+        <p class="desc">
+          Bridge is a team of digital consultants, designers, and thinkers who guide companies through transformation.
+        </p>
+        <a class="chip" href="#">About</a>
+      </div>
+
+      <figure class="partners-img">
+        <img src="https://placehold.co/840x1040" alt="Consultant portrait">
+      </figure>
+    </div>
+  </section>
+
+  <!-- =========== NOTE / QUOTE ROW =========== -->
+  <section class="section note-row">
+    <div class="wrap note-grid">
+      <figure class="note-img">
+        <img src="https://placehold.co/1040x600" alt="Headshot">
+      </figure>
+      <aside class="note-copy">
+        <p class="small">“The best digital transformation isn’t about grand overhauls. It’s about making smart, practical changes that actually move your business forward.”</p>
+        <p class="meta">— <strong>Eldo</strong>, Founder &amp; CEO</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =========== INSIGHTS =========== -->
+  <section class="insights block">
+    <div class="container">
+      <div class="insights__head">
+        <div>
+          <span class="chip">Event</span>
+          <h2 class="h2">Insights that<br>Drive results</h2>
+        </div>
+        <a class="btn btn--dark" href="#">View all</a>
+      </div>
+
+      <div class="grid-2">
+        <article class="post">
+          <img src="https://placehold.co/528x232" alt="">
+          <span class="post__tag">Conversion & funnel strategy</span>
+          <h3>The 5 key elements of a high-converting landing page</h3>
+          <p>Learn the essential components every landing page needs to capture attention and drive conversions.</p>
+          <div class="post__by">Jenny Wang</div>
+        </article>
+
+        <article class="post">
+          <img src="https://placehold.co/528x232" alt="">
+          <span class="post__tag">Email & automation</span>
+          <h3>How to write email sequences that actually convert</h3>
+          <p>Write emails that engage, nurture, and convert your leads with clarity, structure, and persuasive messaging.</p>
+          <div class="post__by">Kenny Woo</div>
+        </article>
+
+        <article class="post">
+          <img src="https://placehold.co/528x232" alt="">
+          <span class="post__tag">Paid ads & traffic</span>
+          <h3>How to build ad creatives that don’t feel like ads</h3>
+          <p>Design scroll-stopping ad creatives that feel organic, get clicks, and consistently drive qualified leads.</p>
+          <div class="post__by">Joshua Bakare</div>
+        </article>
+
+        <article class="post">
+          <img src="https://placehold.co/528x232" alt="">
+          <span class="post__tag">Growth & insights</span>
+          <h3>The tools we use to run funnels on autopilot</h3>
+          <p>The exact tools and tech stack we use to build and run conversion funnels that work 24/7 for clients.</p>
+          <div class="post__by">Jacob Malpas</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== FAQ =========== -->
+  <section class="faq block" id="faq">
+    <div class="container">
+      <div class="faq__intro">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h2">What clients ask us most</h2>
+        <p class="muted">We’re here for the follow-up questions too — find us on the Contact page.</p>
+        <a href="#" class="btn btn--outline-gradient btn--pill">Contact</a>
+      </div>
+
+      <details class="faq__item" open>
+        <summary>What is a The Troy Groups?</summary>
+        <p>We are a global leader in outsourced capital raising and direct investment opportunities. We help businesses connect with investors, raise funds, expand into new markets, and offer strategic consulting, marketing, and recruitment services.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>Which sectors do you cover?</summary>
+        <p>Placeholder text. Replace with your final copy.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>What services do you offer?</summary>
+        <p>Placeholder text. Replace with your final copy.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>Who are your clients and how many do you serve?</summary>
+        <p>Placeholder text. Replace with your final copy.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>How do I get started working with Troy Groups?</summary>
+        <p>Placeholder text. Replace with your final copy.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>Are you a regulated investment advisor?</summary>
+        <p>Placeholder text. Replace with your final copy.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- =========== CTA =========== -->
+  <section class="cta block">
+    <div class="cta__glow" aria-hidden="true"></div>
+    <div class="container cta__inner">
+      <h3 class="cta__kicker">Ready To Grow Together!</h3>
+      <p class="cta__sub">Effortlessly manage your spending, saving, and investing—all in one place.</p>
+      <h2 class="cta__title">Schedule your meeting</h2>
+      <img class="cta__img" src="https://placehold.co/600x360" alt="">
+    </div>
+  </section>
+<div id="site-footer" data-include="footer"></div>
+
+<!-- Scripts (order matters) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS?.init && AOS.init({ once:true, duration:600, easing:'ease-out' });</script>
+
+<!-- This injects header/footer -->
+<script src="./assets/js/components.js" defer></script>
+
+<!-- Your page JS last -->
+<script src="./assets/js/main.js" defer></script>
+
+</body>
+</html>
