@@ -403,10 +403,6 @@ h1,h2,h3{margin:0 0 12px}
   min-height: 520px;
   overflow: hidden;
 
-  /* Rounded top-right like Figma */
-  border-top-right-radius: 70px;
-  border-top-left-radius: 2px;
-
   background: #000;
   box-shadow: 0 1px 0 rgba(0,0,0,.05);
 }

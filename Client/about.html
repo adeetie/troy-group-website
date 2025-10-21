@@ -22,34 +22,31 @@
   <!-- Auto header (your JS injects it) -->
   <div id="site-header"></div>
 
-  <!-- =================== HERO (ABOUT) =================== -->
-  <section class="block pt-3 about-hero-wrap">
-    <div class="container container-1280">
-      <figure class="about-hero">
-        <img src="https://placehold.co/1600x520" alt="Team collaboration"/>
-        <div class="about-hero__overlay" aria-hidden="true"></div>
+ <!-- ===== ABOUT HERO SECTION ===== -->
+<section class="about-hero position-relative overflow-hidden">
+  <img src="assets/images/about_hero.png" alt="About The Troy Group" class="about-hero-img">
 
-        <div class="about-hero__copy">
-          <h1 class="about-hero__title">ABOUT</h1>
-          <p class="about-hero__sub">
-            Driving innovation, fostering growth, and<br>
-            delivering lasting value globally
-          </p>
+  <div class="about-hero-overlay"></div>
 
-          <a href="#" class="btn btn--outline-gradient btn--pill about-hero__cta">
-            <span>Who we are</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
-              <path d="M7 17L17 7M17 7H9M17 7v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
-      </figure>
+  <div class="container position-relative z-2">
+    <div class="row">
+      <div class="col-lg-7 col-md-9">
+        <h1 class="about-title mb-3" data-aos="fade-up">ABOUT</h1>
+        <p class="about-subtext mb-4" data-aos="fade-up" data-aos-delay="100">
+          Driving innovation, fostering growth, and delivering lasting value globally
+        </p>
+        <a href="./services.html" class="btn btn-brand" data-aos="fade-up" data-aos-delay="200">
+          Who We Are
+        </a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== WHAT WE DO + CEO ===== -->
+
+ <!-- ===== WHAT WE DO + CEO ===== -->
   <section class="block" id="what-we-do">
-    <div class="container container-1280">
+    <div class="container" style="max-width:1280px">
       <div class="row g-5 align-items-start">
         <aside class="col-lg-2"><p class="eyebrow">What we do</p></aside>
 
@@ -58,264 +55,617 @@
           <p class="lead-tight">Growing companies come to us when things feel harder than they should be. Maybe decisions take longer, processes break down, or your team is stretched thin.</p>
           <p class="lead-tight mb-3">We help you step back, identify what’s slowing you down, and build practical solutions that support where you’re headed—without overcomplicating the process.</p>
 
-          <div class="ceo-card">
-            <div class="d-flex gap-3">
-              <img src="https://placehold.co/114x143" alt="CEO">
-              <div>
-                <p class="h6 mb-1">Eldo Korita</p>
-                <div class="small mb-2">CEO & Founder</div>
-                <p class="small mb-0">A driven finance executive and strategic investor, bridging capital and innovation to fuel scalable growth and lasting market impact.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <!-- CEO CARD (clean markup) -->
+<div class="ceo-card">
+  <div class="ceo">
+    <img src="./assets/images/home_eldo.png" alt="CEO" class="ceo__img">
+    <div class="ceo__text">
+      <h3 class="ceo__name">Eldo Korita</h3>
+      <p class="ceo__role">CEO &amp; Founder</p>
+      <p class="ceo__blurb">
+        A driven finance executive and strategic investor, bridging capital and innovation to fuel scalable growth and lasting market impact.
+      </p>
+    </div>
+  </div>
+</div>
+
 
         <div class="col-lg-3"></div>
       </div>
 
-      <!-- KPI bubbles -->
-      <ul class="about-stats">
-        <li><span class="bubble">27+</span><p>Years Of Excellence</p></li>
-        <li><span class="bubble">54</span><p>Professional Employees</p></li>
-        <li><span class="bubble">04</span><p>Our Offices Worldwide</p></li>
-        <li><span class="bubble">116</span><p>Our Satisfied Clients</p></li>
-      </ul>
-    </div>
-  </section>
+    <!-- === KPI STRIP (Image-2 design) ==================================== -->
+<section class="kpi-lite">
+  <div class="container">
+    <ul class="kpi-lite__list">
+      <!-- 1: Star -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">27+</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/solar_star-bold.svg" alt="Star" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Years Of<br>Excellence</p>
+      </li>
 
-  <!-- ===== IMAGE TRIO ===== -->
-  <section class="block">
-    <div class="container image-trio container-1280">
-      <div class="row g-3">
-        <div class="col-md-4"><img src="https://placehold.co/540x540" alt=""></div>
-        <div class="col-md-4"><img src="https://placehold.co/540x540" alt=""></div>
-        <div class="col-md-4"><img src="https://placehold.co/540x540" alt=""></div>
-      </div>
-    </div>
-  </section>
+      <!-- 2: Fire -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">54</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/mdi_fire.svg" alt="Fire" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Professional<br>Employees</p>
+      </li>
 
-  <!-- ===== BOARD MEMBERS ===== -->
-  <section class="block">
-    <div class="container container-993">
-      <p class="eyebrow">Our team</p>
-      <h2 class="h2 up">Board members</h2>
-      <div class="board-grid mt-3">
-        <!-- 8 sample cards -->
-        <article class="board-card">
-          <img src="https://placehold.co/540x220" alt="">
-          <div class="name">Alexander Doyle</div>
-          <div class="role">Chairman</div>
-        </article>
-        <article class="board-card">
-          <img src="https://placehold.co/540x220" alt="">
-          <div class="name">Ivana Marquez</div>
-          <div class="role">Non-Executive Director</div>
-        </article>
-        <article class="board-card">
-          <img src="https://placehold.co/540x220" alt="">
-          <div class="name">Bruno Estevez</div>
-          <div class="role">Independent Director</div>
-        </article>
-        <article class="board-card">
-          <img src="https://placehold.co/540x220" alt="">
-          <div class="name">Maya Prasad</div>
-          <div class="role">Independent Director</div>
-        </article>
-        <article class="board-card">
-          <img src="https://placehold.co/540x220" alt="">
-          <div class="name">Luca Romano</div>
-          <div class="role">Board Advisor</div>
-        </article>
-        <article class="board-card">
-          <img src="https://placehold.co/540x220" alt="">
-          <div class="name">Olivia Chen</div>
-          <div class="role">Board Advisor</div>
-        </article>
-        <article class="board-card">
-          <img src="https://placehold.co/540x220" alt="">
-          <div class="name">Samuel Okoro</div>
-          <div class="role">Board Advisor</div>
-        </article>
-        <article class="board-card">
-          <img src="https://placehold.co/540x220" alt="">
-          <div class="name">Elise Dubois</div>
-          <div class="role">Board Advisor</div>
-        </article>
-      </div>
-    </div>
-  </section>
+      <!-- 3: Fire -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">04</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/mdi_fire.svg" alt="Fire" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Our Offices<br>Worldwide</p>
+      </li>
 
-  <!-- ===== PRINCIPLES ===== -->
-  <section class="block">
-    <div class="container container-993">
-      <p class="eyebrow">Our values</p>
-      <h2 class="h2 up">Principles that guide us</h2>
-      <div class="rule"></div>
+      <!-- 4: Tick -->
+      <li class="kpi-lite__item">
+        <span class="kpi-lite__bubble">
+          <span class="kpi-lite__num">116</span>
+          <img class="kpi-lite__icon" src="./assets/images/icons/weui_done2-filled.svg" alt="Check" width="22" height="22" loading="lazy">
+        </span>
+        <p class="kpi-lite__label">Our Satisfied<br>Clients</p>
+      </li>
+    </ul>
+  </div>
+</section>
 
-      <div class="row g-4">
-        <div class="col-md-6">
-          <h3 class="h6 fw-semibold mb-1">Impact Over Vanity Metrics</h3>
-          <p class="lead-tight">Momentum and measurable outcomes—not theatrics.</p>
-        </div>
-        <div class="col-md-6">
-          <h3 class="h6 fw-semibold mb-1">Processes that Create Clarity</h3>
-          <p class="lead-tight">Fewer meetings, tighter feedback loops, cleaner delivery.</p>
-        </div>
-        <div class="col-md-6">
-          <h3 class="h6 fw-semibold mb-1">Innovation From Diverse Strengths</h3>
-          <p class="lead-tight">We pair great operators with great builders to move faster.</p>
-        </div>
-        <div class="col-md-6">
-          <h3 class="h6 fw-semibold mb-1">Partnership As a Leading Value</h3>
-          <p class="lead-tight">We build long-term bridges between capital and innovation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+ <!-- ===== ABOUT: MOVING IMAGE STRIP ===== -->
+<section class="about-strip" aria-label="Company culture gallery">
+  <div class="strip-mask">
+    <!-- one full track -->
+    <ul class="strip-track">
+      <!-- 300 × 346 -->
+      <li class="itm itm-300x346"><img src="assets/images/about_frame_1.png" alt=""></li>
+      <!-- 462 × 533 -->
+      <li class="itm itm-462x533"><img src="assets/images/about_frame_2.png" alt=""></li>
+      <!-- 477 × 322 -->
+      <li class="itm itm-477x322"><img src="assets/images/about_frame_3.jpg" alt=""></li>
+      <!-- 461 × 464 -->
+      <li class="itm itm-461x464"><img src="assets/images/about_frame_4.png" alt=""></li>
+      <!-- 300 × 346 -->
+      <li class="itm itm-300x346"><img src="assets/images/about_frame_5.png" alt=""></li>
+      <!-- 462 × 533 -->
+      <li class="itm itm-462x533"><img src="assets/images/about_frame_6.png" alt=""></li>
+      <!-- 462 × 335 -->
+      <li class="itm itm-462x335"><img src="assets/images/about_frame_7.png" alt=""></li>
+      <!-- 461 × 470 (fit to 461×464 frame) -->
+      <li class="itm itm-461x464"><img src="assets/images/about_frame_8.png" alt=""></li>
+      <!-- 300 × 346 -->
+      <li class="itm itm-300x346"><img src="assets/images/about_frame_9.png" alt=""></li>
+      <!-- 462 × 533 -->
+      <li class="itm itm-462x533"><img src="assets/images/about_frame_10.png" alt=""></li>
+      <!-- 461 × 464 -->
+      <li class="itm itm-461x464"><img src="assets/images/about_frame_11.png" alt=""></li>
+      <!-- 462 × 533 -->
+      <li class="itm itm-462x533"><img src="assets/images/about_frame_12.png" alt=""></li>
+      <!-- 462 × 335 -->
+      <li class="itm itm-462x335"><img src="assets/images/about_frame_13.png" alt=""></li>
+    </ul>
 
-  <!-- ===== LEADERSHIP TEAM ===== -->
-  <section class="block">
-    <div class="container container-993">
-      <p class="eyebrow">Our team</p>
-      <h2 class="h2 up">Leadership team</h2>
+  </div>
+</section>
 
-      <div class="team-grid mt-3">
-        <!-- 15 members -->
-        <!-- Row 1 -->
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">A. Fernandez</div><div class="role">Managing Partner</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">M. Johnson</div><div class="role">Head of Strategy</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">R. Patel</div><div class="role">Investment Lead</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">S. Nakamura</div><div class="role">Operations</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">L. Chen</div><div class="role">Partnerships</div></div>
-        <!-- Row 2 -->
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">K. Brown</div><div class="role">Finance</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">I. Ahmed</div><div class="role">Growth</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">P. Sousa</div><div class="role">Markets</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">V. Rossi</div><div class="role">Research</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">E. López</div><div class="role">People</div></div>
-        <!-- Row 3 -->
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">N. Singh</div><div class="role">Legal</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">J. Park</div><div class="role">Advisory</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">O. Weber</div><div class="role">Executive</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">H. Ali</div><div class="role">Ventures</div></div>
-        <div class="member"><img src="https://placehold.co/120x120" alt=""><div class="name">T. Nguyen</div><div class="role">Analytics</div></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== TALL IMAGE PAIR ===== -->
-  <section class="block">
-    <div class="container stripe-2 container-1280">
-      <img src="https://placehold.co/720x920" alt="">
-      <img src="https://placehold.co/720x920" alt="">
-    </div>
-  </section>
+  <!-- ===== BOARD MEMBERS SECTION ===== -->
+<section class="board-section py-5 text-center">
+  <div class="container">
+    <h2 class="section-title mb-3" data-aos="fade-up">Board members</h2>
+    <p class="text-muted mb-5" data-aos="fade-up" data-aos-delay="100">
+      We're lucky to be supported by some of the best investors in the world.
+    </p>
 
-  <!-- ===== CAREER + ROLES ===== -->
-  <section class="block">
-    <div class="container container-1280">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-6">
-          <img class="img-fluid rounded-3" src="https://placehold.co/608x420" alt="Career">
-        </div>
-        <div class="col-lg-6">
-          <p class="eyebrow">Career</p>
-          <h2 class="h2 up">Do work that matters<br>(and lights you up)</h2>
-          <p class="lead-tight">We believe your work should inspire you. Join our team to make real impact, grow in your craft, and help build solutions that transform businesses and lives around the world.</p>
-          <p class="lead-tight">Let’s do something incredible—together.</p>
-          <a href="#" class="btn btn--outline-gradient btn--pill mt-2">
-            <span>Career</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
-              <path d="M7 17L17 7M17 7H9M17 7v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+    <div class="row justify-content-center g-4" data-aos="fade-up" data-aos-delay="200">
+      <!-- Member 1 -->
+      <div class="col-6 col-md-3">
+        <div class="member">
+          <div class="member-img mb-3">
+            <img src="assets/images/about_eldo_avatar.png" alt="Eldo Korita">
+          </div>
+          <h5 class="member-name mb-1">Eldo Korita</h5>
+          <p class="member-role text-primary fw-semibold">Founder & CEO</p>
+          <div class="member-social">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
         </div>
       </div>
 
-      <!-- roles -->
-      <div class="roles mt-5">
-        <p class="muted mb-2">We’re committed to bringing world-class, passionate professionals together to push new boundaries and grow.</p>
-        <div class="row-item">
-          <div><div class="fw-semibold">Product Designer</div><div class="meta">Full-time · Remote</div></div>
-          <a href="#" class="btn btn--dark">Apply</a>
+      <!-- Member 2 -->
+      <div class="col-6 col-md-3">
+        <div class="member">
+          <div class="member-img mb-3">
+            <img src="assets/images/about_rommel_avatar.png" alt="Rommel Bayangar">
+          </div>
+          <h5 class="member-name mb-1">Rommel Bayangar</h5>
+          <p class="member-role text-primary fw-semibold">CPO</p>
+          <div class="member-social">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
         </div>
-        <div class="row-item">
-          <div><div class="fw-semibold">Creative Strategist</div><div class="meta">Full-time · Dubai</div></div>
-          <a href="#" class="btn btn--dark">Apply</a>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="col-6 col-md-3">
+        <div class="member">
+          <div class="member-img mb-3">
+            <img src="assets/images/about_avinash_avatar.png" alt="Avinash Sharma">
+          </div>
+          <h5 class="member-name mb-1">Avinash Sharma</h5>
+          <p class="member-role text-primary fw-semibold">COO</p>
+          <div class="member-social">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
         </div>
-        <div class="row-item">
-          <div><div class="fw-semibold">Customer Success Manager</div><div class="meta">Full-time · Hybrid</div></div>
-          <a href="#" class="btn btn--dark">Apply</a>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="col-6 col-md-3">
+        <div class="member">
+          <div class="member-img mb-3">
+            <img src="assets/images/about_avinash_j_avatar.png" alt="Avinash Jeshwani">
+          </div>
+          <h5 class="member-name mb-1">Avinash Jeshwani</h5>
+          <p class="member-role text-primary fw-semibold">CRO</p>
+          <div class="member-social">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== FAQ ===== -->
-  <section class="block" id="faq">
-    <div class="container container-1280">
-      <p class="eyebrow">FAQ</p>
-      <h2 class="h2 up">What clients ask us most</h2>
-      <hr class="divider">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <p class="lead-tight">We’re here for the follow-up questions too—find us on the Contact page.</p>
-          <a href="contact.html" class="btn btn--outline-gradient btn--pill mt-2">Contact</a>
+
+  <!-- ===== PRINCIPLES THAT GUIDE US ===== -->
+<section class="principles-section py-5">
+  <div class="container">
+
+    <!-- Kicker + Section Title -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <p class="kicker mb-2">Our values</p>
+        <h2 class="principles-title">PRINCIPLES THAT GUIDE US</h2>
+      </div>
+    </div>
+
+    <!-- Table-like list -->
+    <div class="principles-table">
+
+      <!-- Row 1 -->
+      <div class="principles-row">
+        <div class="principles-left">
+          Integrity in Every Transaction
         </div>
-        <div class="col-lg-8">
-          <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="h1">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="true">What is The Troy Groups?</button>
-              </h2>
-              <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  We are a global leader in outsourced capital raising and direct investment opportunities. We help businesses connect with investors, raise funds, expand into new markets, and offer strategic consulting, marketing, and recruitment services.
-                </div>
-              </div>
+        <div class="principles-right">
+          We uphold the highest standards of transparency and ethics, ensuring every partnership and investment is built on trust and accountability.
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="principles-row">
+        <div class="principles-left">
+          Innovation that Drives Growth
+        </div>
+        <div class="principles-right">
+          We connect visionary ideas with strategic capital—fostering innovation that leads to sustainable business growth and long-term impact.
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="principles-row">
+        <div class="principles-left">
+          Partnership for Lasting Value
+        </div>
+        <div class="principles-right">
+          We believe in building meaningful relationships with our clients and investors, aligning our goals to create enduring success across global markets.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- ===== LEADERSHIP TEAM ===== -->
+<section class="leadership-section py-5 text-center">
+  <div class="container">
+    <!-- Section Header -->
+    <p class="kicker mb-2" data-aos="fade-up">Our team</p>
+    <h2 class="section-title mb-2" data-aos="fade-up" data-aos-delay="100">Leadership team</h2>
+    <p class="text-muted mb-5" data-aos="fade-up" data-aos-delay="150">
+      We're building the future of software development.
+    </p>
+
+    <!-- ROW 1 -->
+    <div class="row justify-content-center g-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/konstantinos.webp" alt="Konstantinos S"></div>
+          <h5 class="leader-name">Konstantinos S</h5>
+          <p class="leader-role">Vice President of BD</p>
+          <p class="leader-bio">Former co-founder of Opendoor. Early staff at Spotify and Clearbit.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/mehmet.webp" alt="Mehmet Salih"></div>
+          <h5 class="leader-name">Mehmet Salih</h5>
+          <p class="leader-role">IR Manager</p>
+          <p class="leader-bio">Lead engineering teams at Figma, Pitch, and Protocol Labs.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/smit.webp" alt="Smit Kothari"></div>
+          <h5 class="leader-name">Smit Kothari</h5>
+          <p class="leader-role">Investment Manager</p>
+          <p class="leader-bio">Former PM for Linear, Lambda School, and On Deck.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/catia.webp" alt="Catia Pereira"></div>
+          <h5 class="leader-name">Catia Pereira</h5>
+          <p class="leader-role">IR Advisor</p>
+          <p class="leader-bio">Former frontend dev for Linear, Coinbase, and Postscript.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="row justify-content-center g-5" data-aos="fade-up" data-aos-delay="250">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/bhavesh.webp" alt="Bhavesh Rajpara"></div>
+          <h5 class="leader-name">Bhavesh Rajpara</h5>
+          <p class="leader-role">Research Analyst</p>
+          <p class="leader-bio">Lead backend dev at Clearbit. Former Clearbit and Loom.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/sakshi.webp" alt="Sakshi Sharma"></div>
+          <h5 class="leader-name">Sakshi Sharma</h5>
+          <p class="leader-role">Research Analyst</p>
+          <p class="leader-bio">Founding design team at Figma. Former Pleo, Stripe, and Tile.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/kei.webp" alt="Kei Mintzouli"></div>
+          <h5 class="leader-name">Kei Mintzouli</h5>
+          <p class="leader-role">Investment Manager</p>
+          <p class="leader-bio">Lead user research for Slack. Contractor for Netflix and Udacity.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/regis.webp" alt="Regis Islamaj"></div>
+          <h5 class="leader-name">Regis Islamaj</h5>
+          <p class="leader-role">Investment Analyst</p>
+          <p class="leader-bio">Lead CX at Wealthsimple. Former PagerDuty and Sqreen.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="row justify-content-center g-5" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/akshay.webp" alt="Akshay Shende"></div>
+          <h5 class="leader-name">Akshay Shende</h5>
+          <p class="leader-role">Investment Analyst</p>
+          <p class="leader-bio">Lead backend dev at Clearbit. Former Clearbit and Loom.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/andrea.webp" alt="Andrea Cote"></div>
+          <h5 class="leader-name">Andrea Cote</h5>
+          <p class="leader-role">Client Success Manager</p>
+          <p class="leader-bio">Founding design team at Figma. Former Pleo, Stripe, and Tile.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/jahnavi.webp" alt="Jahnavi Gallia"></div>
+          <h5 class="leader-name">Jahnavi Gallia</h5>
+          <p class="leader-role">IR Analyst</p>
+          <p class="leader-bio">Lead user research for Slack. Contractor for Netflix and Udacity.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="leader-card">
+          <div class="leader-img"><img src="./assets/img/team/rhythm.webp" alt="Rhythm Kothari"></div>
+          <h5 class="leader-name">Rhythm Kothari</h5>
+          <p class="leader-role">IR Analyst</p>
+          <p class="leader-bio">Lead CX at Wealthsimple. Former PagerDuty and Sqreen.</p>
+          <div class="leader-social">
+            <a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FEATURE PHOTO ===== -->
+<section class="about-feature-photo py-5">
+  <div class="container">
+    <figure class="feature-frame" data-aos="fade-up">
+      <img src="assets/images/about_video.png" alt="Team walking in corridor" class="feature-img">
+    </figure>
+  </div>
+</section>
+
+<!-- ===== WORK THAT MATTERS (SPLIT CTA) ===== -->
+<section class="work-cta py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <!-- Image -->
+      <div class="col-12 col-md-5" data-aos="fade-right">
+        <div class="work-photo">
+          <img src="assets/images/about_career.png" alt="Professional portrait">
+        </div>
+      </div>
+
+      <!-- Copy -->
+      <div class="col-12 col-md-7" data-aos="fade-left">
+        <p class="kicker mb-2">Careers</p>
+        <h3 class="work-heading mb-2">
+          DO WORK THAT MATTERS<br>
+          (AND LIGHTS YOU UP)
+        </h3>
+        <p class="work-copy mb-3">
+          Join a team where curiosity meets craft. We back bold ideas with real ownership, mentorship, and the space to do your best work.
+        </p>
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="#" class="btn btn-brand">Career</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OPEN ROLES (with filters) ===== -->
+<section id="open-roles" class="jobs-wrap py-5">
+  <div class="container">
+    <!-- Heading -->
+    <div class="row justify-content-center text-center mb-3">
+      <div class="col-lg-9">
+        <h2 class="jobs-hero">
+          We’re committed to bringing world-class,<br>
+          passionate professionals together to push<br>
+          new boundaries and grow
+        </h2>
+        <p class="text-muted mt-2">
+          We believe in building teams where unique perspectives and talents can thrive
+          and everyone has what they need to excel in their role, career, and at home.
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter pills -->
+    <div class="jobs-filter d-flex flex-wrap gap-2 justify-content-center mb-4" role="tablist" aria-label="Filter roles by category">
+      <button class="pill active" data-filter="all" aria-pressed="true" role="tab">View all</button>
+      <button class="pill" data-filter="design" role="tab" aria-pressed="false">Design</button>
+      <button class="pill" data-filter="software" role="tab" aria-pressed="false">Software Engineering</button>
+      <button class="pill" data-filter="success" role="tab" aria-pressed="false">Customer Success</button>
+      <button class="pill" data-filter="sales" role="tab" aria-pressed="false">Sales</button>
+      <button class="pill" data-filter="marketing" role="tab" aria-pressed="false">Marketing</button>
+    </div>
+
+    <!-- Roles list -->
+    <div class="jobs-list d-grid gap-3">
+      <!-- card -->
+      <article class="job-card" data-category="design">
+        <div class="job-left">
+          <span class="job-tag">Design</span>
+          <h5 class="job-title">Product Designer</h5>
+          <ul class="job-meta">
+            <li><i class="bi bi-geo-alt"></i> Remote</li>
+            <li><i class="bi bi-circle"></i> Full-time</li>
+          </ul>
+        </div>
+        <div class="job-right">
+          <a href="#" class="job-view">View job <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </article>
+
+      <article class="job-card" data-category="software">
+        <div class="job-left">
+          <span class="job-tag">Software Development</span>
+          <h5 class="job-title">Engineering Manager</h5>
+          <ul class="job-meta">
+            <li><i class="bi bi-geo-alt"></i> Remote</li>
+            <li><i class="bi bi-circle"></i> Full-time</li>
+          </ul>
+        </div>
+        <div class="job-right">
+          <a href="#" class="job-view">View job <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </article>
+
+      <article class="job-card" data-category="success">
+        <div class="job-left">
+          <span class="job-tag">Customer Success</span>
+          <h5 class="job-title">Customer Success Manager</h5>
+          <ul class="job-meta">
+            <li><i class="bi bi-geo-alt"></i> Remote</li>
+            <li><i class="bi bi-circle"></i> Full-time</li>
+          </ul>
+        </div>
+        <div class="job-right">
+          <a href="#" class="job-view">View job <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </article>
+
+      <article class="job-card" data-category="sales">
+        <div class="job-left">
+          <span class="job-tag">Sales</span>
+          <h5 class="job-title">Account Executive</h5>
+          <ul class="job-meta">
+            <li><i class="bi bi-geo-alt"></i> Remote</li>
+            <li><i class="bi bi-circle"></i> Full-time</li>
+          </ul>
+        </div>
+        <div class="job-right">
+          <a href="#" class="job-view">View job <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </article>
+
+      <article class="job-card" data-category="marketing">
+        <div class="job-left">
+          <span class="job-tag">Marketing</span>
+          <h5 class="job-title">SEO Marketing Manager</h5>
+          <ul class="job-meta">
+            <li><i class="bi bi-geo-alt"></i> Remote</li>
+            <li><i class="bi bi-circle"></i> Full-time</li>
+          </ul>
+        </div>
+        <div class="job-right">
+          <a href="#" class="job-view">View job <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ================== FAQ ================== -->
+<section class="faq fx-pad">
+  <div class="container">
+    <div class="row align-items-start g-4">
+      <!-- Left: eyebrow, title, copy, pill -->
+      <div class="col-12 col-lg-5">
+        <div class="faq-left">
+          <span class="faq-eyebrow">FAQ</span>
+          <h3 class="faq-title">WHAT CLIENTS ASK US MOST</h3>
+          <p class="faq-copy">
+            We’re here for the follow-up questions too — find us on the Contact page.
+          </p>
+          <a href="contact.html" class="pill micro">Contact</a>
+        </div>
+      </div>
+
+      <!-- Right: question list -->
+      <div class="col-12 col-lg-7">
+        <div class="faq-list">
+          <!-- Item 1 (open) -->
+          <div class="faq-item is-open">
+            <button class="faq-q" type="button">
+              <span>What is a The Troy Groups?</span>
+              <span class="faq-icon"><i class="bi bi-dash"></i></span>
+            </button>
+            <div class="faq-a">
+              We are a global leader in outsourced capital raising and direct investment opportunities.
+              We help businesses connect with investors, raise funds, expand into new markets, and offer
+              strategic consulting, marketing, and recruitment services.
             </div>
+          </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="h2">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">Which sectors do you cover?</button>
-              </h2>
-              <div id="c2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">Finance, real estate, technology, and emerging markets—connecting capital with innovation worldwide.</div>
-              </div>
-            </div>
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span>Which sectors do you cover?</span>
+              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+            </button>
+          </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="h3">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">What services do you offer?</button>
-              </h2>
-              <div id="c3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">Capital raising, investor matchmaking, market expansion, marketing, and recruitment solutions.</div>
-              </div>
-            </div>
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span>What services do you offer?</span>
+              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+            </button>
+          </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="h4">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4">How do I get started working with The Troy Groups?</button>
-              </h2>
-              <div id="c4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">Reach out through our contact form; we’ll align on scope, timeline, and the right investor networks to accelerate outcomes.</div>
-              </div>
-            </div>
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span>Who are your clients and how many do you serve?</span>
+              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+            </button>
+          </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="h5">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5">Are you a regulated investment advisor?</button>
-              </h2>
-              <div id="c5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">We operate as a connector and strategic consultant. For regulated advisory functions, we partner with licensed entities in relevant jurisdictions.</div>
-              </div>
-            </div>
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span>How do I get started working with Troy Groups?</span>
+              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+            </button>
+          </div>
 
-          </div><!-- /accordion -->
+          <!-- Item 6 -->
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span>Are you a regulated investment advisor?</span>
+              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 <section class="cta-hero fx-pad" aria-labelledby="cta-title">
   <div class="container text-center cta-stack">
     <p class="cta-eyebrow">Ready To Grow Together!</p>

@@ -143,66 +143,59 @@
       </div>
     </section>
 
-    <!-- Image + Contact form 
-    <section class="contact-card">
-      <div class="row g-4 align-items-start">
-        <div class="col-lg-6">
-          <img class="w-100 rounded" src="https://placehold.co/620x720?text=Visual" alt="Decor image">
-        </div>
-
-        <div class="col-lg-6">
-          <h3 class="title-xl title-xl--form">Get in touch</h3>
-          <p class="lead-sm">Our friendly team would love to hear from you.</p>
-
-          <div class="toggle-btns mb-3">
-            <div class="btn-group" role="group" aria-label="Contact purpose">
-              <input type="radio" class="btn-check" name="purpose" id="investor" checked>
-              <label class="btn btn-outline-secondary" for="investor">Investor</label>
-              <input type="radio" class="btn-check" name="purpose" id="fund">
-              <label class="btn btn-outline-secondary" for="fund">Fund Raising</label>
-            </div>
-          </div>
-
-          <form id="contactForm" class="contact-form">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label" for="cName">Full name</label>
-                <input type="text" class="form-control" id="cName" placeholder="Your name">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="cPhone">Phone number</label>
-                <div class="input-group">
-                  <select class="form-select country-select" id="cCountry">
-                    <option selected>US</option><option>IN</option><option>UK</option>
-                  </select>
-                  <input type="tel" class="form-control" id="cPhone" placeholder="+1 (555) 000-0000">
-                </div>
-              </div>
-              <div class="col-12">
-                <label class="form-label" for="cEmail">Email</label>
-                <input type="email" class="form-control" id="cEmail" placeholder="you@company.com">
-              </div>
-              <div class="col-12">
-                <label class="form-label" for="cMessage">Message</label>
-                <textarea class="form-control" id="cMessage" rows="4" placeholder="Write your message here..."></textarea>
-              </div>
-              <div class="col-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="agree">
-                  <label class="form-check-label" for="agree">
-                    You agree to our friendly <a href="privacy-policy.html">privacy policy</a>.
-                  </label>
-                </div>
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary w-100">Send message</button>
-              </div>
-            </div>
-          </form>
-
-        </div>
+    <!-- ===== CONTACT: EMBEDS ===== -->
+<section class="contact-wrap py-5">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Left visual -->
+      <div class="col-12 col-lg-6">
+        <figure class="m-0">
+          <img src="./assets/img/contact/hero.webp" alt="Get in touch" class="img-fluid rounded-4">
+        </figure>
       </div>
-    </section>-->
+
+      <!-- Right: tabs + embeds -->
+      <div class="col-12 col-lg-6">
+        <h2 class="mb-1">Get in touch</h2>
+        <p class="text-muted mb-3">Our friendly team would love to hear from you.</p>
+
+        <!-- Tabs -->
+        <div class="contact-tabs">
+          <button class="ctab active" data-panel="panel-message">Send Message</button>
+          <button class="ctab" data-panel="panel-schedule">Schedule Meeting</button>
+        </div>
+
+        <!-- Panel: Send Message (Tally embed with redirect) -->
+        <div id="panel-message" class="contact-panel">
+          <!-- ✅ REPLACE FORM ID BELOW -->
+          <iframe
+            class="tally-embed"
+            data-tally-src="https://tally.so/r/XXXXXXXX?transparentBackground=1&hideTitle=1&alignLeft=1&redirectTo=%2FClient%2Fthankyou.html%3Ffrom%3Dcontact"
+            width="100%" height="560" frameborder="0" marginheight="0" marginwidth="0" title="Contact form">
+          </iframe>
+          <script>
+            (function(){var d=document,w="tally";if(typeof d.querySelectorAll==="function"){d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc;});}
+            if(window[w])return;window[w]={load:function(){},open:function(){}};var s=d.createElement("script");s.src="https://tally.so/widgets/embed.js";s.async=true;d.body.appendChild(s);}());
+          </script>
+        </div>
+
+        <!-- Panel: Schedule Meeting (Calendly embed) -->
+        <div id="panel-schedule" class="contact-panel d-none">
+          <!-- ✅ PUT YOUR CALENDLY EVENT LINK -->
+          <div class="calendly-inline-widget rounded-4 border"
+               data-url="https://calendly.com/your-handle/30min"
+               style="min-width:320px;height:700px;"></div>
+          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <div class="small text-muted mt-2">
+            Selecting a time will create an event and redirect you to our confirmation page.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <!-- Auto footer -->
@@ -211,5 +204,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="./assets/js/contact-embeds.js"></script>
+
 </body>
 </html>
