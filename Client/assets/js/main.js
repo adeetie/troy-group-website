@@ -174,4 +174,48 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// ============== FAQ accordion ==============
+document.addEventListener('DOMContentLoaded', () => {
+  const lists = document.querySelectorAll('.faq-list');
+  if (!lists.length) return;
+
+  lists.forEach(list => {
+    list.querySelectorAll('.faq-item .faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const iconWrap = btn.querySelector('.faq-icon');
+
+        // If clicking an already-open item → close it.
+        const isOpen = item.classList.contains('is-open');
+
+        // Close all siblings
+        list.querySelectorAll('.faq-item.is-open').forEach(openItem => {
+          if (openItem !== item) {
+            openItem.classList.remove('is-open');
+            const i = openItem.querySelector('.faq-icon');
+            if (i) i.innerHTML = '<i class="bi bi-plus"></i>';
+          }
+        });
+
+        // Toggle current
+        if (isOpen) {
+          item.classList.remove('is-open');
+          if (iconWrap) iconWrap.innerHTML = '<i class="bi bi-plus"></i>';
+        } else {
+          item.classList.add('is-open');
+          if (iconWrap) iconWrap.innerHTML = '<i class="bi bi-dash"></i>';
+        }
+      });
+    });
+
+    // Ensure initial icons reflect initial state in HTML
+    list.querySelectorAll('.faq-item').forEach(it => {
+      const icon = it.querySelector('.faq-icon');
+      if (!icon) return;
+      icon.innerHTML = it.classList.contains('is-open')
+        ? '<i class="bi bi-dash"></i>'
+        : '<i class="bi bi-plus"></i>';
+    });
+  });
+});
 

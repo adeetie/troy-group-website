@@ -13,73 +13,82 @@
   <!-- Global + Page Styles -->
   <link href="./assets/css/global.css?v=1" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/active-businesses.css" />
+   <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Auto header -->
-  <div id="site-header"></div>
 
-  <!-- HERO -->
-  <header class="biz-hero">
-    <img src="https://placehold.co/1600x420" alt="Business hero">
-    <div class="biz-hero__title">Our<br/>Active<br/>Businesses</div>
-  </header>
+  <!-- Header via components -->
+  <div data-include="header"></div>
 
-  <!-- INTRO -->
-  <main class="page-wrap">
-    <div class="row g-5 align-items-start">
-      <aside class="col-lg-4">
-        <p class="eyebrow mb-0">Our Active Businesses:<br/>Building Wealth Together</p>
-      </aside>
+  <main class="activebiz-page">
 
-      <div class="col-lg-8">
-        <h2 class="h2-tight">See what we’re investing in</h2>
-        <p class="lead-lite">
-          At Troy Groups, we are proud to showcase our active business endeavors that reflect our commitment to innovation
-          and growth. We focus our efforts on a diverse range of sectors, each strategically chosen for maximum impact.
-          Join us as we strive to create value and build a prosperous future together.
-        </p>
-      </div>
-    </div>
-  </main>
+    <!-- HERO -->
+    <section class="hero-wrap">
+      <figure class="hero-figure">
+        <!-- Replace with your hero image -->
+        <img src="./assets/images/act_hero.png" alt="Business documents and laptop" class="hero-img">
+        <figcaption class="hero-caption">
+          <h1 class="hero-title">OUR ACTIVE<br>BUSINESSES</h1>
+        </figcaption>
+      </figure>
+    </section>
 
-  <!-- TEAM / OFFER SECTION -->
-  <section class="team-section">
-    <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-6 text-block">
-          <p class="eyebrow">What we offer</p>
-          <h3>A team that listens, thinks, and builds</h3>
-          <p>
-            Executive Search &amp; Strategic Hiring: From critical early-stage hires to seasoned executives, we deliver precision-matched candidates who bring leadership, execution, and vision.
-          </p>
-          <p>
-            Bespoke Talent Mapping: We identify standout talent from leading startups, global consulting firms, and top universities—tailored to your unique needs.
-          </p>
-          <p>
-            Founder-Led Candidate Engagement: Our hands-on, high-touch outreach ensures the right message reaches the right candidates—from day one.
-          </p>
-          <p>
-            Rigorous Screening &amp; Assessment: Our partner-driven vetting process evaluates each candidate for leadership, execution, problem-solving ability, and cultural fit using a proprietary scoring system.
-          </p>
-        </div>
-        <div class="col-lg-6">
-          <img src="https://placehold.co/600x420" alt="Team discussion">
+    <!-- INTRO ROW -->
+    <section class="intro-row">
+      <div class="container-compact">
+        <div class="row g-4 align-items-start">
+          <div class="col-12 col-lg-4">
+            <p class="kicker m-0">Our Active Businesses:<br>Building Wealth Together</p>
+          </div>
+          <div class="col-12 col-lg-8">
+            <h2 class="intro-heading">SEE WHAT WE’RE INVESTING IN</h2>
+            <p class="intro-copy">
+              At Troy Groups, we are proud to showcase our active business endeavors that reflect
+              our commitment to innovation and growth. We focus our efforts across a diverse range of
+              sectors, each strategically chosen for maximum impact. Join us as we strive to create
+              value and build a prosperous future together.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta block">
-    <div class="cta__glow" aria-hidden="true"></div>
-    <div class="container cta__inner">
-      <h3 class="cta__kicker">Ready To Grow Together!</h3>
-      <p class="cta__sub">Effortlessly manage your spending, saving, and investing—all in one place.</p>
-      <h2 class="cta__title">Schedule your meeting</h2>
-      <img class="cta__img" src="https://placehold.co/600x360" alt="">
-    </div>
-  </section>
+    <!-- LIGHT-BLUE FEATURE BAND -->
+    <section class="feature-band">
+      <div class="container-compact">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-6">
+            <p class="eyebrow mb-2">What we Offer</p>
+            <h3 class="band-title">A TEAM THAT LISTENS, THINKS, AND BUILDS</h3>
+            <div class="band-copy">
+              <p><strong>Executive Search & Strategic Hiring:</strong> From critical early-stage hires to seasoned executives, we deliver precision-matched candidates who bring leadership, execution, and vision.</p>
+              <p><strong>Bespoke Talent Mapping:</strong> We identify standout talent from leading startups, global consulting firms, and top universities — tailored to your unique needs.</p>
+              <p><strong>Founder-Led Candidate Engagement:</strong> Our hands-on, high-touch outreach ensures the right message reaches the right candidates — from day one.</p>
+              <p><strong>Rigorous Screening & Assessment:</strong> Our partner-led vetting process evaluates each candidate for leadership, execution, problem-solving ability, and cultural fit using a proprietary scoring system.</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <!-- Replace with your real image -->
+            <img class="band-image" src="./assets/images/act_2.png" alt="Team discussion">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <section class="cta-hero fx-pad" aria-labelledby="cta-title">
+  <div class="container text-center cta-stack">
+    <p class="cta-eyebrow">Ready To Grow Together!</p>
+    <p class="cta-sub">
+      Effortlessly manage your spending, saving, and investing — all in one place.
+    </p>
+
+    <!-- GLASS: heading on top, then glow, then orb (stacked) -->
+    <h2 id="cta-title" class="cta-title">Schedule your meeting</h2>
+    <div class="cta-glow" aria-hidden="true"></div>
+  </div>
+</section>
 
   <!-- Auto footer -->
   <div id="site-footer"></div>

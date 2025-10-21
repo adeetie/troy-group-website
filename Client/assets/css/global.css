@@ -662,24 +662,7 @@
   border:0; color:#fff;
 }
 .vm-gradient .card-body{ min-height: 360px; position:relative; }
-.vm-arrow{
-  position:absolute;
-  right:-6%;             /* nudge off edge like reference */
-  top: 22%;
-  width: 60%;            /* scale */
-  height: 56%;
-  opacity: .16;
-  background-repeat:no-repeat;
-  background-size: contain;
-  background-position: right center;
-  pointer-events:none;
-  filter: drop-shadow(0 0 0 rgba(0,0,0,0)); /* ensure crisp SVG */
-  background-image: url("data:image/svg+xml;utf8,\
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 498 372'>\
-    <path d='M0,240 C120,90 240,90 360,170' fill='none' stroke='white' stroke-width='40' stroke-linecap='round'/>\
-    <polyline points='300,125 360,170 305,215' fill='none' stroke='white' stroke-width='40' stroke-linecap='round' stroke-linejoin='round'/>\
-  </svg>");
-}
+
 
 /* ===== Card inner spacing to match rounded borders (reference has breathing room) ===== */
 .vm-section .col-lg-4 > .card + .card{ margin-top: 16px; } /* vertical stack gap on left & middle columns */
@@ -707,4 +690,92 @@
   .vm-eyebrow{ font-size:36px; }
   .vm-kicker{ font-size:26px; }
   .vm-title{ font-size:24px; }
+}
+/* ================= VISION & MISSION ================= */
+.vm-section{ padding-block: clamp(48px, 7.5vw, 92px); }
+.vm-h1{
+  font: 900 clamp(28px, 4.4vw, 64px)/1.05 Inter, system-ui;
+  color:#141820; letter-spacing:.2px; margin:0 0 8px;
+}
+.vm-rule{ border:0; height:1px; background:#E8EDF3; margin: 8px 0 22px; }
+
+.vm-kicker{
+  margin:0 0 6px; color:#6B7280;
+  font: 800 clamp(16px, 2.2vw, 24px)/1.15 Inter, system-ui;
+}
+.vm-title{
+  margin:0; color:#1E242F;
+  font: 800 clamp(22px, 3.2vw, 44px)/1.15 Inter, system-ui;
+}
+.vm-eyebrow{
+  margin: .25rem 0 0; color:#8B9098;
+  font: 500 clamp(13px,1.5vw,15px)/1.65 Inter, system-ui;
+}
+
+.card-soft{
+  border:1px solid #E9EEF5;
+  background:#fff; box-shadow: 0 10px 26px rgba(16,24,40,.06);
+}
+
+.vm-micro{
+  color:#434A57; letter-spacing:.25px;
+  font: 800 11.5px/1 Inter, system-ui;
+}
+
+/* avatars */
+.avatar-stack{ display:flex; align-items:center; gap:10px; }
+.avatar-stack img{
+  width:34px; height:34px; object-fit:cover; border-radius:999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
+.avatar-stack img:nth-child(1){ width:38px; height:38px; }
+.avatar-stack img:nth-child(3){ width:36px; height:36px; }
+
+/* copy & lists */
+.vm-copy{ color:#424B57; font: 500 13.8px/1.75 Inter, system-ui; margin:0 0 14px; }
+.vm-list{ margin:0; padding-left: 1.1rem; }
+.vm-list li{
+  color:#2A2F38; font:700 14px/1.6 Inter, system-ui; margin: 0 0 8px;
+}
+.vm-list li b{ font-weight:800; }
+.vm-list li::marker{ color:#B9C3D1; }
+
+/* metrics */
+.metric{ display:flex; align-items:baseline; gap:6px; }
+.metric__num{ font: 900 clamp(30px, 4.2vw, 44px)/1 Inter, system-ui; color:#0E236B; }
+.metric__plus{ font: 800 clamp(20px, 2.8vw, 28px)/1 Inter, system-ui; color:#0E236B; opacity:.9; }
+.metric__label{ color:#6B7280; font: 700 12px/1.4 Inter, system-ui; }
+
+/* availability pill */
+.status-dot{
+  width:10px; height:10px; border-radius:999px;
+  background: radial-gradient(circle at 30% 30%, #32d45e 0%, #1db14b 60%, #119c3f 100%);
+  box-shadow:0 0 0 4px rgba(49, 213, 95, .12);
+}
+
+/* gradient rating card */
+.vm-grad{
+  background: linear-gradient(140deg, #031b75 0%, #1849fb 60%, #498cff 100%);
+  color:#fff; border:0; box-shadow:0 20px 52px rgba(30, 72, 200, .25);
+  overflow:hidden;
+}
+.vm-grad-copy{
+  margin:0 0 18px; color: rgba(255,255,255,.95);
+  font: 600 13.5px/1.7 Inter, system-ui;
+}
+.vm-rating{ display:flex; align-items:baseline; gap:8px; margin: 6px 0 6px; }
+.vm-rating__num{ font: 900 clamp(30px, 4.4vw, 48px)/1 Inter, system-ui; }
+.vm-rating__slash{ font:800 16px/1 Inter, system-ui; opacity:.9; }
+.vm-stars{ letter-spacing:2px; opacity:.95; font: 900 12px/1 Inter, system-ui; }
+
+/* watermark arrow */
+.vm-arrow{
+  position:absolute; right:-4%; bottom:8%;
+  width:68%; opacity:.18; filter: blur(.2px);
+}
+
+/* layout nudges */
+.vm-topcopy{ margin-bottom: 10px; }
+@media (max-width: 991.98px){
+  .vm-arrow{ right:-8%; width:76%; }
 }

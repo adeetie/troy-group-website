@@ -1,56 +1,232 @@
-/* ===== CONTACT / DISTRIBUTED TEAM (page-scoped) ===== */
-:root{
-  --ink:#0f0f12; --muted:#667085; --ink-2:#1f2430; --band:#0c5ef7;
-  --soft:#eef2f7; --hr:#e9edf3;
+/* ===========================
+   CONTACT PAGE — CSS ONLY FIX
+   Works with your current contact.html
+   =========================== */
+
+/* --- Shared page rhythm --- */
+.page-wrap{
+  padding-block: 48px 96px;
 }
 
-/* layout & base type */
-.page-wrap{max-width:1100px;margin:0 auto;padding:40px 16px 24px}
-.eyebrow{color:#98a2b3;font:600 13px/1 Inter,system-ui;margin-bottom:6px}
-.eyebrow--accent{ color:#8b5cf6 }
-.title-xl{font:800 clamp(28px,4.5vw,40px)/1.15 "Inter",system-ui;color:var(--ink-2)}
-.title-xl--bold{ font-weight:800 }
-.title-xl--form{ font-size:22px }
-.lead-sm{color:#657084;font:400 15px/1.7 Inter,system-ui}
-.lead-sm--narrow{ max-width:680px; margin:6px auto 26px }
+/* A narrow center container look for all top sections */
+.page-wrap > .text-center,
+.map-wrap,
+.quick-contacts,
+.offices-band,
+.section-pad{
+  max-width: 980px;     /* match the tight column in the reference */
+  margin-inline: auto;
+}
 
-/* Map */
-.map-wrap{position:relative;margin:34px auto 0;max-width:920px}
-.map-wrap img{width:100%;height:auto;border-radius:10px}
+/* ---------- HERO ---------- */
+.text-center .eyebrow{
+  text-transform: uppercase;
+  letter-spacing:.08em;
+  font-size:.8rem;
+  color:#6b7280;
+  margin-bottom:.25rem;
+}
+.text-center .title-xl{
+  font-family: 'Montserrat', sans-serif;
+  font-weight:700;
+  color:#111827;
+  margin-bottom:.35rem;
+}
+.text-center .lead-sm{
+  color:#6b7280;
+  font-size: .95rem;
+}
+
+/* ---------- MAP CARD ---------- */
+.map-wrap{
+  position:relative;
+  margin-top: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  background:#fff;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, .06);
+}
+.map-wrap img{
+  display:block; width:100%;
+  aspect-ratio: 16 / 7;     /* same vibe as the reference */
+  object-fit: cover;
+  filter: saturate(.95) contrast(1.01);
+}
+
+/* Purple glow pins (kept subtle and small like the ref) */
 .hotspot{
-  position:absolute;width:10px;height:10px;background:#7c5cff;border-radius:50%;
-  box-shadow:0 0 18px 6px rgba(124,92,255,.45)
+  position:absolute; width:12px; height:12px; border-radius:999px;
+  background: radial-gradient(circle, rgba(124, 58, 237, .95) 35%, rgba(124, 58, 237, .25) 65%, transparent 75%);
+  box-shadow: 0 0 18px rgba(124,58,237,.45);
+  animation: pinpulse 2.2s infinite ease-out;
 }
-/* sample hotspot positions */
-.hs-1{left:22%;top:36%}.hs-2{left:37%;top:30%}.hs-3{left:49%;top:38%}
-.hs-4{left:63%;top:52%}.hs-5{left:70%;top:35%}.hs-6{left:78%;top:61%}
+@keyframes pinpulse{
+  0%{ transform:scale(.9); opacity:.9 }
+  70%{ transform:scale(1.5); opacity:.2 }
+  100%{ transform:scale(1.6); opacity:0 }
+}
+/* Keep your existing positions */
+.hs-1{ top:38%; left:72% }
+.hs-2{ top:30%; left:60% }
+.hs-3{ top:60%; left:66% }
+.hs-4{ top:42%; left:38% }
+.hs-5{ top:48%; left:48% }
+.hs-6{ top:45%; left:22% }
 
-/* Quick contacts */
-.quick-contacts .title{font:700 14px/1.2 Inter,system-ui;color:#23262b}
-.quick-contacts .desc{color:#6b7280;font:400 13.5px/1.6 Inter}
-.quick-contacts a{font-weight:700;text-decoration:none}
+/* ---------- QUICK CONTACT TRIO ---------- */
+.quick-contacts{
+  margin-top: 22px !important;
+}
+.quick-contacts .title{
+  font-weight:600; color:#111827; font-size:1rem;
+}
+.quick-contacts .desc{
+  color:#6b7280; font-size:.875rem; margin-top:2px;
+}
+.quick-contacts a{
+  color:#2563eb; font-weight:600; text-decoration:none;
+  font-size:.875rem;
+}
+.quick-contacts a:hover{ text-decoration:underline }
 
-/* Offices band */
-.offices-band{background:#0a5cff;color:#fff;border-radius:10px;padding:28px}
-.offices-band h3{font:800 20px/1.2 Inter,system-ui;margin-bottom:4px}
-.offices-band small{opacity:.85}
-.offices-band .city{font:700 14px/1 Inter;margin-top:18px}
-.offices-band .addr{font:400 13px/1.6 Inter,system-ui;opacity:.9}
+/* Space rows tighter like the ref */
+.quick-contacts .col-md-4{ padding-top:6px; padding-bottom:6px }
 
-/* Team */
-.section-pad{padding:56px 0 12px}
-.team-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
-@media (max-width:992px){.team-grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:640px){.team-grid{grid-template-columns:repeat(2,1fr)}}
-.member{text-align:center}
-.avatar{width:76px;height:76px;border-radius:999px;object-fit:cover;margin:0 auto 10px;display:block}
-.name{font:700 14px/1.2 Inter;color:#0f1720}
-.role{font:600 12.5px/1.2 Inter;color:#6b7280}
+/* ---------- BLUE OFFICES BAND ---------- */
+  
+/* ===== OFFICES BAND (3-column total: left intro + 2 address cols) ===== */
 
-/* Form + image */
-.contact-card{max-width:1100px;margin:36px auto 0}
-.country-select{max-width:110px}
-.contact-form .btn-primary{background:#6C5CE7;border:0}
-.contact-form .btn-primary:hover{background:#5948e2}
-.contact-form .form-control,.contact-form .form-select{border-color:#dde3ea}
-.toggle-btns .btn{border-color:#d8deea}
+.offices-band{
+  background: linear-gradient(180deg, #00368e 0%, #0a4bff 100%);
+  color:#fff;
+  border-radius:16px;
+  box-shadow: 0 10px 28px rgba(15,76,255,.15);
+  padding-block: 28px;            /* vertical padding */
+  margin: 32px auto 0;
+}
+
+.offices-inner{
+  max-width: 980px;               /* same width as other sections */
+  margin-inline: auto;
+  padding-inline: 32px;           /* horizontal padding inside the slab */
+  display: grid;
+  grid-template-columns: 28% 1fr; /* left intro (fixed) + right grid */
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left intro column */
+.offices-intro small{
+  display:block;
+  margin: 2px 0 2px;
+  opacity:.85;
+  font-size:.8rem;
+}
+.offices-intro h3{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:1.25rem;
+  line-height:1.25;
+  margin: 4px 0 6px;
+}
+.offices-intro p{
+  opacity:.92;
+  font-size:.92rem;
+  margin:0;
+}
+
+/* Right side: exactly two columns for addresses */
+.offices-cols{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  column-gap: 56px;
+  row-gap: 0;
+}
+
+/* Each address column stack */
+.off-col .city{
+  font-weight:600;
+  margin-top:16px;
+  line-height:1.2;
+}
+.off-col .city:first-of-type{ margin-top:0 }
+.off-col .addr{
+  font-size:.85rem;
+  opacity:.96;
+  line-height:1.35;
+  margin-top:4px;
+}
+/* space between blocks in a column */
+.off-col .addr + .city{ margin-top:16px }
+
+/* Responsive */
+@media (max-width: 991.98px){
+  .offices-inner{
+    grid-template-columns: 1fr;   /* intro above, addresses below */
+    gap: 24px;
+  }
+  .offices-cols{
+    grid-template-columns: 1fr;   /* single column of addresses on tablet/mobile */
+    column-gap: 0;
+  }
+  .offices-band{ padding-block: 24px }
+  .offices-inner{ padding-inline: 20px }
+}
+
+/* ---------- TEAM GRID ---------- */
+.section-pad{ padding-block: 56px }
+.section-pad .eyebrow--accent{
+  color:#6b5efb; font-weight:600; font-size:.8rem;
+}
+.section-pad .title-xl{ margin-top: 6px; margin-bottom: 8px }
+.section-pad .lead-sm--narrow{
+  max-width: 720px; margin-inline:auto; color:#6b7280;
+  font-size:.95rem;
+}
+
+/* grid exactly like the reference: small, airy avatars */
+.team-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 26px 36px;
+  max-width: 760px;
+  margin: 24px auto 0;
+}
+@media (max-width: 992px){
+  .team-grid{ grid-template-columns: repeat(3, minmax(0,1fr)) }
+}
+@media (max-width: 576px){
+  .team-grid{ grid-template-columns: repeat(2, minmax(0,1fr)) }
+}
+.team-grid .member{ text-align:center }
+.team-grid .avatar{
+  width:56px; height:56px; border-radius:999px; object-fit:cover;
+  box-shadow: 0 8px 18px rgba(2,6,23,.08);
+  display:block; margin-inline:auto;
+}
+.team-grid .name{
+  font-weight:600; font-size:.9rem; margin-top:8px;
+}
+.team-grid .role{
+  font-size:.78rem; color:#6b7280; margin-top:2px;
+}
+
+/* ---------- BOTTOM (image + form) ----------
+   Your form section is currently commented out in HTML.
+   These styles are ready; they'll apply when you un-comment. */
+.contact-card{ max-width: 1040px; margin: 44px auto 0 }
+.contact-card img{ border-radius: 14px }
+.contact-form .form-control, .contact-form .form-select{
+  border:1px solid rgba(17,24,39,.12);
+  padding:.6rem .75rem; border-radius:.6rem;
+}
+.contact-form .form-control:focus,
+.contact-form .form-select:focus{
+  border-color:#0d6efd; box-shadow: 0 0 0 3px rgba(13,110,253,.25);
+}
+.contact-form .btn-primary{
+  background:#6b6ef9; border-color:#6b6ef9; font-weight:600;
+}
+.contact-form .btn-primary:hover{
+  background:#5a5ee6; border-color:#5a5ee6;
+}

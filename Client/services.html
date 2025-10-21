@@ -20,199 +20,278 @@
   <!-- Auto header -->
   <div id="site-header"></div>
 
-  <!-- ===== HERO ===== -->
-  <section class="block pt-3">
-    <div class="container container-1280">
-      <figure class="svc-hero">
-        <!-- Replace with your hero: /assets/img/services-hero.jpg -->
-        <img src="https://placehold.co/1280x480" alt="Services hero">
-        <div class="copy">
-          <p class="eyebrow eyebrow--light">Services</p>
-          <h1>SERVICES</h1>
-          <p class="lead svc-hero__lead">
-            Transforming potential into performance with strategy, collaboration, and purpose.
+ <!-- ===== HERO (Services) ===== -->
+<section class="svc-hero position-relative">
+  <!-- Background image -->
+  <img class="svc-hero__bg" src="assets/images/services/hero.webp" alt="People collaborating">
+
+  <!-- Dark gradient overlay -->
+  <div class="svc-hero__shade"></div>
+
+  <!-- Content -->
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-6 d-flex align-items-end">
+        <div class="svc-hero__copy">
+          <h1 class="svc-hero__title">SERVICES</h1>
+          <p class="svc-hero__lead">
+            Transforming potential into performance with<br>
+            strategy, collaboration, and purpose
           </p>
-          <a href="about.html" class="btn btn--outline-gradient btn--pill mt-2">
-            <span>Who We Are</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
-              <path d="M7 17L17 7M17 7H9M17 7v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+
+          <a class="btn btn-lg btn-outline-light rounded-pill px-4 svc-hero__cta" href="about.html">
+            Who We Are <span aria-hidden="true">↗</span>
           </a>
         </div>
-      </figure>
+      </div>
+      <div class="col-lg-6"><!-- empty: image focus on right side --></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== BEYOND GROWING PAINS ===== -->
-  <section class="block">
-    <div class="container container-993">
-      <div class="row g-5">
-        <aside class="col-lg-3"><p class="eyebrow">How we work</p></aside>
-        <div class="col-lg-9">
-          <h2 class="h2 up">Beyond growing pains</h2>
-          <p class="lead">Most teams come to us when things feel a bit off. Not broken—just slower, messier, harder than they need to be.</p>
-          <p class="lead">The business has grown, but how you work hasn’t quite kept up. Decisions take longer. Energy goes into the wrong things. We help you step back, spot what’s getting in the way, and build a setup that actually fits how you work best.</p>
+<!-- ===== INTRO (Beyond Growing Pains) ===== -->
+<section class="svc-intro">
+  <div class="container container-993">
+    <div class="row g-5">
+      <!-- Left label -->
+      <aside class="col-lg-3">
+        <p class="eyebrow svc-intro__label">How we work</p>
+      </aside>
 
-          <div class="mini-card">
-            <img src="https://placehold.co/108x108" alt="Sales support">
-            <div>
-              <div class="label">Got questions?</div>
-              <div class="small">Andrea from our sales team is here to help—just send us an email.</div>
-              <a class="contact-card__email" href="mailto:andrea@bridgeconsulting.com">andrea@bridgeconsulting.com</a>
+      <!-- Right content -->
+      <div class="col-lg-9">
+        <h2 class="svc-intro__heading">BEYOND GROWING PAINS</h2>
+
+        <p class="svc-intro__para">
+          Most teams come to us when things feel a bit off. Not broken — just slower, messier,
+          harder than they used to be.
+        </p>
+        <p class="svc-intro__para">
+          The business has grown, but how you work hasn’t quite kept up. People wear too many
+          hats. Decisions take longer. Energy goes into the wrong things.
+        </p>
+        <p class="svc-intro__para">
+          We help you step back, spot what’s getting in the way, and build a setup that actually
+          fits how you work now.
+        </p>
+
+        <div class="svc-contact card-clean d-flex align-items-center gap-3">
+          <img class="svc-contact__img" src="assets/images/services/andrea.webp" alt="Andrea — Sales">
+          <div>
+            <div class="svc-contact__label">Got questions?</div>
+            <div class="svc-contact__small">
+              Andrea from our sales team is here to help—just send us an email.
             </div>
+            <a class="svc-contact__link" href="mailto:andrea@bridgeconsulting.com">andrea@bridgeconsulting.com</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== WHAT WE OFFER (Accordion) ===== -->
-  <section class="block">
-    <div class="container container-993">
-      <div class="row g-5">
-        <aside class="col-lg-3"><p class="eyebrow">What we offer</p></aside>
 
-        <div class="col-lg-9">
-          <div class="accordion tg-acc" id="svcAcc">
-            <!-- 1 -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="accOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accOneC" aria-expanded="true" aria-controls="accOneC">
-                  Connections &amp; Fundraising
-                </button>
-              </h2>
-              <div id="accOneC" class="accordion-collapse collapse show" data-bs-parent="#svcAcc" aria-labelledby="accOne">
-                <div class="accordion-body">
-                  <div class="row g-3 align-items-center">
-                    <div class="col-md-3">
-                      <img class="w-100 rounded" src="https://placehold.co/220x120" alt="">
-                    </div>
-                    <div class="col-md-9">
-                      <ul class="sub-bullets">
-                        <li>Targeted investor connections</li>
-                        <li>Fundraising management</li>
-                      </ul>
-                    </div>
-                  </div>
+  <!-- ===== WHAT WE OFFER ===== -->
+<section class="svc-offer">
+  <div class="container container-993">
+    <h3 class="svc-offer__title">WHAT WE OFFER</h3>
+    <p class="svc-offer__sub">Achieving goals for businesses and Entrepreneurs around the globe.</p>
+
+    <div class="accordion svc-acc" id="svcAcc">
+      <!-- ITEM 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="svcH1">
+          <button class="accordion-button svc-acc__btn" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#svcC1"
+                  aria-expanded="true" aria-controls="svcC1">
+            <span class="svc-acc__num">001</span>
+            <span class="svc-acc__title">Connections &amp; Fundraising</span>
+            <span class="svc-acc__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div id="svcC1" class="accordion-collapse collapse show"
+             data-bs-parent="#svcAcc" aria-labelledby="svcH1">
+          <div class="accordion-body">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-5 col-lg-4 d-flex justify-content-start">
+                <!-- image collage (same placement for all items) -->
+                <div class="svc-acc__media">
+                  <img src="assets/images/services/acc-1a.webp" alt="">
+                  <img src="assets/images/services/acc-1b.webp" alt="">
                 </div>
               </div>
-            </div>
-
-            <!-- 2 -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="accTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accTwoC" aria-expanded="false" aria-controls="accTwoC">
-                  Strategy &amp; Marketing
-                </button>
-              </h2>
-              <div id="accTwoC" class="accordion-collapse collapse" data-bs-parent="#svcAcc" aria-labelledby="accTwo">
-                <div class="accordion-body">
-                  <ul class="sub-bullets">
-                    <li>Market positioning & GTM</li>
-                    <li>Pricing, messaging & narrative</li>
-                  </ul>
-                </div>
+              <div class="col-md-7 col-lg-8">
+                <ul class="svc-acc__list">
+                  <li>Targeted Investor Connections</li>
+                  <li>Fundraising Management</li>
+                </ul>
               </div>
             </div>
-
-            <!-- 3 -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="accThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accThreeC" aria-expanded="false" aria-controls="accThreeC">
-                  Investment &amp; Expansion
-                </button>
-              </h2>
-              <div id="accThreeC" class="accordion-collapse collapse" data-bs-parent="#svcAcc" aria-labelledby="accThree">
-                <div class="accordion-body">
-                  <ul class="sub-bullets">
-                    <li>Capital structuring</li>
-                    <li>New market entry</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!-- 4 -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="accFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accFourC" aria-expanded="false" aria-controls="accFourC">
-                  IT &amp; Recruitment
-                </button>
-              </h2>
-              <div id="accFourC" class="accordion-collapse collapse" data-bs-parent="#svcAcc" aria-labelledby="accFour">
-                <div class="accordion-body">
-                  <ul class="sub-bullets">
-                    <li>Specialist hiring</li>
-                    <li>Interim leadership & delivery squads</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sub-CTA inline like Figma -->
-          <div class="d-flex align-items-center justify-content-between mt-4">
-            <h3 class="h5 m-0 subcta-title">Big change starts with one smart step</h3>
-            <a href="#" class="btn btn--outline-gradient btn--pill">
-              <span>Get Started</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
-                <path d="M7 17L17 7M17 7H9M17 7v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== GET TO KNOW US (pale band) ===== -->
-  <section class="block pt-12-custom">
-    <div class="container container-1160 pale pale-container">
-      <div class="row g-4 align-items-center">
-        <aside class="col-lg-3"><p class="eyebrow">Who we are</p></aside>
-        <div class="col-lg-5">
-          <h3 class="h3 h3-custom">Get to know us</h3>
-          <p class="lead mb-2">
-            A visionary platform where innovation meets impact. We empower clients and collaborators through bespoke growth strategies, trustworthy partnerships, and relentless commitment to excellence.
+      <!-- ITEM 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="svcH2">
+          <button class="accordion-button svc-acc__btn collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#svcC2"
+                  aria-expanded="false" aria-controls="svcC2">
+            <span class="svc-acc__num">002</span>
+            <span class="svc-acc__title">Strategy &amp; Marketing</span>
+            <span class="svc-acc__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div id="svcC2" class="accordion-collapse collapse"
+             data-bs-parent="#svcAcc" aria-labelledby="svcH2">
+          <div class="accordion-body">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-5 col-lg-4 d-flex justify-content-start">
+                <div class="svc-acc__media">
+                  <img src="assets/images/services/acc-2a.webp" alt="">
+                  <img src="assets/images/services/acc-2b.webp" alt="">
+                </div>
+              </div>
+              <div class="col-md-7 col-lg-8">
+                <ul class="svc-acc__list">
+                  <li>Go-to-Market Playbooks</li>
+                  <li>Brand Positioning &amp; Messaging</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="svcH3">
+          <button class="accordion-button svc-acc__btn collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#svcC3"
+                  aria-expanded="false" aria-controls="svcC3">
+            <span class="svc-acc__num">003</span>
+            <span class="svc-acc__title">Investment &amp; Expansion</span>
+            <span class="svc-acc__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div id="svcC3" class="accordion-collapse collapse"
+             data-bs-parent="#svcAcc" aria-labelledby="svcH3">
+          <div class="accordion-body">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-5 col-lg-4 d-flex justify-content-start">
+                <div class="svc-acc__media">
+                  <img src="assets/images/services/acc-3a.webp" alt="">
+                  <img src="assets/images/services/acc-3b.webp" alt="">
+                </div>
+              </div>
+              <div class="col-md-7 col-lg-8">
+                <ul class="svc-acc__list">
+                  <li>Market Entry &amp; Partnerships</li>
+                  <li>Due Diligence Support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="svcH4">
+          <button class="accordion-button svc-acc__btn collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#svcC4"
+                  aria-expanded="false" aria-controls="svcC4">
+            <span class="svc-acc__num">004</span>
+            <span class="svc-acc__title">IT &amp; Recruitment</span>
+            <span class="svc-acc__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div id="svcC4" class="accordion-collapse collapse"
+             data-bs-parent="#svcAcc" aria-labelledby="svcH4">
+          <div class="accordion-body">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-5 col-lg-4 d-flex justify-content-start">
+                <div class="svc-acc__media">
+                  <img src="assets/images/services/acc-4a.webp" alt="">
+                  <img src="assets/images/services/acc-4b.webp" alt="">
+                </div>
+              </div>
+              <div class="col-md-7 col-lg-8">
+                <ul class="svc-acc__list">
+                  <li>Specialist Tech Hiring</li>
+                  <li>Team Scaling &amp; Onboarding</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /accordion -->
+  </div>
+</section>
+  <!-- ===== CTA: BIG CHANGE ===== -->
+<section class="svc-cta">
+  <div class="container container-993 d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+    <div>
+      <h3 class="svc-cta__title">BIG CHANGE STARTS WITH<br>ONE SMART STEP</h3>
+    </div>
+    <a href="contact.html" class="btn btn-outline-dark rounded-pill px-4 mt-3 mt-md-0">
+      Get Started <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== GET TO KNOW US ===== -->
+<section class="svc-knowus">
+  <div class="container container-1280">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <p class="eyebrow text-dark mb-2">Who we are</p>
+        <h2 class="svc-knowus__title">GET TO KNOW US</h2>
+        <p class="svc-knowus__para">
+          A visionary platform where innovation meets impact. We empower clients and
+          collaborators through beyond-growth strategies, trustworthy partnerships, and
+          relentless commitment to excellence.
+        </p>
+        <p class="svc-knowus__para">
+          Then we build clear, practical solutions that make it easier to get things done.
+        </p>
+        <a href="about.html" class="btn btn-outline-dark rounded-pill px-4 mt-3">About</a>
+      </div>
+      <div class="col-lg-6">
+        <img src="assets/images/services/knowus-1.webp" class="svc-knowus__img w-100" alt="Writing notes">
+      </div>
+    </div>
+
+    <div class="row g-4 mt-5">
+      <div class="col-lg-6">
+        <img src="assets/images/services/knowus-2.webp" class="svc-knowus__img w-100" alt="Business networking">
+      </div>
+      <div class="col-lg-6">
+        <div class="svc-knowus__quote">
+          <p class="svc-knowus__quote-text">
+            Empowering businesses and individuals through strategy, insight, and innovation daily.
           </p>
-          <a href="about.html" class="btn btn--pill btn--outline-gradient">About</a>
-        </div>
-        <div class="col-lg-4">
-          <img class="w-100 rounded" src="https://placehold.co/620x420" alt="Notebook and glass">
+          <div class="svc-knowus__quote-author">Rommel Binaygar<br><span>CIO</span></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== QUOTE BAND (image + blue card) ===== -->
-  <section class="block pt-28">
-    <div class="container container-1160">
-      <div class="row g-4">
-        <div class="col-lg-8">
-          <img class="w-100 rounded" src="https://placehold.co/900x420" alt="People talking">
-        </div>
-        <div class="col-lg-4">
-          <div class="quote-card">
-            <p class="mb-5 quote-card__text">
-              Empowering businesses and individuals through strategy, insight, and innovation daily.
-            </p>
-            <div class="small opacity-75">Rommel Bayangcar<br>Chief Revenue Officer</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ <section class="cta-hero fx-pad" aria-labelledby="cta-title">
+  <div class="container text-center cta-stack">
+    <p class="cta-eyebrow">Ready To Grow Together!</p>
+    <p class="cta-sub">
+      Effortlessly manage your spending, saving, and investing — all in one place.
+    </p>
 
-  <!-- ===== CTA: Schedule your meeting ===== -->
-  <section class="cta block">
-    <div class="cta__glow" aria-hidden="true"></div>
-    <div class="container cta__inner">
-      <h3 class="cta__kicker">Ready To Grow Together!</h3>
-      <p class="cta__sub">Effortlessly manage your spending, saving, and investing—all in one place.</p>
-      <h2 class="cta__title">Schedule your meeting</h2>
-      <img class="cta__img" src="https://placehold.co/600x360" alt="">
-    </div>
-  </section>
+    <!-- GLASS: heading on top, then glow, then orb (stacked) -->
+    <h2 id="cta-title" class="cta-title">Schedule your meeting</h2>
+    <div class="cta-glow" aria-hidden="true"></div>
+  </div>
+</section>
 
   <!-- Auto footer -->
   <div id="site-footer"></div>
@@ -222,4 +301,3 @@
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
-f
