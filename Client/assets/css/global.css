@@ -16,118 +16,6 @@
   --hdr-border: #E6EAF2;
 }
 
-/* ===== Header ===== */
-.tg-header{
-  position: sticky; top: 0; z-index: 1000;
-  background: var(--hdr-bg);
-  border-bottom: 1px solid var(--hdr-border);
-}
-.tg-header .nav-link{ color: var(--nav-text); opacity:.85; }
-.tg-header .nav-link:hover,
-.tg-header .nav-link.active,
-.tg-header .nav-link.is-current{ color: var(--link); opacity:1; }
-.tg-header .navbar-toggler{ border:0; }
-
-.btn.tg-btn-outline,
-.btn.tg-btn-outline-light{
-  border:1.5px solid var(--link);
-  border-radius:999px;
-  padding:.55rem 1rem;
-  font-weight:600;
-  background:#fff; color:#111;
-}
-.btn.tg-btn-outline:hover{ box-shadow:0 0 0 3px color-mix(in srgb, var(--link) 18%, transparent); }
-
-/* ===== Mega menu ===== */
-.tg-mega{ position:relative; }
-
-/* Hide by default */
-.tg-megamenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: #fff;
-  border-radius: 32px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-  z-index: 999;
-  transition: all 0.3s ease;
-}
-
-/* When opened (via JS toggle) */
-.tg-megamenu.open {
-  display: block;
-}
-
-/* Optional: Prevent accidental collapse on hover */
-.tg-mega:hover .tg-megamenu {
-  display: none;
-}
-
-/* stays closed until JS toggles .is-open */
-.tg-megamenu.is-open{ opacity:1; visibility:visible; pointer-events:auto; }
-
-/* No halo; ensure no accidental hover-open */
-@media (hover:hover) and (pointer:fine){
-  /* intentionally empty – click only */
-}
-
-/* desktop split */
-@media (min-width: 992px){
-  .tg-megamenu .col-lg-7{ flex:0 0 60%; max-width:60%; }
-  .tg-megamenu .col-lg-5{ flex:0 0 40%; max-width:40%; }
-}
-
-/* headings & lists */
-.tg-mm-head{ font-weight:700; font-size:1rem; margin:0 0 1rem; color:#111; }
-.tg-mm-list li+li{ margin-top:.6rem; }
-.tg-mm-list a{ color:#222; text-decoration:none; white-space:nowrap; font-weight:600; }
-.tg-mm-list a:hover{ color:var(--link); }
-
-/* socials pinned bottom with equal paddings and label ABOVE */
-.tg-mm-social{
-  margin-top:auto;               /* pins to bottom of the left column */
-  padding-block:16px;            /* equal top/bottom spacing */
-  display:flex; flex-direction:column; align-items:flex-start; gap:12px;
-}
-.tg-mm-social-label{ color:#6B7280; font-size:.875rem; }
-.tg-social-icons{ display:flex; gap:12px; }
-.tg-icon-link{
-  width:36px; height:36px; border:1px solid var(--mega-border);
-  border-radius:10px; display:flex; align-items:center; justify-content:center;
-  color:#111; transition:all .18s ease;
-}
-.tg-icon-link:hover{ border-color:var(--link); color:var(--link); }
-
-/* Right image mosaic – exact sizes & a touch lower */
-.tg-mega-media{
-  display:grid; grid-template-columns:auto auto;
-  column-gap:var(--mega-gap); row-gap:var(--mega-gap);
-  justify-content:end;
-  margin-top:14px;               /* grid slightly lower like Figma */
-}
-.tg-mega-media img{ display:block; border-radius:var(--mega-tile-r); background:#F3F6FB; border:1px solid var(--mega-border); }
-.tg-mega-media .tile-1{ width:175px; height:233px; object-fit:cover; align-self:end; }
-.tg-mega-media .tile-2{ width:191px; height:191px; object-fit:cover; align-self:start; }
-.tg-mega-media .tile-3{ width:175px; height:149px; object-fit:cover; align-self:end; }
-.tg-mega-media .tile-4{ width:191px; height:191px; object-fit:cover; align-self:start; }
-
-/* toggle button */
-.nav__toggle{ background:transparent; border:0; padding:.5rem .75rem; line-height:1.2; color:var(--nav-text); }
-.nav__toggle .chev{ display:inline-block; transition:transform .18s ease; }
-.nav__toggle.is-current{ color:var(--link); }
-.nav__toggle.is-current .chev{ transform:rotate(180deg); }
-
-/* mobile */
-@media (max-width:991.98px){
-  .tg-megamenu{
-    position:static; left:auto; transform:none; width:auto; max-width:100%;
-    padding:14px; border-radius:18px;
-  }
-  .tg-mega-media{ grid-template-columns:1fr 1fr; margin-top:10px; }
-  .tg-mega-media img{ width:100%; height:auto; aspect-ratio:1/1; }
-}
 /* ================== Stats Strip ================== */
 .tg-stats { position: relative; }
 
@@ -798,7 +686,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  animation: strip-marquee 45s linear infinite;
+  animation: strip-marquee 60s linear infinite;
   will-change: transform;
 }
 
@@ -1470,5 +1358,25 @@
 .contact-tabs .ctab.active{ background:#eef2ff; border-color:#c7d2fe; color:#1f4eff; }
 .contact-panel.d-none{ display:none !important; }
 .calendly-inline-widget { width:100%; background:#fff; }
+/* --- universal override for Troy header visibility --- */
 
-
+/* === Force visibility & proper stacking === */
+#mega-allpages {
+  position: fixed !important;
+  top: 120px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 999999 !important;
+  background: #fff !important;
+  border-radius: 60px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  display: none;
+}
+#mega-allpages.is-open {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+/* visibility state */
+.tgx-megamenu { display: none; position: fixed; top: var(--tgx-header-bottom,110px); left: 0; right: 0; z-index: 10001; }
+.tgx-megamenu.is-open { display: block; }

@@ -12,24 +12,18 @@
 /* HERO */
 .svc-hero {
   position: relative;
-  min-height: 420px;
-  overflow: hidden;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 70px;
+  min-height: 100px;
   background: #000;
 }
 .svc-hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.85;
+  object-position: center;
+  transform: scale(1.05);
+  opacity: 0.9;
 }
-.svc-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.45) 100%);
-}
+
 .svc-hero .copy {
   position: absolute;
   inset: 0;
@@ -98,7 +92,7 @@
   height: clamp(420px, 55vw, 520px);
   overflow: hidden;
   position: relative;
-  border-radius: 0;
+  border-radius: 12px;
   margin-top: 16px;        /* matches your screenshot spacing */
 }
 
@@ -383,7 +377,7 @@
 
 /* Bottom quote block */
 .svc-knowus__quote{
-  background: linear-gradient(120deg, #0814ff 0%, #000472 100%);
+  background: linear-gradient(120deg, #2932ff 0%, #6c70ff 100%);
   color: #fff;
   border-radius: 14px;
   padding: clamp(24px, 3vw, 40px);

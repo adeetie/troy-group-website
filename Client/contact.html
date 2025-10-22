@@ -13,14 +13,103 @@
   <!-- Global styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/global.css?v=1">
+  <link rel="stylesheet" href="assets/css/header.tgx.css">
+
 
   <!-- Page-specific styles -->
   <link rel="stylesheet" href="assets/css/contact.css?v=1">
+  <script src="assets/js/main.js" defer></script>
+
 </head>
 <body>
 
   <!-- Auto header -->
-  <div id="site-header"></div>
+<div class="tgx-scope">
+  <header class="tgx-header" role="banner">
+    <div class="tgx-bar">
+      <!-- Brand -->
+      <a class="tgx-brand" href="index.html" aria-label="The Troy Groups — Home">
+        <img class="tgx-brand-logo" src="assets/images/header_logo.png" alt="The Troy Groups">
+        <span class="tgx-brand-text">TROY GROUPS</span>
+      </a>
+
+      <!-- Nav (center) -->
+      <nav class="tgx-nav" aria-label="Primary">
+        <a class="tgx-navlink" href="index.html" data-link="home">Home</a>
+
+        <div class="tgx-mega">
+          <button class="tgx-navlink nav__toggle" id="allpagesToggle"
+                  data-link="allpages" aria-expanded="false"
+                  aria-controls="mega-allpages" type="button">
+            All pages <span class="tgx-chev" aria-hidden="true">▾</span>
+          </button>
+
+          <!-- MEGA PANEL (will be fixed-position so nothing can clip it) -->
+          <div id="mega-allpages" class="tgx-megamenu" role="region" aria-label="All pages menu">
+            <div class="fc-card">
+              <div class="fc-outline"></div>
+
+              <!-- Left columns -->
+              <div class="fc-columns">
+                <div class="fc-col fc-col--a">
+                  <div class="fc-h">Service</div>
+                  <a class="fc-strong" href="clients.html" data-link="clients">Our Client</a>
+                  <a class="fc-strong" href="our-active-businesses.html" data-link="our-active-businesses">Our Active Businesses</a>
+                  <a class="fc-strong" href="our-strategies.html" data-link="our-strategies">Our strategies</a>
+                  <a class="fc-strong" href="our-opportunities.html" data-link="our-opportunities">Our Opportunities</a>
+                </div>
+
+                <div class="fc-col fc-col--b">
+                  <div class="fc-h">Important link</div>
+                  <a class="fc-link" href="privacy-policy.html" data-link="privacy-policy">Privacy &amp; Policy</a>
+                  <a class="fc-link" href="terms.html" data-link="terms">Terms and Conditions</a>
+                </div>
+
+                <div class="fc-col fc-col--c">
+                  <div class="fc-h">Resources</div>
+                  <a class="fc-link" href="blog.html" data-link="blog">Blog</a>
+                  <a class="fc-link" href="events.html" data-link="events">Events</a>
+                </div>
+              </div>
+
+              <!-- Social -->
+              <div class="fc-social-label">Reach out on us:</div>
+              <div class="fc-social">
+                <a class="fc-ico" href="#" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#0F172A"><path d="M13 22v-9h3l1-4h-4V7.5c0-1.1.3-1.8 1.9-1.8H17V2.2C16.4 2.1 15.2 2 13.8 2 10.9 2 9 3.7 9 6.9V9H6v4h3v9h4z"/></svg>
+                </a>
+                <a class="fc-ico" href="#" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#0F172A"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm5.25-1.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/></svg>
+                </a>
+                <a class="fc-ico" href="#" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#0F172A"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.3 2.3-2.7 4.8-2.7 5.1 0 6.1 3.4 6.1 7.8V24h-5v-6.7c0-1.6 0-3.7-2.3-3.7s-2.6 1.8-2.6 3.6V24H8z"/></svg>
+                </a>
+              </div>
+
+              <!-- Right collage – placeholders that always load -->
+              <!-- Right collage – actual images -->
+<img class="fc-img fc-img1" src="assets/images/all_pages_img_1.png" alt="Troy Groups collage 1">
+<img class="fc-img fc-img2" src="assets/images/all_pages_img_2.png" alt="Troy Groups collage 2">
+<img class="fc-img fc-img3" src="assets/images/all_pages_img_3.png" alt="Troy Groups collage 3">
+<img class="fc-img fc-img4" src="assets/images/all_pages_img_4.png" alt="Troy Groups collage 4">
+
+            </div>
+          </div>
+        </div>
+
+        <a class="tgx-navlink" href="about.html" data-link="about">About</a>
+        <a class="tgx-navlink" href="contact.html" data-link="contact">Contact</a>
+      </nav>
+
+      <!-- CTAs (right) -->
+      <div class="tgx-ctas">
+        <a href="schedule.html" class="btn tg-btn-outline">Schedule A Call ↗</a>
+<a href="signup.html" class="btn tg-btn-outline-light">Sign Up</a>
+
+      </div>
+    </div>
+  </header>
+</div>
 
   <main class="page-wrap">
     <!-- Intro -->
