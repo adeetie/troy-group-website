@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Carrers — The Troy Groups</title>
+
+  <!-- Fonts & Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Your global styles first -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/css/footer.css?v=1">
+
+  <link rel="stylesheet" href="assets/css/global.css?v=1">
+  <link rel="stylesheet" href="assets/css/header.tgx.css">
+
+
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="assets/css/about.css?v=1">
+  <script src="assets/js/main.js" defer></script>
+
+</head>
+<body>
+
+ <div class="tgx-scope">
+  <header class="tgx-header" role="banner">
+    <div class="tgx-bar">
+      <!-- Brand -->
+      <a class="tgx-brand" href="index.html" aria-label="The Troy Groups — Home">
+        <img class="tgx-brand-logo" src="assets/images/header_logo.png" alt="The Troy Groups">
+        <span class="tgx-brand-text">TROY GROUPS</span>
+      </a>
+
+      <!-- Nav (center) -->
+      <nav class="tgx-nav" aria-label="Primary">
+        <a class="tgx-navlink" href="index.html" data-link="home">Home</a>
+
+        <div class="tgx-mega">
+          <button class="tgx-navlink nav__toggle" id="allpagesToggle"
+                  data-link="allpages" aria-expanded="false"
+                  aria-controls="mega-allpages" type="button">
+            All pages <span class="tgx-chev" aria-hidden="true">▾</span>
+          </button>
+
+          <!-- MEGA PANEL (will be fixed-position so nothing can clip it) -->
+          <div id="mega-allpages" class="tgx-megamenu" role="region" aria-label="All pages menu">
+            <div class="fc-card">
+              <div class="fc-outline"></div>
+
+              <!-- Left columns -->
+              <div class="fc-columns">
+                <div class="fc-col fc-col--a">
+                  <div class="fc-h">Service</div>
+                  <a class="fc-strong" href="clients.html" data-link="clients">Our Client</a>
+                  <a class="fc-strong" href="our-active-businesses.html" data-link="our-active-businesses">Our Active Businesses</a>
+                  <a class="fc-strong" href="our-strategies.html" data-link="our-strategies">Our strategies</a>
+                  <a class="fc-strong" href="our-opportunities.html" data-link="our-opportunities">Our Opportunities</a>
+                </div>
+
+                <div class="fc-col fc-col--b">
+                  <div class="fc-h">Important link</div>
+                  <a class="fc-link" href="privacy-policy.html" data-link="privacy-policy">Privacy &amp; Policy</a>
+                  <a class="fc-link" href="terms.html" data-link="terms">Terms and Conditions</a>
+                </div>
+
+                <div class="fc-col fc-col--c">
+                  <div class="fc-h">Resources</div>
+                  <a class="fc-link" href="blog.html" data-link="blog">Blog</a>
+                  <a class="fc-link" href="events.html" data-link="events">Events</a>
+                </div>
+              </div>
+
+              <!-- Social -->
+              <div class="fc-social-label">Reach out on us:</div>
+              <div class="fc-social">
+                <a class="fc-ico" href="#" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#0F172A"><path d="M13 22v-9h3l1-4h-4V7.5c0-1.1.3-1.8 1.9-1.8H17V2.2C16.4 2.1 15.2 2 13.8 2 10.9 2 9 3.7 9 6.9V9H6v4h3v9h4z"/></svg>
+                </a>
+                <a class="fc-ico" href="#" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#0F172A"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm5.25-1.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/></svg>
+                </a>
+                <a class="fc-ico" href="#" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#0F172A"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.3 2.3-2.7 4.8-2.7 5.1 0 6.1 3.4 6.1 7.8V24h-5v-6.7c0-1.6 0-3.7-2.3-3.7s-2.6 1.8-2.6 3.6V24H8z"/></svg>
+                </a>
+              </div>
+
+              <!-- Right collage – placeholders that always load -->
+              <!-- Right collage – actual images -->
+<img class="fc-img fc-img1" src="assets/images/all_pages_img_1.png" alt="Troy Groups collage 1">
+<img class="fc-img fc-img2" src="assets/images/all_pages_img_2.png" alt="Troy Groups collage 2">
+<img class="fc-img fc-img3" src="assets/images/all_pages_img_3.png" alt="Troy Groups collage 3">
+<img class="fc-img fc-img4" src="assets/images/all_pages_img_4.png" alt="Troy Groups collage 4">
+
+            </div>
+          </div>
+        </div>
+
+        <a class="tgx-navlink" href="about.html" data-link="about">About</a>
+        <a class="tgx-navlink" href="contact.html" data-link="contact">Contact</a>
+      </nav>
+
+      <!-- CTAs (right) -->
+      <div class="tgx-ctas">
+        <a href="schedule.html" class="btn tg-btn-outline">Schedule A Call ↗</a>
+<a href="signup.html" class="btn tg-btn-outline-light">Sign Up</a>
+
+      </div>
+    </div>
+  </header>
+</div>
+
+ 
+
+  <!-- =================== HERO =================== -->
+  <section class="hero">
+    <img class="hero__bg" src="assets/images/carrers1.png" alt="" />
+    <div class="hero__overlay"></div>
+    <div class="container hero__inner">
+      <h1 class="hero__title">Career and<br>internships</h1>
+    </div>
+  </section>
+
+  <!-- =================== CULTURE / INTRO =================== -->
+  <section class="intro">
+    <div class="container intro__grid">
+      <div class="intro__eyebrow">Our culture</div>
+      <div class="intro__copy">
+        <h2 class="section-title">We build with care</h2>
+        <p>We’re a team of designers, engineers, and product people who work closely—on the process, and with each other. Different roles, shared direction.</p>
+        <p>We care about how things are made, and how it feels to make them. That means being clear, staying curious, and always thinking about the people we’re building for.</p>
+        <p>We take our time, build trust, and aim to do work that lasts.</p>
+
+        <a href="#" class="chip">Open positions</a>
+        
+      </div>
+      
+    </div>
+    
+  </section>
+
+  <!-- =================== VALUES GRID =================== -->
+  <!-- Boxed image inserted by editor: displays careers3.png above the values grid -->
+  <section class="boxed-image-section" aria-hidden="false">
+    <div class="container">
+      <div class="boxed-image">
+        <img src="assets/images/careers2.png" alt="Careers" />
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="container">
+      
+      <div class="values__head">
+        <div class="eyebrow">Our values</div>
+        <h2 class="section-title">Work that makes sense</h2>
+      </div>
+
+      <div class="values__grid">
+        <article class="value-card">
+          <div class="value-card__media"></div>
+          <h3>Smart work</h3>
+          <p>We focus on meaningful work—not busywork.</p>
+        </article>
+
+        <article class="value-card">
+          <div class="value-card__media"></div>
+          <h3>Room to grow</h3>
+          <p>You’ll get space, support, and real chances to level up.</p>
+        </article>
+
+        <article class="value-card">
+          <div class="value-card__media"></div>
+          <h3>People-first culture</h3>
+          <p>Kind people, clear feedback, no egos.</p>
+        </article>
+
+        <article class="value-card">
+          <div class="value-card__media"></div>
+          <h3>Flexible by default</h3>
+          <p>We trust you to work in the way that works best.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= PARTNERS (reference-accurate) ========= -->
+<section id="partners" class="partners fx-pad">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <!-- Left: tight copy column -->
+      <div class="col-lg-6">
+        <div class="partners__copy">
+          <p class="partners__eyebrow">Who we are</p>
+          <h2 class="partners__title">YOUR STRATEGIC<br>PARTNERS IN GROWTH</h2>
+          <p class="partners__lead">
+            we act as your strategic partners in growth —<br>
+            combining deep insight, trusted relationships, and bold<br>
+            execution to cultivate opportunities, accelerate<br>
+            progress, and build sustainable success together
+          </p>
+
+         <div class="tgx-ctas">
+        <a href="about.html" class="btn tg-btn-outline">About ↗</a>
+
+
+      </div>
+        </div>
+      </div>
+
+      <!-- Right: portrait with frame -->
+      <div class="col-lg-6">
+        <figure class="portrait-frame">
+          <img src="./assets/images/home_who_we_are.png" alt="Portrait" class="portrait-img">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= PHOTO + BLUE QUOTE (HORIZONTAL, SAME HEIGHT, STICK) ======= -->
+<section class="photo-quote fx-pad">
+  <div class="container">
+    <!-- g-0 = no gutter; align-items-stretch makes both columns same height -->
+    <div class="row pq-row g-0 align-items-stretch">
+      <!-- Left: Image -->
+      <div class="col-12 col-lg-7">
+        <figure class="pq-frame">
+          <img
+            src="./assets/images/home_eldo_2.png"
+            alt="Discussion"
+            class="pq-img"
+          />
+        </figure>
+      </div>
+
+      <!-- Right: Blue gradient quote card -->
+      <div class="col-12 col-lg-5">
+        <article class="pq-card">
+          <p class="pq-text">
+            Guided by insight and integrity, we craft bespoke strategies that
+            empower growth, maximize value, and redefine financial excellence
+            for our clients.
+          </p>
+          <div class="pq-meta">
+            <div class="pq-name">Eldo Korita</div>
+            <div class="pq-role">Founder &amp; CEO</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- =================== ROLES / JOBS =================== -->
+  <section class="roles">
+    <div class="container">
+      <header class="roles__head">
+        <div class="roles__head-left">
+          <h3 class="roles__title">Start doing work that matters</h3>
+          <p class="roles__sub">Want to work with some of the best global talent and build software used by all the companies you know and love? Join the team — we’re hiring!</p>
+        </div>
+        <div class="roles__filters">
+          <span class="muted">Location:</span>
+          <button class="select">View all</button>
+        </div>
+      </header>
+
+      <hr class="divider">
+
+      <!-- Design -->
+      <div class="roles__row">
+        <div class="roles__col">
+          <h4>Design</h4>
+          <p class="muted">Open positions in our design team.</p>
+        </div>
+        <div class="roles__cards">
+          <article class="job">
+            <div class="job__top">
+              <h5>Product Designer</h5>
+              <span class="pill">Melbourne, Australia</span>
+            </div>
+            <p class="muted">We’re looking for a mid-level product designer to join our team.</p>
+            <div class="job__meta">
+              <span class="meta">Full-time</span>
+              <span class="meta">80k - 100k</span>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job__top">
+              <h5>UX Designer</h5>
+              <span class="pill">Melbourne, Australia</span>
+            </div>
+            <p class="muted">We’re looking for a mid-level UX designer to join our team.</p>
+            <div class="job__meta">
+              <span class="meta">Full-time</span>
+              <span class="meta">80k - 100k</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Software -->
+      <div class="roles__row">
+        <div class="roles__col">
+          <h4>Software Development</h4>
+          <p class="muted">Open positions in our software team.</p>
+        </div>
+        <div class="roles__cards">
+          <article class="job">
+            <div class="job__top">
+              <h5>Engineering Manager</h5>
+              <span class="pill">Melbourne, Australia</span>
+            </div>
+            <p class="muted">We’re looking for an experienced engineering manager to join our team.</p>
+            <div class="job__meta">
+              <span class="meta">Full-time</span>
+              <span class="meta">$80k - $100k</span>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job__top">
+              <h5>Frontend Developer</h5>
+              <span class="pill">Melbourne, Australia</span>
+            </div>
+            <p class="muted">We’re looking for an experienced frontend developer to join our team.</p>
+            <div class="job__meta">
+              <span class="meta">Full-time</span>
+              <span class="meta">$80k - $100k</span>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job__top">
+              <h5>Backend Developer</h5>
+              <span class="pill">Melbourne, Australia</span>
+            </div>
+            <p class="muted">We’re looking for an experienced backend developer to join our team.</p>
+            <div class="job__meta">
+              <span class="meta">Full-time</span>
+              <span class="meta">$80k - $100k</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="roles__wide">
+        <img src="assets/images/careers3.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== CONTACT BLOCK =================== -->
+  <section class="contact-block">
+    <div class="container contact__inner">
+      <figure class="contact__media">
+        <img src="https://placehold.co/576x800" alt="">
+      </figure>
+
+      <form class="contact__form" action="#" method="post" onsubmit="return false;">
+        <header class="contact__head">
+          <h3>Get in touch</h3>
+          <p>Our friendly team would love to hear from you.</p>
+          <div class="tabs">
+            <button type="button" class="tab tab--active">Investor</button>
+            <button type="button" class="tab">Fund Raising</button>
+          </div>
+        </header>
+
+        <div class="grid-2">
+          <label class="field">
+            <span>First name</span>
+            <input type="text" placeholder="First name" />
+          </label>
+          <label class="field">
+            <span>Last name</span>
+            <input type="text" placeholder="Last name" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Email</span>
+          <input type="email" placeholder="you@company.com" />
+        </label>
+
+        <div class="grid-2">
+          <label class="field">
+            <span>Phone number</span>
+            <div class="input-combo">
+              <select aria-label="Country">
+                <option>US</option>
+                <option>IN</option>
+                <option>AU</option>
+              </select>
+              <input type="tel" placeholder="+1 (555) 000-0000" />
+            </div>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Message</span>
+          <textarea rows="5" placeholder=""></textarea>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" />
+          <span>You agree to our friendly <a href="#">privacy policy</a>.</span>
+        </label>
+
+        <button class="btn btn-primary">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- =================== CTA — Schedule your meeting =================== -->
+<section class="cta-hero fx-pad" aria-labelledby="cta-title">
+  <div class="container text-center cta-stack">
+    <p class="cta-eyebrow">Ready To Grow Together!</p>
+    <p class="cta-sub">
+      Effortlessly manage your spending, saving, and investing — all in one place.
+    </p>
+
+    <!-- GLASS: heading on top, then glow, then orb (stacked) -->
+    <h2 id="cta-title" class="cta-title">Schedule your meeting</h2>
+    <div class="cta-glow" aria-hidden="true"></div>
+  </div>
+</section>
+
+  <!-- Auto footer (your JS injects it) -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

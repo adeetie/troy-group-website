@@ -1,0 +1,121 @@
+/* =========================================================
+   FOOTER — Single-source stylesheet (Figma-accurate)
+   - Full bleed background
+   - Centered inner container
+   - 5-column grid; Office wider
+   - No ugly wraps; predictable widths
+   - Watermark behind content
+========================================================= */
+
+.site-footer{
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid rgba(24,30,21,.12);
+  /* reduce excessive bottom space so footer content is clearly visible */
+  padding: 72px 0 120px;
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 1; /* ensure footer sits above lower stacking contexts */
+}
+
+/* Inner width (match Figma) */
+.site-footer > .container{
+  /* Match the site's container where possible so footer columns line up
+     with other content. Use the site's --container token if available. */
+  max-width: min(var(--container, 1160px), 1320px);
+  margin-inline: auto;
+  padding-inline: 24px;             /* match site gutters */
+  width: 100%;
+}
+
+/* Grid — prevent narrow columns from wrapping */
+.site-footer .footer-grid{
+  display: grid;
+  /* Office column fixed-ish, other columns flexible but balanced */
+  grid-template-columns: minmax(220px, 1.2fr) repeat(4, minmax(140px, 0.9fr));
+  align-items: start;
+  column-gap: 48px;
+  row-gap: 28px;
+}
+
+.site-footer .footer-col h4{
+  margin: 0 0 10px;
+  font: 700 16px/1.2 Inter, system-ui;
+  color: #0B1221;
+}
+
+/* One link per line; consistent rhythm */
+.site-footer .footer-col > a,
+.site-footer .footer-col p{
+  display: block;
+  margin: 6px 0;
+  font: 400 16px/1.6 Inter, system-ui;
+  color: #111827;
+  text-decoration: none;
+}
+.site-footer .footer-col > a{ padding: 2px 0; }
+.site-footer .footer-col > a:hover{ text-decoration: underline; }
+
+/* Office specifics */
+.site-footer .footer-office p{ max-width: 420px; }
+.site-footer .footer-office a{
+  white-space: nowrap;              /* keep domain on one line on desktop */
+  overflow-wrap: anywhere;          /* still safe on small screens */
+}
+
+/* Socials */
+.site-footer .footer-socials{
+  display: flex; gap: 12px; margin-top: 18px; align-items:center;
+}
+.site-footer .footer-socials .social-icon{
+  width: 36px; height: 36px; display:inline-flex; align-items:center; justify-content:center;
+  border: 1px solid #0B1221; border-radius: 6px;
+  color: #0B1221; background: transparent; font-size:16px;
+  transition: background .12s ease, color .12s ease, border-color .12s ease, transform .08s ease;
+}
+.site-footer .footer-socials .social-icon:hover{
+  background:#0B1221; color:#fff; border-color:#0B1221; transform: translateY(-1px);
+}
+
+/* Watermark behind */
+.site-footer .footer-watermark{
+  position: absolute; left: 50%; transform: translateX(-50%);
+  /* pull the watermark slightly lower but keep it visible behind content */
+  bottom: -12px;
+  white-space: nowrap; pointer-events: none; user-select: none;
+  font: 700 clamp(120px, 18vw, 220px)/.9 Montserrat, system-ui;
+  letter-spacing: .02em;
+  color: #E2EEFF;
+  /* make watermark much subtler so links and text remain fully legible */
+  opacity: .12;
+  filter: drop-shadow(0 2px 8px rgba(33, 89, 196, .06));
+  z-index: 0;
+  pointer-events: none;
+}
+.site-footer .footer-grid,
+.site-footer .footer-col,
+.site-footer .footer-socials{ position: relative; z-index: 2; }
+
+/* Responsive */
+@media (max-width: 1199.98px){
+  .site-footer .footer-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 32px;
+  }
+}
+@media (max-width: 991.98px){
+  .site-footer .footer-grid{
+    grid-template-columns: 1fr 1fr;
+    column-gap: 28px;
+  }
+}
+@media (max-width: 575.98px){
+  .site-footer{ padding: 56px 0 96px; }
+  .site-footer .footer-grid{ grid-template-columns: 1fr; }
+  .site-footer .footer-watermark{ font-size: 96px; bottom: -8px; left: 60%; transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .site-footer .footer-socials .social-icon{ transition: none; }
+}

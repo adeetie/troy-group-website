@@ -81,3 +81,38 @@
     }, 150);
   });
 })();
+// FAQ accordion: bind directly to each button to avoid relying on event bubbling
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    if (btn.dataset.faqBound === '1') return;
+    btn.dataset.faqBound = '1';
+
+    const toggle = (e) => {
+      // allow keyboard activation to call this handler via e.g. Enter
+      if (e) e.preventDefault();
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const list = item.parentElement;
+      const single = list?.dataset.accordion === 'single';
+
+      if (single && list) {
+        list.querySelectorAll('.faq-item.is-open').forEach(i => {
+          if (i !== item) {
+            i.classList.remove('is-open');
+            const b = i.querySelector('.faq-q');
+            b && b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      const nowOpen = !item.classList.contains('is-open');
+      item.classList.toggle('is-open', nowOpen);
+      btn.setAttribute('aria-expanded', String(nowOpen));
+    };
+
+    btn.addEventListener('click', toggle);
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+});

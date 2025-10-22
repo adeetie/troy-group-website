@@ -18,12 +18,14 @@
 
   <!-- 3) Page-specific CSS (optional, if you need) -->
   <link href="./assets/css/style.css?v=1" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/footer.css?v=1">
+
   <link rel="stylesheet" href="assets/css/header.tgx.css">
 
 
   <!-- 4) AOS (optional animations) -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="assets/js/main.js" defer></script>
+ 
 
 </head>
 
@@ -162,8 +164,6 @@
     </div>
   </div>
 </div>
-
-
         <div class="col-lg-3"></div>
       </div>
 
@@ -209,161 +209,163 @@
     </ul>
   </div>
 </section>
-<!-- === OUR SERVICES ================================================== -->
-<section class="services-section">
+<!-- ===== OUR SERVICES SECTION ===== -->
+<section class="services-section py-5">
   <div class="container">
-    <h2 class="services-title">Our Services</h2>
-    <hr class="services-divider" />
+    <h2 class="services-title mb-4">OUR SERVICES</h2>
+    <div class="services-divider mb-5"></div>
 
-    <div class="services-grid">
-      <!-- Card 1 -->
-      <div class="service-card">
-        <img src="./assets/images/home_services_1.png" alt="Digital Roadmap" />
-        <span class="service-tag">Service</span>
-        <div class="service-overlay"></div>
-        <h3 class="service-title">Digital Roadmap &amp;<br>Strategy</h3>
+    <div class="services-wrap">
+      <!-- 3-card grid -->
+      <div class="services-grid">
+        <!-- Card 1 -->
+        <article class="service-card">
+          <img src="assets/images/home_services_1.png" alt="Digital Roadmap & Strategy">
+          <span class="service-tag">Service</span>
+          <h3 class="service-title">Digital Roadmap &<br>Strategy</h3>
+          <div class="service-overlay"></div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="service-card">
+          <img src="assets/images/home_services_2.png" alt="Automation & AI Solutions">
+          <span class="service-tag">Service</span>
+          <h3 class="service-title">Automation & AI<br>Solutions</h3>
+          <div class="service-overlay"></div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="service-card">
+          <img src="assets/images/home_services_4.png" alt="On-Demand Tech Experts">
+          <span class="service-tag">Service</span>
+          <h3 class="service-title">On-Demand Tech<br>Experts</h3>
+          <div class="service-overlay"></div>
+        </article>
+         <!-- Right-floating CTA -->
+      <a href="services.html" class="services-cta-btn" aria-label="View more services">
+        View more →
+      </a>
       </div>
 
-      <!-- Card 2 -->
-      <div class="service-card">
-        <img src="./assets/images/home_services_2.png" alt="Automation & AI" />
-        <span class="service-tag">Service</span>
-        <div class="service-overlay"></div>
-        <h3 class="service-title">Automation &amp; AI<br>Solutions</h3>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="service-card">
-        <img src="./assets/images/home_services_3.png" alt="On-Demand Experts" />
-        <span class="service-tag">Service</span>
-        <div class="service-overlay"></div>
-        <h3 class="service-title">On-Demand Tech<br>Experts</h3>
-      </div>
+     
     </div>
-
-    <a href="#" class="view-more-btn">View more →</a>
   </div>
-</section>
-<!-- ============ VISION & MISSION ============ -->
-<section id="vision-mission" class="vm-section fx-pad">
-  <div class="container">
+<!-- Vision & Mission (Figma export, cleaned) -->
+<section class="vm">
+  <div class="vm__artboard">
 
-    <!-- Top heading -->
-    <div class="row align-items-end">
-      <div class="col-12">
-        <h2 class="vm-h1">VISION AND MISSION</h2>
-        <hr class="vm-rule">
-      </div>
-    </div>
+    <!-- LEFT GROUP (740 × 403) -->
+    <div class="vm__left">
 
-    <!-- Focus + tagline -->
-    <div class="row g-4 align-items-start vm-topcopy">
-      <div class="col-12 col-lg-8">
-        <p class="vm-kicker">Our focus is simple</p>
-        <h3 class="vm-title">Innovating the Way the World Invests</h3>
+      <!-- Top mini-card (avatars + “40+ Investors”) -->
+      <div class="vm__mini">
+        <div class="vm__mini-inner">
+          <div class="vm__avatars">
+            <img class="vm__ava vm__ava--xs" src="assets/images/home_profile_1.png" alt="">
+            <img class="vm__ava vm__ava--md" src="assets/images/home_profile_2.png" alt="">
+            <img class="vm__ava vm__ava--sm" src="assets/images/home_profile_3.png" alt="">
+            <img class="vm__ava vm__ava--lg" src="assets/images/home_profile_4.png" alt="">
+            <img class="vm__ava vm__ava--xxs" src="assets/images/home_profile_5.jpg" alt="">
+          </div>
+          <div class="vm__investors">40+ Investors</div>
+        </div>
+        <div class="vm__mini-border"></div>
       </div>
-      <div class="col-12 col-lg-4">
-        <p class="vm-eyebrow">
-          We promise to deliver beyond your expectations for your business.
+
+      <!-- Stats card: 45+ Experts + paragraph -->
+      <div class="vm__stat">
+        <div class="vm__stat-border"></div>
+
+        <div class="vm__stat-numwrap">
+          <div class="vm__stat-num">45</div>
+          <div class="vm__plus">+</div>
+          <div class="vm__stat-label">Experts</div>
+        </div>
+
+        <p class="vm__stat-copy">
+          To be the most impactful bridge innovation businesses and investors, creating a sustainable and progressive business environment worldwide, to raise more than £1B and generate more than 25% Net IRR within the next 12 months.
         </p>
       </div>
     </div>
 
-    <!-- Three-card row -->
-    <div class="row g-4">
-      <!-- LEFT COLUMN (investors + experts) -->
-      <div class="col-12 col-lg-4">
-        <!-- investor strip -->
-        <div class="card card-soft rounded-4 mb-3">
-          <div class="card-body py-3 px-4 d-flex align-items-center justify-content-between">
-            <div class="avatar-stack">
-              <!-- use any round images you have in /assets/images/ -->
-              <img src="./assets/images/home_blog_1.png" alt="">
-              <img src="./assets/images/home_blog_2.png" alt="">
-              <img src="./assets/images/home_blog_3.png" alt="">
-              <img src="./assets/images/home_blog_4.png" alt="">
-              <img src="./assets/images/home_blog_5.png" alt="">
-            </div>
-            <span class="vm-micro">40+ INVESTORS</span>
-          </div>
-        </div>
+    <!-- MIDDLE COLUMN (quotes + 116+ Clients) -->
+    <div class="vm__mid">
+  <div class="vm__mid-border"></div>
 
-        <!-- mission statement + experts count -->
-        <div class="card card-soft rounded-4">
-          <div class="card-body p-4">
-            <p class="vm-copy">
-              To be the most impactful bridge innovation businesses and investors, creating a
-              sustainable and progressive business environment worldwide, to raise more than £1B and
-              generate more than 25% Net IRR within the next 12 months.
-            </p>
+  <ul class="vm__mid-lines">
+    <li><strong>Connection capital</strong> with innovation.</li>
+    <li><strong>Fueling Growth</strong> Creating Impact.</li>
+    <li><strong>Empowering Businesses</strong> Transforming Futures.</li>
+  </ul>
 
-            <div class="metric mb-1">
-              <span class="metric__num">45</span><span class="metric__plus">+</span>
-            </div>
-            <div class="metric__label">Experts</div>
-          </div>
-        </div>
+
+      <div class="vm__mid-numwrap">
+        <div class="vm__mid-num">116</div>
+        <div class="vm__mid-plus">+</div>
+        <div class="vm__mid-label">Clients across six Continents.</div>
       </div>
 
-      <!-- MIDDLE COLUMN (bullets + clients + availability) -->
-      <div class="col-12 col-lg-4">
-        <div class="card card-soft rounded-4 mb-3">
-          <div class="card-body p-4">
-            <ul class="vm-list">
-              <li><b>Connection capital</b> with innovation.</li>
-              <li><b>Fueling Growth</b> Creating Impact.</li>
-              <li><b>Empowering Businesses</b> Transforming Futures.</li>
-            </ul>
-
-            <div class="metric mt-3">
-              <span class="metric__num">116</span><span class="metric__plus">+</span>
-            </div>
-            <div class="metric__label">Clients across six Continents.</div>
-          </div>
-        </div>
-
-        <div class="card card-soft rounded-4">
-          <div class="card-body py-3 px-4 d-flex align-items-center gap-2">
-            <span class="status-dot"></span>
-            <span class="vm-micro">AVAILABLE FOR JOIN</span>
-          </div>
-        </div>
+      <div class="vm__availability">
+        <span class="vm__dot vm__dot--halo"></span>
+        <span class="vm__dot vm__dot--solid"></span>
+        <span class="vm__avail-text">Available for JOIN</span>
       </div>
+      <div class="vm__availability-border"></div>
+    </div>
 
-      <!-- RIGHT COLUMN (gradient rating) -->
-      <div class="col-12 col-lg-4">
-        <div class="vm-grad card rounded-4 position-relative">
-          <div class="card-body p-4">
-            <p class="vm-grad-copy">
-              We are committed to empowering businesses by offering innovative financing solutions,
-              strategic consulting, and investor matchmaking. Our goal is to simplify growth processes,
-              enhance project success, and maximize value for our clients.
-            </p>
+    <!-- RIGHT BLUE CARD (gradient, rating) -->
+    <aside class="vm__blue">
+     <div class="vm__blue-orb"></div>
 
-            <div class="vm-rating">
-              <span class="vm-rating__num">4.8</span><span class="vm-rating__slash">/5</span>
-            </div>
+ 
+  <img class="vm__blue-arrow" src="assets/images/home_vector.png" alt="" aria-hidden="true">
 
-            <div class="vm-stars">★★★★★</div>
-            <div class="vm-micro mt-1">TRUSTED BY<br>CLIENTS WORLDWIDE</div>
-          </div>
+  <p class="vm__blue-copy">
+    We are committed to empowering businesses by offering innovative financing solutions, strategic consulting, and investor matchmaking. Our goal is to simplify growth processes, enhance project success, and maximize value for our clients.
+  </p>
 
-          <!-- watermark arrow 
-          <svg class="vm-arrow" viewBox="0 0 200 120" aria-hidden="true">
-            <path d="M10 100 C60 40, 120 40, 190 20" fill="none" stroke="url(#g)" stroke-width="18" stroke-linecap="round"/>
-            <defs>
-              <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#4B7BFF" stop-opacity="0.25"/>
-                <stop offset="1" stop-color="#9AC5FF" stop-opacity="0.25"/>
-              </linearGradient>
-            </defs>
-          </svg>-->
-        </div>
+
+     <div class="vm__rating">
+  <div class="vm__score">
+    <span class="vm__score-num">4.8</span><span class="vm__score-den">/5</span>
+  </div>
+
+  <div class="vm__rating-right">
+    <div class="vm__stars">
+      <span class="vm__star"></span>
+      <span class="vm__star"></span>
+      <span class="vm__star"></span>
+      <span class="vm__star"></span>
+      <span class="vm__star"></span>
+    </div>
+    <div class="vm__trust">Trusted by<br>clients worldwide</div>
+  </div>
+</div>
+
+    </aside>
+
+    <!-- HEADING + RULE -->
+    <header class="vm__header">
+      <h3 class="vm__title">Vision and mission</h3>
+      <div class="vm__rule"></div>
+    </header>
+
+    <!-- SUBHEAD + RIGHT PARA -->
+    <div class="vm__sub">
+      <div class="vm__sub-left">
+        <span class="vm__sub-grey">Our focus is simple</span><br>
+        <span class="vm__sub-bold">Innovating the Way the World Invests</span>
       </div>
+      <p class="vm__sub-right">
+        We promise to deliver beyond your<br>expectations for your business.
+      </p>
     </div>
 
   </div>
 </section>
+  </section>
+
+  <!-- ========== HOW WE WORKS (sticky image) ========== -->
 
 
 <section class="howwe">
@@ -435,7 +437,11 @@
             progress, and build sustainable success together
           </p>
 
-          <a href="about.html" class="pill-ghost-sm">About</a>
+         <div class="tgx-ctas">
+        <a href="about.html" class="btn tg-btn-outline">About ↗</a>
+
+
+      </div>
         </div>
       </div>
 
@@ -503,7 +509,7 @@
     <div class="row dp-kpis g-4 justify-content-center">
       <div class="col-12 col-md-4">
         <div class="dp-kpi">
-          <div class="dp-kpi__num">$500M–$8B <span>AUM</span></div>
+          <div class="dp-kpi__num">$500M–$8B <span><br>AUM</br></span></div>
           <div class="dp-kpi__meta">Supported by investor network</div>
         </div>
       </div>
@@ -526,140 +532,235 @@
 </section>
 
 
-  <!-- =========== INSIGHTS =========== -->
- <!-- ============ BLOGS / INSIGHTS HEADING ROW ============ -->
-<section class="insights-head fx-pad--tight">
-  <div class="container">
-    <div class="row align-items-center gy-3">
-      <div class="col-12 col-lg-8">
-        <div class="ih-left">
-          <span class="pill micro">EVENT</span>
-          <h4 class="ih-title">
-            Insights that<br><span>Drive results</span>
-          </h4>
+<!-- ============ BLOGS / INSIGHTS ============ -->
+<section class="insights">
+  <div class="insights__container">
+    <!-- Header row -->
+    <div class="insights__head">
+      <div class="insights__left">
+        <span class="pill pill--outline">Event</span>
+        <h3 class="insights__title">
+         <div style="width: 100%; height: 100%; opacity: 0.60; justify-content: center; display: flex; flex-direction: column"><span style="color: #6E6E6E; font-size: 43.66px; font-family: Inter; font-weight: 500; line-height: 46.20px; word-wrap: break-word">Insights that<br/></span><span style="color: #1C1C1C; font-size: 43.66px; font-family: Inter; font-weight: 500; line-height: 46.20px; word-wrap: break-word">Drive results</span></div>
+        </h3>
+      </div>
+
+      <a href="blog.html" class="insights__cta" aria-label="View all insights">
+        <span>View all</span>
+        <svg class="cta__arrow" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Grid -->
+    <div class="insights__grid">
+      <!-- Card 1 -->
+      <article class="card">
+        <figure class="card__media">
+          <img src="assets/images/home_blog_1.png" alt="Conversion & funnel strategy">
+          <span class="tag">Conversion & funnel strategy</span>
+        </figure>
+        <div class="card__body">
+          <h4 class="card__title">The 5 key elements of a high-converting landing page</h4>
+          <p class="card__excerpt">
+            Learn the essential components every landing page needs to capture attention and drive conversions.
+          </p>
+          <div class="card__meta">
+            <img class="card__avatar" src="https://placehold.co/32x32" alt="">
+            <span class="card__by">Jenny Wang</span>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-lg-4 text-lg-end">
-        <a href="blog.html" class="ih-viewall">
-          View all <span class="ih-arrow">→</span>
-        </a>
-      </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <figure class="card__media">
+          <img src="assets/images/home_blog_2.png" alt="Email & automation">
+          <span class="tag">Email & automation</span>
+        </figure>
+        <div class="card__body">
+          <h4 class="card__title">How to write email sequences that actually convert</h4>
+          <p class="card__excerpt">
+            Write emails that engage, nurture, and convert your leads with clarity, structure, and persuasive messaging.
+          </p>
+          <div class="card__meta">
+            <img class="card__avatar" src="https://placehold.co/32x32" alt="">
+            <span class="card__by">Kenny Woo</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <figure class="card__media">
+          <img src="assets/images/home_blog_3.png" alt="Paid ads & traffic">
+          <span class="tag">Paid ads & traffic</span>
+        </figure>
+        <div class="card__body">
+          <h4 class="card__title">How to build ad creatives that don’t feel like ads</h4>
+          <p class="card__excerpt">
+            Design scroll-stopping ad creatives that feel organic, get clicks, and consistently drive qualified leads.
+          </p>
+          <div class="card__meta">
+            <img class="card__avatar" src="https://placehold.co/32x32" alt="">
+            <span class="card__by">Joshua Bakare</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <figure class="card__media">
+          <img src="assets/images/home_blog_4.png" alt="Growth & insights">
+          <span class="tag">Growth & insights</span>
+        </figure>
+        <div class="card__body">
+          <h4 class="card__title">The tools we use to run funnels on autopilot</h4>
+          <p class="card__excerpt">
+            The exact tools and tech stack we use to build and run conversion funnels that work 24/7 for clients.
+          </p>
+          <div class="card__meta">
+            <img class="card__avatar" src="https://placehold.co/32x32" alt="">
+            <span class="card__by">Jacob Malpas</span>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-      <div class="grid-2">
-        <article class="post">
-          <img src="assets/images/home_blog_1.png" alt="">
-          <span class="post__tag">Conversion & funnel strategy</span>
-          <h3>The 5 key elements of a high-converting landing page</h3>
-          <p>Learn the essential components every landing page needs to capture attention and drive conversions.</p>
-          <div class="post__by">Jenny Wang</div>
-        </article>
-
-        <article class="post">
-          <img src="assets/images/home_blog_2.png" alt="">
-          <span class="post__tag">Email & automation</span>
-          <h3>How to write email sequences that actually convert</h3>
-          <p>Write emails that engage, nurture, and convert your leads with clarity, structure, and persuasive messaging.</p>
-          <div class="post__by">Kenny Woo</div>
-        </article>
-
-        <article class="post">
-          <img src="assets/images/home_blog_3.png" alt="">
-          <span class="post__tag">Paid ads & traffic</span>
-          <h3>How to build ad creatives that don’t feel like ads</h3>
-          <p>Design scroll-stopping ad creatives that feel organic, get clicks, and consistently drive qualified leads.</p>
-          <div class="post__by">Joshua Bakare</div>
-        </article>
-
-        <article class="post">
-          <img src="assets/images/home_blog_4.png" alt="">
-          <span class="post__tag">Growth & insights</span>
-          <h3>The tools we use to run funnels on autopilot</h3>
-          <p>The exact tools and tech stack we use to build and run conversion funnels that work 24/7 for clients.</p>
-          <div class="post__by">Jacob Malpas</div>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <!-- ================== FAQ ================== -->
-<section class="faq fx-pad">
+<section class="faq fx-pad" aria-labelledby="faq-title">
   <div class="container">
     <div class="row align-items-start g-4">
       <!-- Left: eyebrow, title, copy, pill -->
       <div class="col-12 col-lg-5">
-        <div class="faq-left">
+        <aside class="faq-left">
           <span class="faq-eyebrow">FAQ</span>
-          <h3 class="faq-title">WHAT CLIENTS ASK US MOST</h3>
+          <h3 id="faq-title" class="faq-title">WHAT CLIENTS ASK US MOST</h3>
           <p class="faq-copy">
-            We’re here for the follow-up questions too — find us on the Contact page.
+            We're here for the follow-up questions too — find us on the Contact page.
           </p>
-          <a href="contact.html" class="pill micro">Contact</a>
-        </div>
+          <a href="contact.html" class="btn tg-btn-outline">Contact ↗</a>
+        </aside>
       </div>
 
       <!-- Right: question list -->
       <div class="col-12 col-lg-7">
-        <div class="faq-list">
-          <!-- Item 1 (open) -->
+        <div class="faq-list" data-accordion="single">
+          <!-- Q1 -->
           <div class="faq-item is-open">
-            <button class="faq-q" type="button">
-              <span>What is a The Troy Groups?</span>
-              <span class="faq-icon"><i class="bi bi-dash"></i></span>
+            <button class="faq-q" type="button" aria-expanded="true">
+              <span>What does Troy Groups do?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-a">
-              We are a global leader in outsourced capital raising and direct investment opportunities.
-              We help businesses connect with investors, raise funds, expand into new markets, and offer
-              strategic consulting, marketing, and recruitment services.
+              We are a global leader in outsourced capital raising and direct investment
+              opportunities. We help businesses connect with investors, raise funds, expand
+              into new markets, and offer strategic consulting, marketing, and recruitment
+              services. 
             </div>
           </div>
 
-          <!-- Item 2 -->
+          <!-- Q2 -->
           <div class="faq-item">
-            <button class="faq-q" type="button">
+            <button class="faq-q" type="button" aria-expanded="false">
               <span>Which sectors do you cover?</span>
-              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
+            <div class="faq-a">
+              Our focus spans FinTech, AI, Energy Transition, Web3, Real Estate, and other innovative
+              industries. 
+            </div>
           </div>
 
-          <!-- Item 3 -->
+          <!-- Q3 -->
           <div class="faq-item">
-            <button class="faq-q" type="button">
+            <button class="faq-q" type="button" aria-expanded="false">
               <span>What services do you offer?</span>
-              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
+            <div class="faq-a">
+              <ul>
+                <li><strong>Connections & Fundraising</strong> — Investor introductions, fundraise management.</li>
+                <li><strong>Strategy & Marketing</strong> — Strategic consulting, marketing & sales.</li>
+                <li><strong>Investment & Expansion</strong> — Growth strategies, market entry, investment management.</li>
+                <li><strong>IT & Recruitment</strong> — Tailored technology solutions and talent acquisition.</li>
+              </ul>
+              
+            </div>
           </div>
 
-          <!-- Item 4 -->
+          <!-- Q4 -->
           <div class="faq-item">
-            <button class="faq-q" type="button">
+            <button class="faq-q" type="button" aria-expanded="false">
               <span>Who are your clients and how many do you serve?</span>
-              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
+            <div class="faq-a">
+              We serve over 116 clients across six continents, from early-stage ventures to
+              established companies seeking expansion or capital infusion. 
+            </div>
           </div>
 
-          <!-- Item 5 -->
+          <!-- Q5 -->
           <div class="faq-item">
-            <button class="faq-q" type="button">
-              <span>How do I get started working with Troy Groups?</span>
-              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>What kind of returns or outcomes have clients seen?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
+            <div class="faq-a">
+              Over the past 24 months, select capital introduction mandates have reported an average
+              IRR of ~26.4%. Client companies have also seen ~+37% YoY EBITDA growth post-introduction.
+              
+            </div>
           </div>
 
-          <!-- Item 6 -->
+          <!-- Q6 -->
           <div class="faq-item">
-            <button class="faq-q" type="button">
+            <button class="faq-q" type="button" aria-expanded="false">
               <span>Are you a regulated investment advisor?</span>
-              <span class="faq-icon"><i class="bi bi-plus"></i></span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
+            <div class="faq-a">
+              No. Troy Groups Ltd is not a regulated investment adviser or asset manager. We do not
+              provide financial advice, solicit investments, or manage investor capital. Any performance
+              data is illustrative, based on client-reported results and internal estimates, not guarantees.
+              
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>How global is your presence?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a">
+              We operate out of four global offices, have connections with thousands of family offices and
+              institutional investors, and serve clients in key markets including the UK, USA, Albania,
+              Greece, India, and the Middle East. 
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>How do I get started working with Troy Groups?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a">
+              Contact us via the “Get Started” section or the contact form. We’ll discuss your business,
+              goals, and match you with services best suited to achieve them.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
  <!-- =================== CTA — Schedule your meeting =================== -->
@@ -676,6 +777,7 @@
   </div>
 </section>
 
+
 <div id="site-footer" data-include="footer"></div>
 
 <!-- Scripts (order matters) -->
@@ -684,7 +786,8 @@
 <script>AOS?.init && AOS.init({ once:true, duration:600, easing:'ease-out' });</script>
 
 <!-- Your page JS last -->
-<script src="./assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=2" defer></script>
+
 
 </body>
 </html>

@@ -676,12 +676,18 @@
 .about-strip .strip-mask {
   overflow: hidden;              /* hides overflow for the loop */
   position: relative;
+  display: flex;                 /* place track ULs side-by-side */
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;             /* ensure we don't stack into multiple rows */
 }
 
 .about-strip .strip-track {
   --gap: 32px;                   /* spacing between items */
   display: inline-flex;
   align-items: center;
+  min-width: max-content;        /* ensure track width fits content and doesn't wrap */
+  flex-shrink: 0;
   gap: var(--gap);
   padding: 0;
   margin: 0;
@@ -1318,36 +1324,7 @@
   .svc-knowus .row img{ margin-top: 20px; }
   .svc-knowus__quote{ text-align: left; }
 }
-/* ===== FIXED FOOTER WATERMARK ===== */
-.site-footer {
-  position: relative;
-  background: linear-gradient(180deg, #F9FBFF 0%, #FFFFFF 100%);
-  overflow: hidden;
-}
 
-.site-footer .footer-body {
-  position: relative;
-  z-index: 2; /* keeps text above watermark */
-}
-
-.footer-watermark {
-  row-gap: inherit;
-      position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    color: #dbe9fd;
-    opacity: 0.55;
-    font-size: clamp(90px, 16vw, 150px);
-    letter-spacing: -1px;
-    line-height: 1;
-    white-space: nowrap;
-    z-index: 1;
-    pointer-events: none;
-    user-select: none;
-}
 
 /* ===== Contact embeds UI ===== */
 .contact-tabs { display:flex; gap:12px; border-bottom:1px solid #eee; margin-bottom:16px; }
@@ -1363,7 +1340,7 @@
 /* === Force visibility & proper stacking === */
 #mega-allpages {
   position: fixed !important;
-  top: 120px !important;
+  top: 85px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   z-index: 999999 !important;
