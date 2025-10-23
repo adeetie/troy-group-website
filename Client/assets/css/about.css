@@ -93,59 +93,37 @@
   .team-grid{ grid-template-columns:repeat(3,1fr) }
   .stripe-2{ grid-template-columns:1fr }
 }
-/* ===== ABOUT HERO SECTION ===== */
-.about-hero {
-  width: 100%;
-  height: 10vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color: #fff;
-}
+/* removed duplicate ABOUT HERO SECTION to avoid conflicting hero sizing; hero styles are centralized in services.css */
 
-.about-hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
+/* ===== Copy of svc-intro (minimal) to keep About and Services consistent ===== */
+.svc-intro{ padding: clamp(40px, 6vw, 72px) 0; }
+.svc-intro__label{ color: rgba(0,0,0,.70); margin-top: 8px }
+.svc-intro__heading{ font-weight: 800; letter-spacing: .4px; text-transform: uppercase; font-size: clamp(28px, 3.3vw, 40px); line-height: 1.1; margin: 0 0 14px 0; color: #1b1e27; }
+.svc-intro__para{ color: #3b3f48; margin-bottom: 10px; max-width: 56ch; }
 
-.about-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.65) 100%);
-  z-index: 1;
-}
+.merged-intro{ padding-top: 32px; padding-bottom: 32px; }
+.merged-intro .svc-intro__heading{ font-size: clamp(34px, 4.6vw, 48px); margin-bottom: 12px }
+.merged-intro .ceo-card{ margin-top: 20px }
 
-.about-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
-  font-size: 72px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.1;
-}
+/* Mini contact card style (kept minimal for About) */
+.svc-contact{ margin-top: 22px; border: 1px solid rgba(0,0,0,.08); padding: 14px 16px; border-radius: 10px; background: #fff; }
+.svc-contact__img{ width: 72px; height: 72px; border-radius: 10px; object-fit: cover; }
+.svc-contact__label{ font-weight: 700; margin-bottom: 2px; color: #0f1219; }
+.svc-contact__small{ font-size: 0.92rem; color: #535865; margin-bottom: 4px; }
+.svc-contact__link{ font-weight: 600; text-decoration: none; color: #1a4cff; }
+.svc-contact__link:hover{ text-decoration: underline; }
 
-.about-subtext {
-  font-size: 20px;
-  line-height: 1.6;
-  max-width: 480px;
-  color: #f0f0f0;
-}
+/* Hero: center-left alignment so copy sits vertically centered but left-aligned */
+.about-hero .container{ display:flex; align-items:center; height:100%; }
+.about-hero .col-lg-7{ padding-top:0; padding-bottom:0 }
 
-.btn-brand {
-  background: #0066ff;
-  border: none;
-  padding: 12px 28px;
-  font-weight: 600;
-  border-radius: 0px;
-  transition: all 0.3s ease;
-}
+/* Unified profile/contact card sizing used on About (ceo-card) and Services (svc-contact) */
+.profile-card{ display:flex; gap:16px; align-items:flex-start; padding:16px; border-radius:10px; max-width:560px; }
+.profile-card .profile-img{ width:88px; height:88px; object-fit:cover; border-radius:8px }
+.profile-card .profile-meta{ flex:1 }
+.profile-card .profile-name{ font-weight:700; margin-bottom:2px }
+.profile-card .profile-role{ color:#6b7280; margin-bottom:6px }
 
-.btn-brand:hover {
-  background: #004cd6;
-  transform: translateY(-2px);
-}
+/* Keep About's blue gradient on .ceo-card but reuse the sizing */
+.ceo-card{ padding:16px; border-radius:10px; }
+.ceo-card .ceo__img{ width:88px; height:88px; object-fit:cover; border-radius:8px }

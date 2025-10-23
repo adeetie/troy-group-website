@@ -191,12 +191,24 @@ h1,h2,h3{margin:0 0 12px}
   background: #000;
   box-shadow: 0 1px 0 rgba(0,0,0,.05);
 }
+/* Center-left alignment: vertically center the hero copy while keeping it left-aligned
+  This makes About and Services hero content sit center vertically and aligned to the left. */
+.about-hero .container, .svc-hero .container{ display: flex; align-items: center; height: 100%; }
 .about-hero > img {
   width: 100%;
   height: 520px;
   object-fit: cover;
   display: block;
   opacity: .92;
+}
+
+/* Services hero background sizing to visually match About hero */
+.svc-hero__bg{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+  display:block;
+  opacity:.92;
 }
 
 /* Left-heavy + bottom vignette for readability */
@@ -308,6 +320,27 @@ button.btn:hover {
   border:1.5px solid var(--btn-outline) !important;
   border-radius:999px !important;
   padding:10px 20px !important;
+}
+
+/* Hero CTA — shared style for About + Services hero buttons */
+.hero-cta{
+  /* base hero CTA (keeps spacing/shape consistent) */
+  background: transparent;
+  color: var(--btn-ink);
+  border: 1.5px solid var(--btn-outline);
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(16,24,40,.06);
+}
+.hero-cta .arrow{ margin-left:8px; font-weight:800 }
+
+/* Variant: white text with white border (requested) */
+.hero-cta--white{
+  background: transparent; /* keep transparent so background image shows through */
+  color: #ffffff; /* white text */
+  border: 1.5px solid rgba(255,255,255,0.9); /* white border */
+  box-shadow: 0 6px 18px rgba(255,255,255,0.06); /* subtle light lift */
 }
 
     /* KPI + “What we do” */
@@ -1919,4 +1952,509 @@ img{max-width:100%; height:auto; display:block}
   margin:0 0 12px; font:700 16px/1.1 Inter, system-ui; color:#0B1221;
 }
 
-/* Links*
+.page-hero {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #000;
+  color: #fff;
+}
+
+.page-hero-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.5) 100%);
+  z-index: 1;
+}
+
+.page-hero-title {
+  font: 700 64px/1.1 'Fira Sans Extra Condensed', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.page-hero-sub {
+  font: 400 18px/1.7 'Inter', sans-serif;
+  color: #e5e7eb;
+  max-width: 540px;
+}
+
+.btn-hero {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: 100px;
+  transition: all .25s ease;
+}
+.btn-hero:hover {
+  background: #111;
+  color: #fff;
+}
+
+.arrow {
+  margin-left: 6px;
+  font-size: 1.2em;
+  transition: transform .25s ease;
+}
+.btn-hero:hover .arrow {
+  transform: translate(3px, -3px);
+}
+/* ====== GLOBAL / CONTAINER ====== */
+:root{
+  --ink-950:#0F0F0F;
+  --ink-900:#1B1E27;
+  --ink-800:#212121;
+  --ink-700:#4B4744;
+  --ink-500:#6A6A6A;
+  --blue-600:#042F6B;
+  --blue-500:rgba(0,106,255,.90);
+  --stroke:#EDEDED;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:#fff;
+  color:var(--ink-900);
+  font-family: Geist, Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  width:100%;
+  max-width:1280px;
+  margin-inline:auto;
+  padding-inline:0;
+}
+
+/* ====== HERO ====== */
+.srp-hero{
+  position:relative;
+  margin-top:72px;                /* more air like ref */
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
+
+/* Decorative thin rounded frames on right side */
+.srp-hero::before,
+.srp-hero::after{
+  content:"";
+  position:absolute;
+  right:-190px;
+  top:-52px;
+  width:760px;
+  height:520px;
+  border-top-right-radius:120px;
+  border-right:1.5px rgba(0,0,0,.11) solid;
+  border-top:.5px rgba(0,0,0,.11) solid;
+  pointer-events:none;
+}
+.srp-hero::after{
+  right:-110px;
+  top:0;
+  width:650px;
+  height:460px;
+  border-top-right-radius:70px;
+  border-right:1.5px rgba(0,0,0,.11) solid;
+  border-top:.5px rgba(0,0,0,.11) solid;
+  opacity:.8;
+}
+
+.srp-hero__row{
+  display:flex;
+  align-items:flex-end;
+  gap:24px;
+}
+
+.srp-hero__title-wrap{
+  width:872px; display:flex; align-items:flex-end;
+}
+.srp-hero__title{
+  margin:0;
+  color:var(--ink-900);
+  font-family:"Fira Sans Extra Condensed", Impact, system-ui, sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  font-size:100px;
+  line-height:100px;  /* matches screenshot’s tight lockup */
+  letter-spacing:.2px;
+}
+
+.srp-hero__copy-wrap{ width:384px }
+.srp-hero__copy{
+  margin:0;
+  color:#6D6D6D;                   /* lighter like ref */
+  font:400 14px/20px Geist, Inter, system-ui, sans-serif;
+}
+
+.srp-hero__image{
+  position:relative;
+  height:580px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#f6f6f6;
+  box-shadow:0 2px 0 rgba(0,0,0,.04), 0 12px 28px rgba(0,0,0,.06);
+}
+.srp-hero__image img{
+  width:1280px; height:580px; display:block; object-fit:cover;
+  border-radius:12px;
+}
+
+/* ====== BODY COPY COLUMN + SIDECARD ====== */
+.srp-body{
+  position:relative;
+  margin-top:56px;
+  display:grid;
+  grid-template-columns: 912px 1fr;   /* text column then side card */
+  gap:56px;
+}
+
+.srp-body__col{ width:912px }
+
+/* headings like the ref (subheads left, 20/32) */
+.srp-h3{
+  margin:0;
+  color:#0F0E0D;
+  font:600 20px/32px Geist, Inter, system-ui, sans-serif;
+}
+.mt-32{ margin-top:32px }
+
+/* paragraph system */
+.srp-p{
+  margin:12px 0 0 0;
+  color:#4B4744;
+  font:400 16px/24px Geist, Inter, system-ui, sans-serif;
+}
+.srp-strong{ font-weight:700 }
+
+/* Bullet list with compact rhythm & custom dot feel */
+.srp-list{
+  margin:12px 0 0 0;
+  padding-left:20px;
+  list-style:none;
+}
+.srp-list li{
+  position:relative;
+  margin:0 0 6px 0;
+  padding-left:14px;
+  color:#4B4744;
+  font:400 16px/24px Geist, Inter, system-ui, sans-serif;
+}
+.srp-list li::before{
+  content:"";
+  position:absolute; left:0; top:10px;
+  width:5px; height:5px; border-radius:50%;
+  background:#6E6E6E;
+  opacity:.9;
+}
+
+/* Side help card (matches translucent white tile) */
+.srp-sidecard{
+  align-self:start;
+  display:flex;
+  gap:16px;
+  background:rgba(255,255,255,.65);
+  border-radius:6px;
+  padding:8px;
+  overflow:hidden;
+  box-shadow:0 1px 0 rgba(0,0,0,.04);
+}
+
+.srp-sidecard__img{ width:114px; height:142px; border-radius:4px; overflow:hidden; flex:0 0 auto }
+.srp-sidecard__img img{ width:100%; height:100%; object-fit:cover; display:block }
+
+.srp-sidecard__content{ display:block }
+.srp-sidecard__title{
+  margin:0 0 6px;
+  color:#141A11;
+  font:600 16px/24px Geist, Inter, system-ui, sans-serif;
+}
+.srp-sidecard__text{
+  margin:0 0 10px;
+  color:#181E15;
+  font:400 16px/24px Geist, Inter, system-ui, sans-serif;
+}
+.srp-sidecard__email{
+  display:inline-block; color:#2B3625; text-decoration:none;
+  font:500 16px/19.2px Inter, system-ui, sans-serif;
+}
+
+/* ====== “All Services” row link (plain, small chevron) ====== */
+.srp-cta{ margin-top:12px; display:flex; align-items:center }
+.srp-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  text-decoration:none; background:transparent; padding:0; border:0;
+}
+.srp-btn span{
+  color:#0F0F0F;
+  text-decoration:underline;
+  font:600 14px/1 Open Sans, system-ui, sans-serif;
+}
+.srp-btn__arrow{
+  position:relative; width:18px; height:18px;
+}
+.srp-btn__arrow::before{
+  content:"";
+  position:absolute; left:6px; top:5px;
+  width:6px; height:10px; border-right:2px solid #111; border-top:2px solid #111;
+  transform:rotate(45deg);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width:1320px){
+  .container{ padding-inline:20px }
+  .srp-hero::before, .srp-hero::after{ display:none } /* hide decorative frames on tight view */
+  .srp-hero__image img{ width:100% }
+}
+@media (max-width:1100px){
+  .srp-hero__row{ flex-direction:column; align-items:flex-start }
+  .srp-hero__title-wrap, .srp-hero__copy-wrap{ width:100% }
+  .srp-body{ grid-template-columns:1fr }
+  .srp-body__col{ width:100% }
+  .srp-sidecard{ order:-1; margin-bottom:24px }
+}
+@media (max-width:720px){
+  .srp-hero{ margin-top:48px }
+  .srp-hero__title{ font-size:64px; line-height:64px }
+  .srp-hero__copy{ font-size:14px; line-height:20px }
+}
+/* ====== BODY COPY COLUMN + SIDECARD (stacked layout) ====== */
+.srp-body {
+  position: relative;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;        /* stack main content and got-questions vertically */
+  align-items: center;           /* center everything horizontally */
+  justify-content: center;       /* center vertically within container */
+  gap: 40px;                     /* spacing between main text and got questions */
+  text-align: left;
+}
+
+/* Main text column */
+.srp-body__col {
+  width: 912px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;       /* vertically center text */
+  align-items: center;           /* center horizontally */
+}
+
+/* Got questions card BELOW main text */
+.srp-sidecard {
+  width: 912px;                  /* align width with text column */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(255,255,255,0.65);
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  text-align: center;
+}
+
+/* Inside card */
+.srp-sidecard__img {
+  width: 114px;
+  height: 142px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.srp-sidecard__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.srp-sidecard__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 640px;
+}
+.srp-sidecard__title {
+  margin: 8px 0 4px;
+  color: #141A11;
+  font: 600 16px/24px Geist, Inter, system-ui, sans-serif;
+}
+.srp-sidecard__text {
+  margin: 0 0 8px;
+  color: #181E15;
+  font: 400 16px/24px Geist, Inter, system-ui, sans-serif;
+}
+.srp-sidecard__email {
+  text-decoration: none;
+  color: #2B3625;
+  font: 500 16px/19.2px Inter, system-ui, sans-serif;
+}
+/* =========================
+   1) HERO: match ref spacing
+   ========================= */
+.srp-hero{
+  position:relative;
+  margin-top:72px;             /* more air above hero */
+  display:flex;
+  flex-direction:column;
+  gap:24px;                    /* tighter than before */
+}
+.srp-hero__row{
+  display:flex; align-items:flex-end; gap:24px;
+}
+.srp-hero__title{
+  margin:0;
+  font-family:"Fira Sans Extra Condensed", Impact, system-ui, sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  font-size:100px;
+  line-height:100px;
+  letter-spacing:.2px;         /* same visual weight as ref */
+  color:#1B1E27;
+}
+.srp-hero__copy-wrap{ width:384px; }
+.srp-hero__copy{
+  margin:0;
+  max-width:340px;             /* smaller column like ref */
+  color:#6D6D6D;
+  font-size:13.5px;
+  line-height:20px;
+}
+
+/* Subtle, soft hero image card feel */
+.srp-hero__image{
+  position:relative; height:580px; border-radius:12px; overflow:hidden;
+  box-shadow:0 2px 0 rgba(0,0,0,.04), 0 12px 28px rgba(0,0,0,.06);
+}
+.srp-hero__image img{ width:1280px; height:580px; object-fit:cover; display:block; border-radius:12px; }
+
+/* Right-side thin rounded frames (desktop only) */
+@media (min-width:1321px){
+  .srp-hero::before,
+  .srp-hero::after{
+    content:"";
+    position:absolute;
+    right:-180px; top:-48px;
+    width:760px; height:520px;
+    border-top-right-radius:120px;
+    border-right:1.5px rgba(0,0,0,.11) solid;
+    border-top:.5px rgba(0,0,0,.11) solid;
+    pointer-events:none;
+  }
+  .srp-hero::after{
+    right:-95px; top:0;
+    width:650px; height:460px;
+    border-top-right-radius:70px;
+    opacity:.85;
+  }
+}
+
+/* ============================================
+   2) BODY: stack + center + bottom-aligned look
+   ============================================ */
+.srp-body{
+  position:relative;
+  margin-top:56px;
+  display:flex;                /* stack, not grid */
+  flex-direction:column;
+  align-items:center;          /* center 912px block */
+  justify-content:center;
+  gap:40px;                    /* space between text and card */
+  text-align:left;
+}
+
+/* Main text column matches ref width */
+.srp-body__col{
+  width:912px;
+  display:flex; flex-direction:column;
+  justify-content:center;      /* keeps the block visually centered vertically */
+  align-items:flex-start;      /* text stays left-aligned */
+}
+
+/* Subheads & paragraphs rhythm */
+.srp-h3{ margin:0; color:#0F0E0D; font:600 20px/32px Geist, Inter, system-ui, sans-serif; }
+.mt-32{ margin-top:32px; }
+.srp-p{ margin:12px 0 0; color:#4B4744; font:400 16px/24px Geist, Inter, system-ui, sans-serif; }
+.srp-strong{ font-weight:700; }
+
+/* Bullets exactly like the ref (small dot, tight) */
+.srp-list{
+  margin:12px 0 0; padding-left:20px; list-style:none;
+}
+.srp-list li{
+  position:relative; margin:0 0 6px; padding-left:14px;
+  color:#4B4744; font:400 16px/24px Geist, Inter, system-ui, sans-serif;
+}
+.srp-list li::before{
+  content:""; position:absolute; left:0; top:10px;
+  width:5px; height:5px; border-radius:50%; background:#6E6E6E; opacity:.9;
+}
+
+/* “Got questions?” card BELOW and centered, same width as text */
+.srp-sidecard{
+  width:912px;
+  display:flex; gap:16px;
+  align-items:center; justify-content:center;
+  background:rgba(255,255,255,.65);
+  border-radius:6px; padding:16px;
+  text-align:center;
+  box-shadow:0 1px 0 rgba(0,0,0,.04);
+}
+.srp-sidecard__img{ width:114px; height:142px; border-radius:4px; overflow:hidden; flex-shrink:0; }
+.srp-sidecard__img img{ width:100%; height:100%; object-fit:cover; display:block; }
+.srp-sidecard__content{ display:flex; flex-direction:column; align-items:center; justify-content:center; max-width:640px; }
+.srp-sidecard__title{ margin:8px 0 4px; color:#141A11; font:600 16px/24px Geist, Inter, system-ui, sans-serif; }
+.srp-sidecard__text{ margin:0 0 8px; color:#181E15; font:400 16px/24px Geist, Inter, system-ui, sans-serif; }
+.srp-sidecard__email{ text-decoration:none; color:#2B3625; font:500 16px/19.2px Inter, system-ui, sans-serif; }
+
+/* “All Services” row link — left aligned, minimal */
+.srp-cta{ width:912px; margin:12px auto 0; display:flex; justify-content:flex-start; align-items:center; }
+.srp-btn{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; background:transparent; padding:0; border:0; }
+.srp-btn span{ color:#0F0F0F; text-decoration:underline; font:600 14px/1 Open Sans, system-ui, sans-serif; }
+.srp-btn__arrow{ position:relative; width:18px; height:18px; }
+.srp-btn__arrow::before{
+  content:""; position:absolute; left:6px; top:5px;
+  width:6px; height:10px; border-right:2px solid #111; border-top:2px solid #111; transform:rotate(45deg);
+}
+
+/* =====================
+   3) RESPONSIVE TWEAKS
+   ===================== */
+@media (max-width:1320px){ .container{ padding-inline:20px } }
+@media (max-width:1100px){
+  .srp-hero::before,.srp-hero::after{ display:none; }
+  .srp-hero__title{ font-size:76px; line-height:76px; }
+  .srp-hero__image{ height:auto; }
+  .srp-hero__image img{ width:100%; height:auto; }
+  .srp-body__col,.srp-sidecard,.srp-cta{ width:100%; }
+}
+@media (max-width:720px){
+  .srp-hero{ margin-top:48px; }
+  .srp-hero__title{ font-size:56px; line-height:56px; }
+  .srp-hero__copy{ font-size:13px; line-height:20px; }
+}
+/* === Unified “What we do + CEO” block locks (non-destructive) === */
+#what-we-do.block{background:#fff;padding:64px 0}
+#what-we-do .eyebrow{margin:0;color:#6B7280;font-weight:600}
+#what-we-do .h2.up{margin-bottom:12px}
+#what-we-do .lead-tight{font-size:16px;line-height:1.7;color:#111827}
+.ceo-card{border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#2c64d6 0%,#8bb9ff 100%);padding:18px}
+.ceo-card .ceo{display:flex;gap:16px;align-items:flex-start}
+.ceo-card .ceo__img{width:132px;height:132px;border-radius:8px;object-fit:cover}
+.ceo-card .ceo__name{color:#fff;margin:0 0 2px;font-weight:700}
+.ceo-card .ceo__role{color:#E6EEFF;margin:0 0 8px;font-weight:600}
+.ceo-card .ceo__blurb{color:#fff;margin:0;font-weight:500}

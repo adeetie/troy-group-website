@@ -1,60 +1,82 @@
-<!-- ===== FOOTER (Figma Accurate) ===== -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container footer-grid">
-    <!-- Office Column -->
-    <div class="footer-col footer-office">
-      <h4>Office</h4>
-      <p>Bur Dubai – Mankhool – Ibrahim<br>
-         Ahmed Abdul Nabi Al Abbas,<br>
-         AA2/-506-012</p>
+<!-- Paste this near the end of your page, before </body> -->
+<link rel="stylesheet" href="tg-footer.css">
 
-      <h4>Drop us a line</h4>
-      <p><a href="https://www.thetroygroups.com" target="_blank">www.thetroygroups.com</a></p>
+<footer class="tg-footer" id="tg-footer">
+  <!-- full-bleed background handled by CSS on .tg-footer -->
+  <div class="tgf-container">
+    <div class="tgf-grid">
+      <!-- Office -->
+      <section class="tgf-col tgf-office" aria-label="Office">
+        <h4 class="tgf-title">Office</h4>
+        <p class="tgf-text">
+          Bur Dubai – Mankhool – Ibrahim<br>
+          Ahmed Abdul Nabi Al Abbas,<br>
+          AA2/-506-012
+        </p>
 
-      <div class="footer-socials">
-        <a href="#" aria-label="Facebook" class="social-icon"><i class="bi bi-facebook"></i></a>
-        <a href="#" aria-label="Instagram" class="social-icon"><i class="bi bi-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn" class="social-icon"><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
+        <h4 class="tgf-title tgf-mt16">Drop us a line</h4>
+        <a class="tgf-link" href="https://www.thetroygroups.com" target="_blank" rel="noopener">www.thetroygroups.com</a>
 
-    <!-- Links Columns -->
-    <div class="footer-links">
-     <div>
-  <h4>Quick link</h4>
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="#">Features</a>
-  <a href="carrers.html">Careers</a>
-  <a href="clients.html">Clients</a>
-</div>
+        <nav class="tgf-socials" aria-label="Social media">
+          <!-- Facebook -->
+          <a class="tgf-icon" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 8h-2a2 2 0 0 0-2 2v2H9v3h2v7h3v-7h2.1l.4-3H14v-1.6c0-.6.2-1.4 1.3-1.4H17V8h-2z" fill="currentColor"/>
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a class="tgf-icon" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a class="tgf-icon" href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 9h4v11H4zM6 7a2 2 0 110-4 2 2 0 010 4zM10 9h3.7v1.6c.6-.9 1.8-1.8 3.6-1.8 3 0 4.7 1.8 4.7 5.3V20h-4v-4.6c0-1.7-.6-2.7-2-2.7-1.3 0-2.3.9-2.3 2.7V20H10V9z" fill="currentColor"/>
+            </svg>
+          </a>
+        </nav>
+      </section>
 
+      <!-- Quick link -->
+      <section class="tgf-col" aria-label="Quick link">
+        <h4 class="tgf-title">Quick link</h4>
+        <a class="tgf-link" href="#">Home</a>
+        <a class="tgf-link" href="#">About Us</a>
+        <a class="tgf-link" href="#">Features</a>
+        <a class="tgf-link" href="#">Careers</a>
+        <a class="tgf-link" href="#">Clients</a>
+      </section>
 
-      <div>
-        <h4>Services</h4>
-        <a href="services.html">All Services</a>
-        <a href="digital-roadmap.html">Digital Roadmap</a>
-        <a href="#">AI Solutions</a>
-        <a href="#">Experts Advices</a>
-        <a href="#">Daily Cash Flow</a>
-      </div>
+      <!-- Services -->
+      <section class="tgf-col" aria-label="Services">
+        <h4 class="tgf-title">Services</h4>
+        <a class="tgf-link" href="#">All Services</a>
+        <a class="tgf-link" href="#">Digital Roadmap</a>
+        <a class="tgf-link" href="#">AI Solutions</a>
+        <a class="tgf-link" href="#">Experts Advices</a>
+        <a class="tgf-link" href="#">Daily Cash Flow</a>
+      </section>
 
-      <div>
-        <h4>Important link</h4>
-        <a href="privacy-policy.html">Privacy &amp; Policy</a>
-        <a href="#">Terms and Conditions</a>
-      </div>
+      <!-- Important link -->
+      <section class="tgf-col" aria-label="Important link">
+        <h4 class="tgf-title">Important link</h4>
+        <a class="tgf-link" href="#">Privacy &amp; Policy</a>
+        <a class="tgf-link" href="#">Terms and Conditions</a>
+      </section>
 
-      <div>
-        <h4>Resources</h4>
-        <a href="#">Blog</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
+      <!-- Resources -->
+      <section class="tgf-col" aria-label="Resources">
+        <h4 class="tgf-title">Resources</h4>
+        <a class="tgf-link" href="#">Blog</a>
+        <a class="tgf-link" href="#">Contact Us</a>
+      </section>
     </div>
   </div>
 
-  <!-- Watermark -->
-  <div class="footer-watermark" aria-hidden="true">
-    THE TROY GROUPS
-  </div>
+  <!-- watermark behind grid -->
+  <div class="tgf-watermark" aria-hidden="true">THE TROY GROUPS</div>
 </footer>

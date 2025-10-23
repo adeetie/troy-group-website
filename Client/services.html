@@ -52,69 +52,63 @@
 </header>
 
 
- <!-- ===== HERO (Services) ===== -->
-<section class="svc-hero position-relative">
-  <!-- Background image -->
-  <img class="svc-hero__bg" src="assets/images/services_hero.png" alt="People collaborating">
-
-  <!-- Content -->
-  <div class="container h-100">
-    <div class="row h-100">
-      <div class="col-lg-6 d-flex align-items-end">
-        <div class="svc-hero__copy">
-          <h1 class="svc-hero__title">SERVICES</h1>
-          <p class="svc-hero__lead">
-            Transforming potential into performance with<br>
-            strategy, collaboration, and purpose
-          </p>
-
-          <a class="btn btn-lg btn-outline-light rounded-pill px-4 svc-hero__cta" href="about.html">
-            Who We Are <span aria-hidden="true">↗</span>
-          </a>
-        </div>
+ <section class="page-hero">
+  <img src="assets/images/services_hero.png" alt="Services at The Troy Group" class="page-hero-img">
+  <div class="page-hero-overlay"></div>
+  <div class="container position-relative z-2">
+    <div class="row">
+      <div class="col-lg-7 col-md-9">
+        <h1 class="page-hero-title mb-3">SERVICES</h1>
+        <p class="page-hero-sub mb-4">
+          Transforming potential into performance with strategy, collaboration, and purpose.
+        </p>
+        <a href="about.html" class="btn btn-lg btn-hero">
+          Who We Are <span class="arrow">↗</span>
+        </a>
       </div>
-      <div class="col-lg-6"><!-- empty: image focus on right side --></div>
     </div>
   </div>
 </section>
 
-<!-- ===== INTRO (Beyond Growing Pains) ===== -->
-<section class="svc-intro">
-  <div class="container container-993">
-    <div class="row g-5">
+
+<!-- ===== MERGED: WHAT WE DO + BEYOND GROWING PAINS (Services only) ===== -->
+<section class="svc-intro merged-intro fx-pad" aria-labelledby="svc-intro-title">
+  <div class="container" style="max-width:1280px">
+    <div class="row g-5 align-items-start">
       <!-- Left label -->
       <aside class="col-lg-3">
         <p class="eyebrow svc-intro__label">How we work</p>
       </aside>
 
-      <!-- Right content -->
-      <div class="col-lg-9">
-        <h2 class="svc-intro__heading">BEYOND GROWING PAINS</h2>
+      <!-- Main content (heading + copy + contact + CEO card) -->
+      <div class="col-lg-7">
+        <h2 id="svc-intro-title" class="svc-intro__heading">BEYOND GROWING PAINS</h2>
 
         <p class="svc-intro__para">
           Most teams come to us when things feel a bit off. Not broken — just slower, messier,
           harder than they used to be.
         </p>
         <p class="svc-intro__para">
-          The business has grown, but how you work hasn’t quite kept up. People wear too many
+          The business has grown, but how you work hasn't quite kept up. People wear too many
           hats. Decisions take longer. Energy goes into the wrong things.
         </p>
         <p class="svc-intro__para">
-          We help you step back, spot what’s getting in the way, and build a setup that actually
+          We help you step back, spot what's getting in the way, and build a setup that actually
           fits how you work now.
         </p>
 
-        <div class="svc-contact card-clean d-flex align-items-center gap-3">
-          <img class="svc-contact__img" src="assets/images/services_profile.png" alt="Andrea — Sales">
-          <div>
-            <div class="svc-contact__label">Got questions?</div>
-            <div class="svc-contact__small">
-              Andrea from our sales team is here to help—just send us an email.
-            </div>
+        <div class="svc-contact card-clean ceo-card ceo-card--services profile-card">
+          <img class="profile-img" src="assets/images/services_profile.png" alt="Andrea — Sales">
+          <div class="profile-meta">
+            <div class="profile-name svc-contact__label">Got questions?</div>
+            <div class="svc-contact__small">Andrea from our sales team is here to help—just send us an email.</div>
             <a class="svc-contact__link" href="mailto:andrea@bridgeconsulting.com">andrea@bridgeconsulting.com</a>
           </div>
         </div>
-      </div>
+
+
+      <!-- spacer column to balance layout -->
+      <div class="col-lg-2"></div>
     </div>
   </div>
 </section>

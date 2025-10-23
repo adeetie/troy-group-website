@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Login — Troy Groups</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- 1) Bootstrap FIRST -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <!-- 2) Your global CSS (design tokens, base styles) -->
+  <link href="./assets/css/global.css?v=1" rel="stylesheet">
+
+  <!-- 3) Page-specific CSS (optional, if you need) -->
+  <link href="./assets/css/style.css?v=1" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/footer.css?v=1">
+
+  <link rel="stylesheet" href="assets/css/header.tgx.css">
+
+
+  <!-- 4) AOS (optional animations) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+/* ============= AUTH NAMESPACE ============= */
+:root{
+  --ink:#0A2C5C;
+  --muted:#6B7280;
+  --line:#EBEBEB;
+  --panel:#F8FAFF;
+  --blue:#1366E7;
+  --blue2:#1F5FCE;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff}
+
+/* Grid = left card + right hero (like screenshots) */
+.tg-auth{min-height:100svh;display:grid;grid-template-columns:minmax(640px,720px) 1fr}
+@media (max-width:1024px){.tg-auth{grid-template-columns:1fr}.tg-hero{display:none}}
+
+/* LEFT: Card */
+.tg-card-wrap{padding:20px 24px}
+.tg-card{
+  width:100%;max-width:720px;margin:0 auto;border-radius:20px;background:var(--panel);
+  box-shadow:0 1px 0 rgba(17,24,39,.02), 0 8px 32px rgba(15,23,42,.08);
+  padding:28px 36px 22px;
+}
+.tg-head{display:flex;align-items:flex-start;gap:16px}
+.tg-head img{width:96px;height:96px;object-fit:contain}
+.tg-heroTitle{margin-left:8px}
+.tg-welcome{margin:18px 0 4px;font:600 22px/1.2 Inter;color:rgba(0,0,0,.55)}
+.tg-title{margin:0 0 6px;font:800 64px/1.03 Montserrat,Inter,sans-serif;color:var(--ink);letter-spacing:.1px}
+.tg-sub{margin:0 0 12px;max-width:520px;color:#1E447A;font-weight:500;font-size:15px;line-height:1.35}
+
+/* Google button */
+.tg-pill{width:520px;display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:999px;background:#fff;padding:16px 18px}
+.tg-pill img{width:22px;height:22px}
+
+/* divider */
+.tg-div{display:flex;align-items:center;gap:14px;color:var(--muted);margin:16px 0 10px;width:520px}
+.tg-div:before,.tg-div:after{content:"";height:1px;background:var(--line);flex:1}
+
+/* Fields */
+.tg-field{width:520px;margin:14px 0 0}
+.tg-label{display:flex;gap:6px;font-weight:600;margin-bottom:6px}
+.tg-input{width:100%;border:1px solid var(--line);border-radius:65px;background:#fff;padding:16px 18px}
+.tg-input:focus{outline:2px solid #cfe0ff;border-color:#cfe0ff}
+
+/* row: remember + forgot */
+.tg-row{width:520px;display:flex;justify-content:space-between;align-items:center;margin:12px 0 16px}
+.tg-link{color:#0E3EC0;text-decoration:none;font-weight:700}
+
+/* CTA */
+.tg-btn{width:520px;border:0;border-radius:65px;padding:16px 18px;font-weight:800;color:#fff;
+  background:linear-gradient(180deg,#0C6CFF 0%,#1F5FCE 100%);}
+
+/* Alt link */
+.tg-alt{margin:14px 0 0}
+.tg-alt a{color:#0E3EC0;text-decoration:none;font-weight:700}
+
+/* Trust strip */
+.tg-trust{display:flex;align-items:center;gap:12px;background:rgba(217,217,217,.30);border-radius:10px;padding:12px 14px;max-width:560px;margin-top:22px}
+.tg-avatars{display:flex}
+.tg-avatars img{width:48px;height:48px;border-radius:999px;border:2px solid #fff;margin-left:-10px}
+.tg-arrow{margin-left:auto;width:44px;height:44px;border:1.5px solid #111114;border-radius:999px;display:grid;place-items:center}
+
+/* ===== HERO PANEL — FINAL TUNING TO MATCH FIGMA ===== */
+.tg-hero{
+  position: relative;
+  background:#2E6FEA;
+  min-height:100vh;
+  overflow:hidden;
+}
+
+/* Stepped PNGs (ensure file names/paths are exact) */
+.tg-steps{
+  position:absolute;display:block;user-select:none;pointer-events:none;z-index:1;
+  width:auto;height:auto;
+}
+.tg-steps--top{
+  top:-2.2%; right:-1%;
+  width:46vw; max-width:680px;
+}
+.tg-steps--bottom{
+  left:-1%; bottom:-2.2%;
+  width:46vw; max-width:680px;
+}
+
+/* Main photo — slightly smaller & centered like reference */
+.tg-photo{
+  position:absolute; z-index:2;
+  left:61.2%; top:50%;
+  transform:translate(-50%,-50%);
+  width:292px; height:292px; object-fit:cover; border-radius:12px;
+  box-shadow:0 18px 36px rgba(10,30,80,.26),0 3px 12px rgba(10,30,80,.16);
+}
+
+/* Floating tiles — exact scale/placement */
+.tg-float{position:absolute;z-index:3;filter:drop-shadow(0 14px 24px rgba(3,22,76,.22));}
+
+/* Monitor (top) */
+.tg-float--monitor{
+  width:58px;height:58px;
+  left:63.2%; top:26.5%;
+  transform:translate(-50%,-50%);
+}
+
+/* Bars (right) */
+.tg-float--bars{
+  width:50px;height:50px;
+  left:79.9%; top:47.2%;
+  transform:translate(-50%,-50%);
+}
+
+/* Pie (bottom-left) */
+.tg-float--pie{
+  width:66px;height:66px;
+  left:63.0%; top:72.6%;
+  transform:translate(-50%,-50%);
+}
+
+/* Desktop-only hero like comp */
+@media (max-width:1024px){ .tg-hero{display:none;} }
+
+/* Optional: ultra-wide screens keep proportions tight */
+@media (min-width:1600px){
+  .tg-steps--top,.tg-steps--bottom{max-width:720px}
+  .tg-photo{width:308px;height:308px}
+}
+
+</style>
+</head>
+<body>
+<div class="tgx-scope">
+  <header class="tgx-header" role="banner">
+    <div class="tgx-bar">
+      <!-- Brand -->
+      <a class="tgx-brand" href="index.html" aria-label="The Troy Groups — Home">
+        <img class="tgx-brand-logo" src="assets/images/header_logo.png" alt="The Troy Groups">
+        <span class="tgx-brand-text">TROY GROUPS</span>
+      </a>
+
+      <!-- Nav (center) -->
+      <nav class="tgx-nav" aria-label="Primary">
+        <a class="tgx-navlink" href="index.html" data-link="home">Home</a>
+
+        <div class="tgx-mega">
+          <button class="tgx-navlink nav__toggle" id="allpagesToggle"
+                  data-link="allpages" aria-expanded="false"
+                  aria-controls="mega-allpages" type="button">
+            All pages <span class="tgx-chev" aria-hidden="true">▾</span>
+          </button>
+
+          <!-- MEGA PANEL (will be fixed-position so nothing can clip it) -->
+          <div id="mega-allpages" class="tgx-megamenu" role="region" aria-label="All pages menu">
+            <div class="fc-card">
+              <div class="fc-outline"></div>
+
+              <!-- Left columns -->
+              <div class="fc-columns">
+                <div class="fc-col fc-col--a">
+                  <div class="fc-h">Service</div>
+                  <a class="fc-strong" href="clients.html" data-link="clients">Our Client</a>
+                  <a class="fc-strong" href="our-active-businesses.html" data-link="our-active-businesses">Our Active Businesses</a>
+                  <a class="fc-strong" href="our-strategies.html" data-link="our-strategies">Our strategies</a>
+                  <a class="fc-strong" href="our-opportunities.html" data-link="our-opportunities">Our Opportunities</a>
+                </div>
+
+                <div class="fc-col fc-col--b">
+                  <div class="fc-h">Important link</div>
+                  <a class="fc-link" href="privacy-policy.html" data-link="privacy-policy">Privacy &amp; Policy</a>
+                  <a class="fc-link" href="terms.html" data-link="terms">Terms and Conditions</a>
+                </div>
+
+                <div class="fc-col fc-col--c">
+                  <div class="fc-h">Resources</div>
+                  <a class="fc-link" href="blog.html" data-link="blog">Blog</a>
+                  <a class="fc-link" href="events.html" data-link="events">Events</a>
+                </div>
+              </div>
+
+              <!-- Social -->
+              <div class="fc-social-label">Reach out on us:</div>
+              <div class="fc-social">
+                <a class="fc-ico" href="#" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#0F172A"><path d="M13 22v-9h3l1-4h-4V7.5c0-1.1.3-1.8 1.9-1.8H17V2.2C16.4 2.1 15.2 2 13.8 2 10.9 2 9 3.7 9 6.9V9H6v4h3v9h4z"/></svg>
+                </a>
+                <a class="fc-ico" href="#" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#0F172A"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm5.25-1.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/></svg>
+                </a>
+                <a class="fc-ico" href="#" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#0F172A"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.3 2.3-2.7 4.8-2.7 5.1 0 6.1 3.4 6.1 7.8V24h-5v-6.7c0-1.6 0-3.7-2.3-3.7s-2.6 1.8-2.6 3.6V24H8z"/></svg>
+                </a>
+              </div>
+
+              <!-- Right collage – placeholders that always load -->
+              <!-- Right collage – actual images -->
+<img class="fc-img fc-img1" src="assets/images/all_pages_img_1.png" alt="Troy Groups collage 1">
+<img class="fc-img fc-img2" src="assets/images/all_pages_img_2.png" alt="Troy Groups collage 2">
+<img class="fc-img fc-img3" src="assets/images/all_pages_img_3.png" alt="Troy Groups collage 3">
+<img class="fc-img fc-img4" src="assets/images/all_pages_img_4.png" alt="Troy Groups collage 4">
+
+            </div>
+          </div>
+        </div>
+
+        <a class="tgx-navlink" href="about.html" data-link="about">About</a>
+        <a class="tgx-navlink" href="contact.html" data-link="contact">Contact</a>
+      </nav>
+
+      <!-- CTAs (right) -->
+      <div class="tgx-ctas">
+        <a href="schedule.html" class="btn tg-btn-outline">Schedule A Call ↗</a>
+<a href="signup.html" class="btn tg-btn-outline-light">Sign Up</a>
+
+      </div>
+    </div>
+  </header>
+</div>
+<main class="tg-auth">
+  <!-- LEFT -->
+  <section class="tg-card-wrap">
+    <div class="tg-card">
+      <div class="tg-head">
+        <img src="assets/images/header_logo.png" alt="Troy Groups">
+        <div class="tg-heroTitle">
+          <div class="tg-welcome">Welcome Back!</div>
+          <h1 class="tg-title">Troy Groups</h1>
+          <p class="tg-sub">Join Now! Create your account, unlock opportunities, and grow with trusted connections.</p>
+        </div>
+      </div>
+
+      <button class="tg-pill" id="gBtn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="">
+        <span>Sign with Google</span>
+      </button>
+
+      <div class="tg-div">Or sign in with an Email</div>
+
+      <form id="loginForm" novalidate>
+        <div class="tg-field">
+          <label class="tg-label" for="lemail">Email-ID <span style="color:#FF4848">*</span></label>
+          <input id="lemail" class="tg-input" type="email" placeholder="naiya@gmail.com" required>
+        </div>
+
+        <div class="tg-field">
+          <label class="tg-label" for="lpass">Password <span style="color:#FF4848">*</span></label>
+          <input id="lpass" class="tg-input" type="password" placeholder="************" minlength="6" required>
+        </div>
+
+        <div class="tg-row">
+          <label style="display:flex;align-items:center;gap:8px"><input id="remember" type="checkbox"> Remember me</label>
+          <a class="tg-link" href="#">Forgot Passwords?</a>
+        </div>
+
+        <button class="tg-btn" id="loginBtn" type="submit">Login</button>
+
+        <div class="tg-alt">Not registered yet? <a href="signup.html">Create an Account</a></div>
+
+        <div class="tg-trust">
+          <div class="tg-avatars">
+            <img src="assets/images/Avatar (10).png"alt="">
+            <img src="assets/images/Avatar (1).png" alt="">
+            <img src="assets/images/Avatar.png" alt="">
+          </div>
+          <div>
+            <div style="font-weight:600">Join with +20k Trusted Investors!</div>
+            <div style="color:rgba(0,0,0,.45);font-size:14px">Let see Our Happy Clients</div>
+          </div>
+          <div class="tg-arrow">↗</div>
+        </div>
+      </form>
+    </div>
+  </section>
+<!-- RIGHT PANEL -->
+<aside class="tg-hero" aria-hidden="true">
+  <!-- stepped backgrounds 
+  <img class="tg-steps tg-steps--top"    src="assets/images/loginupstair.png"   alt="">
+  <img class="tg-steps tg-steps--bottom" src="assets/images/loginbackstair.png" alt="">-->
+
+  <!-- main photo -->
+  <img class="tg-photo" src="assets/images/login.png" alt="">
+
+  <!-- floating tiles 
+  <img class="tg-float tg-float--monitor" src="assets/images/loginmonitoricon.png" alt="">
+  <img class="tg-float tg-float--bars"    src="assets/images/loginbaricon.png"     alt="">
+  <img class="tg-float tg-float--pie"     src="assets/images/loginpieicon.png"     alt="">-->
+</aside>
+
+
+</main>
+<div id="site-footer" data-include="footer"></div>
+
+<!-- Scripts (order matters) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS?.init && AOS.init({ once:true, duration:600, easing:'ease-out' });</script>
+
+<!-- Your page JS last -->
+<script src="assets/js/main.js?v=2" defer></script>
+<script>
+/* demo-safe API that turns real when your endpoint exists */
+const API = localStorage.getItem('API_BASE') || '/api';
+const wait = ms => new Promise(r=>setTimeout(r,ms));
+async function call(p, data){
+  try{
+    const r = await fetch(API+p,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    if(!r.ok) throw 0; return await r.json();
+  }catch(e){
+    await wait(500); if(p==='/auth/login') return {ok:true,token:'demo-login-'+Date.now()};
+    return {ok:false};
+  }
+}
+const store=(t,persist)=> (persist?localStorage:sessionStorage).setItem('tgx_token',t);
+
+document.getElementById('gBtn').onclick=async()=>{
+  document.getElementById('loginBtn').disabled=true; await wait(600);
+  store('demo-google-'+Date.now(),true); location.href='index.html?google=1';
+};
+document.getElementById('loginForm').addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  const email=document.getElementById('lemail').value.trim();
+  const pass=document.getElementById('lpass').value;
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||pass.length<6){alert('Enter valid credentials.');return;}
+  const btn=document.getElementById('loginBtn'); btn.disabled=true; btn.textContent='Signing in…';
+  const ok=await call('/auth/login',{email,pass});
+  btn.disabled=false; btn.textContent='Login';
+  if(ok.ok){store(ok.token, document.getElementById('remember').checked); location.href='index.html?auth=ok';}
+  else alert('Login failed');
+});
+</script>
+</body>
+</html>

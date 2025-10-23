@@ -88,37 +88,111 @@
 .col-lg-3 {width: 40%;}
 .col-lg-9 {width: 60%;}
 /* ===== SERVICES — HERO ===== */
+
+/* Make Services hero use the same overlay/image stacking as About hero
+   so content (text/buttons) sits above the overlay and no dark band shows. */
 .svc-hero{
   height: clamp(420px, 55vw, 520px);
   overflow: hidden;
   position: relative;
-  border-radius: 12px;
-  margin-top: 16px;        /* matches your screenshot spacing */
+  margin-top: 16px;
 }
 
+/* reuse the same naming/stacking as about-hero for predictability */
+.about-hero-img,
 .svc-hero__bg{
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 62% 40%; /* face to the right, plant visible left */
-  filter: none;
-  transform: scale(1.03);  /* subtle crop */
+  display: block;
+  opacity: .92;
+  z-index: 0;
 }
 
+/* overlay sits above the image but below the content */
+.about-hero-overlay,
 .svc-hero__shade{
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 38%, rgba(0,0,0,0.10) 65%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.28) 38%, rgba(0,0,0,0) 64%),
+              linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,.30) 100%);
+  pointer-events: none;
 }
 
-.svc-hero__copy{
-  padding-bottom: clamp(24px, 8vw, 48px);
-  color: #fff;
+/* ensure text/buttons are above overlay */
+.svc-hero .container,
+.about-hero .container{ position: relative; z-index: 2; }
+
+.svc-hero__copy{ padding-bottom: clamp(24px, 8vw, 48px); color: #fff; z-index:2 }
+
+/* Explicitly apply About-style sizing when you reuse the about-hero markup
+   on the Services page. This forces the image to fill the hero area and
+   keeps the content (text + buttons) above the overlay. */
+.about-hero{
+  min-height: 520px; /* match About */
+  position: relative;
+  overflow: hidden;
+  background: #000; /* fallback while image loads */
 }
+.about-hero > .about-hero-img,
+.about-hero > img{
+  width: 100%;
+  height: 520px;    /* explicit so there's no gap under the image */
+  object-fit: cover;
+  display: block;
+}
+.about-hero-overlay{
+  /* match About page overlay but softened so CTA/readability is preserved */
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.22) 38%, rgba(0,0,0,0) 64%),
+              linear-gradient(180deg, rgba(0,0,0,0) 56%, rgba(0,0,0,.22) 100%);
+  pointer-events: none;
+}
+.about-hero .container{ position: relative; z-index: 5 !important; }
+
+/* make sure key text and the CTA are above everything */
+.about-hero .about-title,
+.about-hero .about-subtext,
+.about-hero .hero-cta,
+.about-hero .btn{ position: relative; z-index: 6; }
+
+/* Mirror About's hero typography so both pages match */
+.about-title{ font-family: "Fira Sans Extra Condensed", sans-serif; font-size: clamp(48px, 6.5vw, 72px); font-weight:700; text-transform:uppercase; line-height:1.05; }
+.about-subtext{ font-size: clamp(16px,2vw,20px); line-height:1.6; max-width:520px; color: #f0f0f0; }
+
+/* ---- Services page specific: merged intro tweaks ---- */
+/* Use the modifier class .ceo-card--services to neutralize the blue gradient only on Services page */
+.ceo-card--services{
+  background: #FFFFFF !important; /* plain white card */
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  color: #111827 !important;
+  box-shadow: 0 12px 30px rgba(16,24,40,0.06) !important;
+}
+.ceo-card--services .ceo__img{ box-shadow: none; }
+
+/* merged-intro spacing for Services page (keeps layout tight) */
+.merged-intro{ padding-top: 32px; padding-bottom: 32px; }
+.merged-intro .svc-intro__heading{ font-size: clamp(34px, 4.6vw, 48px); margin-bottom: 12px }
+.merged-intro .ceo-card{ margin-top: 20px }
+
+/* Center-left hero content: vertically center the container to match About */
+.about-hero .container{ display:flex; align-items:center; height:100%; }
+
+/* Shared profile/contact card sizing to visually match About */
+.profile-card{ display:flex; gap:16px; align-items:flex-start; padding:16px; border-radius:10px; max-width:560px; }
+.profile-card .profile-img{ width:88px; height:88px; object-fit:cover; border-radius:8px }
+.profile-card .profile-meta{ flex:1 }
+.profile-card .profile-name{ font-weight:700; margin-bottom:2px }
+.profile-card .profile-role{ color:#6b7280; margin-bottom:6px }
+
+/* ensure Services neutral CEO card uses the shared sizing */
+.ceo-card--services{ padding:16px; border-radius:10px; }
+.ceo-card--services .ceo__img{ width:88px; height:88px; object-fit:cover; border-radius:8px }
+*** End Patch
 
 .svc-hero__title{
   margin: 0 0 10px 0;
